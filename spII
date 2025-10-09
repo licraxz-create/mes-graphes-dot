@@ -1,1 +1,38 @@
+digraph G { graph [ranksep=1, nodesep=0.5] 
+"processus cognitif" [shape=box, style=filled, fillcolor=green, color=green] 
+"bas niveau" [style=filled,fillcolor=yellow, color=yellow] 
+"haut niveau"[style=filled,fillcolor=lightblue, color=lightblue] 
+Perception [style=filled,fillcolor=orange, color=orange] 
+Organisation [style=filled,fillcolor=orange, color=orange] 
+Lois [shape=box, style=filled, fillcolor=lightyellow, color=lightyellow]
+proximité [shape=box, style=filled, fillcolor=lightyellow, color=lightyellow] 
+similarité [shape=box, style=filled, fillcolor=lightyellow, color=lightyellow] 
+continuité [shape=box, style=filled, fillcolor=lightyellow, color=lightyellow]
+symétrie [shape=box, style=filled, fillcolor=lightyellow, color=lightyellow] 
+clôture [shape=box, style=filled, fillcolor=lightyellow, color=lightyellow] 
+"Approche gestaltiste" [shape=box, style=filled, fillcolor=lightyellow, color=lightyellow] 
+"Approche fonctionnaliste" [shape=box, style=filled, fillcolor=lightyellow, color=lightyellow] 
+"Approche cognitive" [shape=box, style=filled, fillcolor=lightblue, color=lightblue] 
+"traitements ascendants" [shape=box, style=filled, fillcolor=lightgreen, color=lightgreen] 
+"bottom up" [shape=box, style=filled, fillcolor=lightgreen, color=lightgreen] 
+"traitements descendants" [shape=box, style=filled, fillcolor=brown1, color=brown1] 
+"top down" [shape=box, style=filled, fillcolor=brown1, color=brown1] 
+"fonction adaptative" [shape=box, style=filled, fillcolor=lightyellow, color=lightyellow]
+"organisation perceptive" [shape=box, style=filled, fillcolor=lightyellow, color=lightyellow]
+"constance de la forme" [shape=box, style=filled, fillcolor=lightyellow, color=lightyellow] 
+"constance de la couleur"[shape=box, style=filled, fillcolor=lightyellow, color=lightyellow] 
+"constance de la grandeur" [shape=box, style=filled, fillcolor=lightyellow, color=lightyellow] 
+"perception forme" [style=filled,fillcolor=orange, color=orange] 
+"constances perceptives" [style=filled,fillcolor=orange, color=orange] 
+"illusions perceptive" [style=filled,fillcolor=orange, color=orange] 
+attentes [style=filled,fillcolor=orange, color=orange] 
+motivation [style=filled,fillcolor=orange, color=orange] 
+Interprétation [style=filled,fillcolor=orange, color=orange]
+Attention [shape =box style=filled,fillcolor=pink, color=pink] 
+stimuli -> Attention 
+Attention -> Perception [style=dotted] 
+"bas niveau" -> Perception Perception -> Organisation subgraph {rank = same ; "haut niveau"; "bas niveau" } subgraph {rank = same ; stimuli ; sensation ; Perception} stimuli -> sensation -> Perception "processus cognitif" -> "haut niveau" "processus cognitif" -> "bas niveau" subgraph {rank = same ; "perception forme" ; "constances perceptives" ;"illusions perceptive"} Organisation -> "perception forme" Organisation -> "constances perceptives" Organisation -> "illusions perceptive" Perception -> Interprétation Interprétation -> attentes Interprétation -> motivation subgraph {rank=same ; schémas ; contextes } attentes -> schémas attentes -> contextes subgraph {rank=same; émotionnel ; langue ; spatial} contextes -> émotionnel contextes -> spatial contextes -> langue subgraph {rank = same ; "processus autoréférence" ; "défense perceptive" ; "effet privation"} motivation -> "processus autoréférence" motivation -> "défense perceptive" motivation -> "effet privation" subgraph {rank=same ; attentes ; motivation } "Approche gestaltiste" -> Lois subgraph {rank = same ; "Approche gestaltiste" ; "Approche fonctionnaliste" ; "Approche cognitive" } "perception forme"-> "Approche gestaltiste" "perception forme"-> "Approche fonctionnaliste" "perception forme"-> "Approche cognitive" subgraph {rank= same ; proximité ; similarité ; continuité ; symétrie ; clôture } Lois -> similarité Lois -> proximité Lois -> continuité Lois -> symétrie Lois -> clôture subgraph {rank= same ; intensivité ; sélectivité} intensivité [style=filled,fillcolor=pink, color=pink] sélectivité [style=filled,fillcolor=pink, color=pink] Attention -> intensivité Attention -> sélectivité subgraph {rank=same ; alerte ; vigilance ; "a.soutenue" ; "a.sélective" ; "a.divisée"} alerte [style=filled,fillcolor=pink, color=pink] vigilance [style=filled,fillcolor=pink, color=pink] "a.soutenue" [style=filled,fillcolor=pink, color=pink] "a.sélective" [style=filled,fillcolor=pink, color=pink] "a.divisée" [style=filled,fillcolor=pink, color=pink] subgraph {rank = same ; tonique ; phasique} intensivité -> alerte alerte -> phasique alerte -> tonique intensivité -> vigilance intensivité -> "a.soutenue" sélectivité -> "a.sélective" sélectivité -> "a.divisée" subgraph {rank=same ; "traitements ascendants" ; "traitements descendants"} "Approche cognitive" -> "traitements ascendants"-> "bottom up" "Approche cognitive" -> "traitements descendants"-> "top down" subgraph{rank = same ; "bottom up" ; "top down"} subgraph {rank = same ; "fonction adaptative" ; "organisation perceptive"} "illusions perceptive" -> "fonction adaptative" "illusions perceptive" -> "organisation perceptive" subgraph {rank=same ; "constance de la forme" ; "constance de la grandeur" ; "constance de la couleur"} "constances perceptives" -> "constance de la forme" "constances perceptives" -> "constance de la grandeur" "constances perceptives" -> "constance de la couleur" }
+
+
+
 
