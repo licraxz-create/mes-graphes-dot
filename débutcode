@@ -1,0 +1,49 @@
+digraph G {
+    
+    
+
+node [fontsize=13]
+    graph [ranksep=0.5, nodesep=0.5]
+    
+    "Processus cognitif" [shape=box, style=filled, color=lightskyblue, fillcolor=lightskyblue]
+    "Mécanismes mentaux pour réaliser tâches" [fontsize=10 shape=box, style=filled, color=lightskyblue, fillcolor=lightskyblue]
+  Perception [shape=box, style=filled, color=orange, fillcolor=orange]
+  Apprentissage [shape=box, style=filled, color=mediumaquamarine, fillcolor=mediumaquamarine]
+  Mémoire [shape=box, style=filled, color=aquamarine1, fillcolor=aquamarine1]
+  Attention [shape=box, style=filled, color=pink, fillcolor=pink]
+  "Attention sélective"[shape=box, style=filled, color=pink, fillcolor=pink]
+  "Fonctions exécutives" [shape=box, style=filled, color=cornflowerblue, fillcolor=cornflowerblue]
+   subgraph {rank=above "Processus cognitif" ; "Mécanismes mentaux pour réaliser tâches"} 
+   "Mécanismes mentaux pour réaliser tâches" -> "Processus cognitif"
+   subgraph {rank=same Perception ; Apprentissage ; Mémoire}
+   "Processus cognitif" -> Perception [arrowsize=1]
+   "Processus cognitif" -> Apprentissage [arrowsize=1]
+   "Processus cognitif" -> Mémoire [arrowsize=1]
+   "Processus cognitif" -> "Fonctions exécutives"
+   Informations -> "reception"
+Sensation 
+"reception" 
+
+Informations -> Attention 
+
+subgraph {rank=same Sensation ; Perception ; Interprétation}
+ [fontsize=10]
+ 
+  "reception" -> Sensation [style=dotted]
+
+   subgraph{rank=same Attention ; "Concept non unitaire" }
+
+   
+
+Sensation -> Interprétation -> Perception
+Attention -> "Attention sélective"
+subgraph {rank=above "Attention sélective" ; Attention}
+Attention -> "Concept non unitaire" 
+"Concept non unitaire" -> "sélection stimuli"
+"Concept non unitaire"-> "énergie"
+"Concept non unitaire" -> "accès conscient"
+
+"Attention sélective" -> "filtre attentionnel " [style=dotted]
+   
+   
+} 
