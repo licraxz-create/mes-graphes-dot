@@ -1,0 +1,123 @@
+digraph G { 
+    graph [ranksep=0.5, nodesep=0.5]
+    rankdir=LR
+    
+
+      "Mécanismes mentaux pour réaliser tâches du quotidien" [fontsize=10] 
+      "Processus cognitif" [shape=box style=filled fillcolor=deepskyblue] 
+    "Mécanismes mentaux pour réaliser tâches du quotidien" -> "Processus cognitif"
+
+
+Perception [shape=box style=filled fillcolor=orange]
+Apprentissage  [shape=box style=filled fillcolor=chartreuse]
+Mémoire  [shape=box style=filled fillcolor=aquamarine1]
+"Fonction exécutives"  [shape=box style=filled fillcolor=cornflowerblue]
+
+subgraph {rank=same ; Perception ; Apprentissage ; Mémoire ; "Fonction exécutives"}
+
+"Processus cognitif" -> Perception 
+"Processus cognitif" -> Apprentissage 
+"Processus cognitif" -> Mémoire 
+"Processus cognitif" -> "Fonction exécutives"
+
+Stimuli [shape=box fontsize=10]
+Informations [shape=box fontsize=10]
+Stimuli -> 
+Informations -> Sensation -> "Reconnaissance et interprétation" -> Perception
+"Reconnaissance et interprétation"[shape=box style=filled fillcolor=orange fontsize=10]
+Attention [shape=box style=filled fillcolor=pink]
+"Concept non unitaire"[shape=box style=filled fillcolor=pink]
+Intensité [shape=box style=filled fillcolor=pink]
+Sélectivité [shape=box style=filled fillcolor=pink]
+Alerte [shape=box style=filled fillcolor=pink]
+Vigilance [shape=box style=filled fillcolor=pink]
+"Attention soutenue" [shape=box style=filled fillcolor=pink]
+"Attention sélective" [shape=box style=filled fillcolor=pink]
+"Attention divisée" [shape=box style=filled fillcolor=pink]
+
+subgraph {rank=same Attention; "Concept non unitaire"}
+subgraph {rank=same Intensité ; Sélectivité}
+subgraph {rank=same Alerte ; Vigilance ; "Attention soutenue" ; "Attention divisée" ; "Attention sélective" 
+}
+
+
+
+ Informations -> Attention 
+Attention -> "Concept non unitaire"
+"Concept non unitaire" -> Intensité 
+"Concept non unitaire" -> Sélectivité 
+Intensité -> Alerte 
+Alerte -> Tonique 
+Alerte -> Phasique 
+Intensité -> Vigilance 
+Intensité -> "Attention soutenue"
+
+Sélectivité -> "Attention sélective"
+"Attention sélective" -> filtre
+"Attention divisée" -> "traite plusieurs infos"
+Sélectivité -> "Attention divisée"
+
+Perception -> Organisation
+Perception -> Interprétations 
+
+Organisation [shape=box]
+"Perception des formes" [shape=box style=filled fillcolor=orange]
+Interprétations -> Motivation
+Interprétations -> Attentes -> contextes
+contextes [shape=box style=filled fillcolor=lightyellow]
+émotionnel [shape=box style=filled fillcolor=lightyellow]
+spatial [shape=box style=filled fillcolor=lightyellow]
+language [shape=box style=filled fillcolor=lightyellow]
+Motivation [shape=box style=filled fillcolor=lightyellow]
+Schémas [shape=box style=filled fillcolor=lightyellow]
+Attentes -> Schémas 
+
+Motivation [shape=box style=filled fillcolor=lightyellow]
+Attentes [shape=box style=filled fillcolor=lightyellow]
+contextes -> émotionnel 
+contextes -> spatial 
+contextes -> language 
+Schémas -> "vitesse et efficacité perception"
+Schémas -> "comportement adapté"
+"Illusions perceptives" [shape=box style=filled fillcolor=orange]
+"Constances perceptives" [shape=box style=filled fillcolor=orange]
+
+subgraph{rank=same ; "Perception des formes" ; "Illusions perceptives" ; "Constances perceptives"} 
+
+Organisation -> "Perception des formes"-> "Approche gestaltiste"->"Un tout est plus que la somme de ses partie"  -> "Lois"
+"Un tout est plus que la somme de ses partie" [fontsize=10]
+"Un tout est plus que la somme de ses partie" 
+"Perception des formes" -> "Approche fonctionnaliste" -> "ce que nous avons appris à connaître"
+"Approche fonctionnaliste" [shape=box style=filled fillcolor=cadetblue1]
+"Perception des formes" -> "Approche cognitive" -> "Bottom up" -> "traitement sur base de l'analyse de l'environnement"
+"Approche cognitive" -> "Top down" -> "traitement sur base des connaissances"
+"Approche cognitive" [shape=box style=filled fillcolor=plum]
+"Bottom up" [shape=box style=filled fillcolor=plum]
+"Top down" [shape=box style=filled fillcolor=plum]
+Organisation -> "Illusions perceptives" -> "fonction adaptative"
+Organisation -> "Constances perceptives" -> "perception des objets malgré changements"
+
+subgraph { rank=same "Lois" } 
+subgraph {rank=same "Loi proximité" ; "Loi similarité" ; "Loi continuité" ; "Loi symétrie" ;"Loi clôture"}
+
+"Lois"[shape=box style=filled fillcolor=darkgoldenrod1]
+"bonne forme" [shape=box style=filled fillcolor=darkgoldenrod1]
+"Loi de la familiarité"[shape=box style=filled fillcolor=darkgoldenrod1]
+"Loi proximité" [shape=box style=filled fillcolor=darkgoldenrod1]
+"Loi similarité" [shape=box style=filled fillcolor=darkgoldenrod1]
+"Loi continuité" [shape=box style=filled fillcolor=darkgoldenrod1]
+"Loi symétrie" [shape=box style=filled fillcolor=darkgoldenrod1]
+"Loi clôture" [shape=box style=filled fillcolor=darkgoldenrod1]
+"Approche gestaltiste" [shape=box style=filled fillcolor=darkgoldenrod1]
+
+"Lois" -> "Loi proximité" -> "regrouper éléménents proches"
+"Lois" -> "Loi similarité" -> "regrouper éléments semblables"
+"Lois" -> "Loi continuité" -> "organiser des configurations continues"
+"Lois" -> "Loi symétrie" -> "facilité à voir formes symétriques"
+"Lois" -> "Loi clôture" -> "plus grande chance de perception objets fermés"
+"Lois" -> "bonne forme" -> "Forme la plus simple privilégié"
+"Lois" -> "Loi de la familiarité" -> "Reconnaitre forme familière"
+
+
+
+}
