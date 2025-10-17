@@ -117,7 +117,39 @@ subgraph {rank=same "Loi proximité" ; "Loi similarité" ; "Loi continuité" ; "
 "Lois" -> "Loi clôture" -> "plus grande chance de perception objets fermés"
 "Lois" -> "bonne forme" -> "Forme la plus simple privilégié"
 "Lois" -> "Loi de la familiarité" -> "Reconnaitre forme familière"
+//partie 2 
+ Conditionnement [shape=box style=filled fillcolor=chartreuse3]
+ Répondant [shape=box style=filled fillcolor=chartreuse3]
 
+
+ Opérant [shape=box style=filled fillcolor=chartreuse3]
+
+
+ différé [shape=box style=filled fillcolor=chartreuse3]
+ simultané [shape=box style=filled fillcolor=chartreuse3]
+ Exctinction [shape=box style=filled fillcolor=chartreuse3]
+ renforcement [shape=box style=filled fillcolor=chartreuse3]
+ punition [shape=box style=filled fillcolor=chartreuse3]
+ Généralisation [shape=box style=filled fillcolor=chartreuse3]
+ Discrimination [shape=box style=filled fillcolor=chartreuse3]
+"de trace" [shape=box style=filled fillcolor=chartreuse3]
+rétroactif [shape=box style=filled fillcolor=chartreuse3]
+ "social et cognitif"[shape=box style=filled fillcolor=chartreuse2]
+ Expérience -> "Changement de comportement"
+ "Changement de comportement" -> Apprentissage
+ Apprentissage -> Conditionnement -> Répondant -> Mécanismes
+ Mécanismes -> Exctinction -> "SC non suivi de SI, RC disparaît"
+ Mécanismes -> Généralisation ->  "SC entraine RC pour situation similaire"
+ Mécanismes -> Discrimination -> "SC ne sont pas associés à SI"
+ Répondant -> différé -> "SN avant SI"
+ Répondant -> simultané -> "SN en même temps SI"
+ Répondant -> rétroactif -> "SI avant SN"
+ Répondant -> "de trace" -> "SN présent puis retiré avant SI"
+ Conditionnement -> Opérant -> "R provoque S (renforcement)" -> comportement -> augmente 
+ comportement -> diminiue -> punition 
+ augmente -> renforcement -> primaire 
+ renforcement -> secondairer
+ Apprentissage -> "social et cognitif"
 
 
 }
