@@ -1,0 +1,65 @@
+digraph G {
+
+   graph [ranksep=0.5, nodesep=0.5]
+
+    rankdir=DU
+
+
+
+
+
+      "Mécanismes mentaux pour réaliser tâches du quotidien" [fontsize=10] 
+
+      "Processus cognitif" [shape=box style=filled fillcolor=deepskyblue] 
+
+    "Mécanismes mentaux pour réaliser tâches du quotidien" -> "Processus cognitif"
+
+
+
+
+
+Perception [shape=box style=filled fillcolor=orange]
+
+Apprentissage  [shape=box style=filled fillcolor=chartreuse]
+
+Mémoire  [shape=box style=filled fillcolor=aquamarine1]
+
+"Fonction exécutives"  [shape=box style=filled fillcolor=cornflowerblue]
+
+
+
+subgraph {rank=same ; Perception ; Apprentissage ; Mémoire ; "Fonction exécutives"}
+
+
+
+"Processus cognitif" -> Perception 
+
+"Processus cognitif" -> Apprentissage 
+
+"Processus cognitif" -> Mémoire 
+
+"Processus cognitif" -> "Fonction exécutives"
+
+"Expérience" -> "changement comportement" -> Apprentissage 
+Apprentissage  -> Conditionnement -> Répondant -> SI
+SI -> SN -> SC -> RC 
+RC [shape=box style=filled fillcolor=darkolivegreen2]
+Conditionnement -> Opérant 
+Répondant -> "modes d'associations"
+"modes d'associations" [shape=box style=filled fillcolor=darkolivegreen2]
+"modes d'associations" -> différé 
+différé [shape=box style=filled fillcolor=darkolivegreen2]
+"modes d'associations" -> simultané 
+simultané [shape=box style=filled fillcolor=darkolivegreen2]
+"modes d'associations" -> trace
+trace [shape=box style=filled fillcolor=darkolivegreen2]
+"modes d'associations" -> retroactif 
+retroactif [shape=box style=filled fillcolor=darkolivegreen2]
+
+Conditionnement [shape=box style=filled fillcolor=darkolivegreen2]
+Répondant [shape=box style=filled fillcolor=darkolivegreen2]
+Opérant [shape=box style=filled fillcolor=darkolivegreen2]
+"social et cognitif" [shape=box style=filled fillcolor=darkolivegreen1]
+Apprentissage -> "social et cognitif"
+  
+}
