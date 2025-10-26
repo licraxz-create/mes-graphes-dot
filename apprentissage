@@ -1,65 +1,187 @@
+
 digraph G {
-
-   graph [ranksep=0.5, nodesep=0.5]
-
-    rankdir=DU
-
-
-
-
-
-      "Mécanismes mentaux pour réaliser tâches du quotidien" [fontsize=10] 
-
-      "Processus cognitif" [shape=box style=filled fillcolor=deepskyblue] 
-
-    "Mécanismes mentaux pour réaliser tâches du quotidien" -> "Processus cognitif"
-
-
-
-
-
-Perception [shape=box style=filled fillcolor=orange]
-
-Apprentissage  [shape=box style=filled fillcolor=chartreuse]
-
-Mémoire  [shape=box style=filled fillcolor=aquamarine1]
-
-"Fonction exécutives"  [shape=box style=filled fillcolor=cornflowerblue]
-
-
-
-subgraph {rank=same ; Perception ; Apprentissage ; Mémoire ; "Fonction exécutives"}
-
-
-
-"Processus cognitif" -> Perception 
-
-"Processus cognitif" -> Apprentissage 
-
-"Processus cognitif" -> Mémoire 
-
-"Processus cognitif" -> "Fonction exécutives"
-
-"Expérience" -> "changement comportement" -> Apprentissage 
-Apprentissage  -> Conditionnement -> Répondant -> SI
-SI -> SN -> SC -> RC 
-RC [shape=box style=filled fillcolor=darkolivegreen2]
-Conditionnement -> Opérant 
-Répondant -> "modes d'associations"
-"modes d'associations" [shape=box style=filled fillcolor=darkolivegreen2]
-"modes d'associations" -> différé 
-différé [shape=box style=filled fillcolor=darkolivegreen2]
-"modes d'associations" -> simultané 
-simultané [shape=box style=filled fillcolor=darkolivegreen2]
-"modes d'associations" -> trace
-trace [shape=box style=filled fillcolor=darkolivegreen2]
-"modes d'associations" -> retroactif 
-retroactif [shape=box style=filled fillcolor=darkolivegreen2]
-
-Conditionnement [shape=box style=filled fillcolor=darkolivegreen2]
-Répondant [shape=box style=filled fillcolor=darkolivegreen2]
-Opérant [shape=box style=filled fillcolor=darkolivegreen2]
-"social et cognitif" [shape=box style=filled fillcolor=darkolivegreen1]
-Apprentissage -> "social et cognitif"
-  
+    // Configuration globale
+    graph [
+        rankdir=LR
+        ranksep=0.8
+        nodesep=0.6
+        bgcolor=white
+        fontname="Arial"
+    ]
+    
+    node [
+        fontname="Arial"
+        fontsize=10
+        shape=box
+        style=filled
+    ]
+    
+    edge [
+        fontname="Arial"
+        fontsize=9
+    ]
+    
+    // Nœud racine
+    root [
+        label="Mécanismes mentaux pour\nréaliser tâches du quotidien"
+        fillcolor=lightgray
+        shape=ellipse
+    ]
+    
+    // Niveau 1 - Processus cognitif
+    processus [label="Processus cognitif" fillcolor=deepskyblue]
+    root -> processus
+    
+    // Niveau 2 - Composantes principales
+    perception [label="Perception" fillcolor=orange]
+    apprentissage [label="Apprentissage" fillcolor=chartreuse]
+    memoire [label="Mémoire" fillcolor=aquamarine1]
+    fonctions_exec [label="Fonction exécutives" fillcolor=cornflowerblue]
+    
+    processus -> {perception apprentissage memoire fonctions_exec}
+    
+    // === SECTION APPRENTISSAGE ===
+    
+    // Définition apprentissage
+    experience [label="Expérience" fillcolor=lightyellow]
+    changement [label="Changement comportement" fillcolor=lightyellow]
+    experience -> changement -> apprentissage
+    
+    // Types de conditionnement
+    conditionnement [label="Conditionnement" fillcolor=darkolivegreen2]
+    apprentissage -> conditionnement
+    
+    // Conditionnement répondant
+    repondant [label="Répondant" fillcolor=darkolivegreen2]
+    conditionnement -> repondant
+    
+    // Stimuli et réponses
+    si [label="SI" fillcolor=darkolivegreen2]
+    sn [label="SN" fillcolor=darkolivegreen2]
+    sc [label="SC" fillcolor=darkolivegreen2]
+    rc [label="RC" fillcolor=darkolivegreen2]
+    
+    repondant -> si
+    si -> sn -> sc -> rc
+    
+    // Modes d'associations
+    modes [label="Modes d'associations" fillcolor=darkolivegreen2]
+    rc -> modes
+    
+    differe [label="Différé" fillcolor=gold]
+    efficace [label="SN avant SI jusqu'à RI débute\n(le plus efficace)" fillcolor=gold]
+    modes -> differe -> efficace
+    
+    simultane [label="Simultané" fillcolor=darkolivegreen2]
+    simul_desc [label="SN et SI en même temps" fillcolor=lightyellow]
+    modes -> simultane -> simul_desc
+    
+    trace [label="Trace" fillcolor=darkolivegreen2]
+    trace_desc [label="SN présent puis retiré avant SI" fillcolor=lightyellow]
+    modes -> trace -> trace_desc
+    
+    retroactif [label="Rétroactif" fillcolor=darkolivegreen2]
+    moins_efficace [label="Le moins efficace" fillcolor=lightcoral]
+    modes -> retroactif -> moins_efficace
+    
+    // Adaptation aux circonstances
+    adapter [label="Adapter aux circonstances" fillcolor=lightblue]
+    repondant -> adapter
+    
+    extinction [label="Extinction" fillcolor=darkolivegreen2]
+    ext_desc [label="SC non suivi de SI,\nRC disparaît" fillcolor=lightyellow]
+    adapter -> extinction -> ext_desc
+    
+    generalisation [label="Généralisation" fillcolor=darkolivegreen2]
+    gen_desc [label="Stimuli similaire\ndéclenche RC" fillcolor=lightyellow]
+    adapter -> generalisation -> gen_desc
+    
+    discrimination [label="Discrimination" fillcolor=darkolivegreen2]
+    disc_desc [label="Réaction différente à\nstimuli similaire" fillcolor=lightyellow]
+    adapter -> discrimination -> disc_desc
+    
+    // Facteurs clés
+    facteurs [label="Facteurs clés" fillcolor=lightblue]
+    rc -> facteurs
+    
+    fiabilite [label="Fiabilité de SN\npour prédire SI" fillcolor=darkolivegreen2]
+    frequence [label="Fréquence apparition\nSN au SI" fillcolor=darkolivegreen2]
+    intensite [label="Intensité SI" fillcolor=darkolivegreen2]
+    relation_temp [label="Relation temporelle\nSN et SI" fillcolor=darkolivegreen2]
+    
+    facteurs -> {fiabilite frequence intensite relation_temp}
+    
+    // Contre-conditionnement
+    contre_cond [label="Contre-conditionnement" fillcolor=aqua]
+    contre_desc [label="SC en SN par association\nstimulus incompatible à RC" fillcolor=lightyellow]
+    conditionnement -> contre_cond -> contre_desc
+    
+    // === CONDITIONNEMENT OPÉRANT ===
+    
+    operant [label="Opérant" fillcolor=darkolivegreen1]
+    conditionnement -> operant
+    
+    relation [label="Relation entre comportement\net conséquence" fillcolor=lightyellow]
+    operant -> relation
+    
+    contingences [label="Contingences" fillcolor=darkolivegreen1]
+    relation -> contingences
+    
+    // Types de contingences
+    neutres [label="Neutres" fillcolor=lightgray]
+    neutres_desc [label="Ne changent pas la fréquence\nd'apparition du comportement" fillcolor=lightyellow]
+    contingences -> neutres -> neutres_desc
+    
+    renforcantes [label="Renforçantes" fillcolor=lightgreen]
+    contingences -> renforcantes
+    
+    freq_augmente [label="Fréquence d'apparition\ncomportement augmente" fillcolor=lightyellow]
+    renforcantes -> freq_augmente
+    
+    r_plus [label="R+" fillcolor=lightgreen]
+    r_moins [label="R-" fillcolor=lightgreen]
+    freq_augmente -> {r_plus r_moins}
+    
+    r_plus_desc [label="Ajout stimulus\nappétitif" fillcolor=lightyellow]
+    r_moins_desc [label="Retrait stimulus\naversif" fillcolor=lightyellow]
+    r_plus -> r_plus_desc
+    r_moins -> r_moins_desc
+    
+    punitives [label="Punitives" fillcolor=lightcoral]
+    contingences -> punitives
+    
+    freq_diminue [label="Fréquence d'apparition\ncomportement diminue" fillcolor=lightyellow]
+    punitives -> freq_diminue
+    
+    p_plus [label="P+" fillcolor=lightcoral]
+    p_moins [label="P-" fillcolor=lightcoral]
+    freq_diminue -> {p_plus p_moins}
+    
+    p_plus_desc [label="Ajout stimulus\naversif" fillcolor=lightyellow]
+    p_moins_desc [label="Retrait stimulus\nappétitif" fillcolor=lightyellow]
+    p_plus -> p_plus_desc
+    p_moins -> p_moins_desc
+    
+    // Programmes de renforcement
+    continu [label="Continu" fillcolor=lightgreen]
+    continu_desc [label="Conditionnement\nplus rapide" fillcolor=lightyellow]
+    renforcantes -> continu -> continu_desc
+    
+    intermittent [label="Intermittent" fillcolor=lightgreen]
+    inter_desc [label="Plus résistant\nà l'extinction" fillcolor=lightyellow]
+    renforcantes -> intermittent -> inter_desc
+    
+    // === APPRENTISSAGE SOCIAL ET COGNITIF ===
+    
+    social_cognitif [label="Social et cognitif" fillcolor=darkolivegreen3]
+    apprentissage -> social_cognitif
+    
+    observation [label="Observation" fillcolor=lightblue]
+    observation -> imitation -> "reproduire comportement"
+    observation -> vicariant -> "comportement integré en fonction conséquence"
+    latent [label="Latent" fillcolor=lightblue]
+    latent -> "Apprentissage sans renforcement immédiat"
+    insight [label="Insight" fillcolor=lightblue]
+    insight -> "découverte soudaine d'une solution"
+    social_cognitif -> {observation latent insight}
 }
