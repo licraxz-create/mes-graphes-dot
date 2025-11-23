@@ -1,0 +1,60 @@
+digraph G { 
+    graph [ranksep=0.5, nodesep=0.5]
+    
+    rankdir=LR
+    
+Civilisations [shape=box style=filled fillcolor=lightyellow]
+
+Civilisations -> Archaïques -> "éducation conservative" -> Survie -> Groupe
+Survie -> Individus 
+"éducation conservative" [shape=box style=filled fillcolor=lightyellow]
+"éducation conservative" -> "transmission valeurs" 
+Archaïques [shape=box style=filled fillcolor=lightyellow]
+Civilisations -> Antiques -> Grecque -> Politique 
+Grecque -> Philosophes
+
+Démocratie [shape=box style=filled fillcolor=darkolivegreen1]
+Philosophes [shape=box style=filled fillcolor=darkolivegreen1]
+Philosophes -> Sophistes
+Philosophes -> Cyniques -> Diogène 
+Diogène -> "Modèle transgression et contestation" -> "psychologie de l'éduaction"
+"Modèle transgression et contestation" -> "épistémologie de la connaissance"
+Socrate [shape=box style=filled fillcolor=darkolivegreen1]
+Platon [shape=box style=filled fillcolor=darkolivegreen1]
+Aristote [shape=box style=filled fillcolor=darkolivegreen1]
+Sophistes -> Platon -> "Relation éducative" 
+Platon -> Académie
+"Relation éducative" [shape=box style=filled fillcolor=darkolivegreen1]
+Sophistes -> Aristote 
+Aristote -> Scholé -> "Loisir d'apprendre"
+Aristote -> Lycée 
+Sophistes -> Socrate -> maïeutique
+maïeutique [shape=box style=filled fillcolor=darkolivegreen1]
+Epoques [shape=box style=filled fillcolor=darkolivegreen1]
+Grecque -> Epoques -> Classique -> Démocratie -> "citoyens libres ont accès à l'éducation"
+Epoques -> Homérique -> Préceptorat 
+Homérique -> Fosterage 
+Grecque [shape=box style=filled fillcolor=darkolivegreen1]
+Romaines [shape=box style=filled fillcolor=coral]
+Civilisations -> Sumériennes -> écriture -> scribe 
+Sumériennes [shape=box style=filled fillcolor=indianred]
+Antiques -> Romaines -> "Pensée éducative" -> Cicéron -> Rhétorique 
+"Pensée éducative" [shape=box style=filled fillcolor=coral]
+Romaines -> Ecoles -> Ludus 
+Ecoles -> Schola
+Ecoles -> "Arts libéraux" -> trivium 
+"Arts libéraux" -> quadrivium 
+"Arts libéraux" [shape=box style=filled fillcolor=cornflowerblue]
+Ecoles [shape=box style=filled fillcolor=coral]
+"Pensée éducative" -> Quintilien -> éducateurs
+Cicéron [shape=box style=filled fillcolor=coral]
+Quintilien[shape=box style=filled fillcolor=coral]
+Antiques ->"Antiquité chrétienne" -> "Eduquer=christianniser" -> "Arts libéraux"
+"Eduquer=christianniser" -> "culture chéretienne"
+"Antiquité chrétienne" [shape=box style=filled fillcolor=cornflowerblue]
+"Eduquer=christianniser" [shape=box style=filled fillcolor=cornflowerblue]
+
+}
+
+
+
