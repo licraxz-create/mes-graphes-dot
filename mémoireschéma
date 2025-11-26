@@ -1,0 +1,57 @@
+digraph G {
+graph [ranksep=0.5, nodesep=0.5]
+    rankdir=TB
+   Mémoire [shape=box, style=filled, fillcolor=darkorange]
+  
+
+ Mémoire -> "Fonction mentale"   // Force A à gauche de B 
+
+
+"Fonction mentale" -> Encoder 
+
+
+subgraph{rank=same; Rappel; Reconnaissance; Réapprentissage}
+Rappel [shape=box, style=filled, fillcolor=lightyellow]
+Encoder  [shape=box, style=filled, fillcolor=lightyellow]
+Stocker  [shape=box, style=filled, fillcolor=lightyellow]
+Codes  [shape=box, style=filled, fillcolor=lightyellow]
+Reconnaissance [shape=box, style=filled, fillcolor=lightyellow]
+Réapprentissage [shape=box, style=filled, fillcolor=lightyellow]
+Récupérer -> Rappel -> "retrouver et reproduire une infos"
+Récupérer -> Reconnaissance -> "déterminer si info connue et apprise"
+Récupérer -> Réapprentissage -> "réapprendre info"
+subgraph {rank=same; "infos maintenues dans le temps"; Stocker }
+Stocker -> "infos maintenues dans le temps"
+"infos maintenues dans le temps"[shape=box, style=filled, fillcolor=lightyellow]
+subgraph {rank=same; "évènement devient trace mnésique":Codes}
+    Encoder -> "évènement devient trace mnésique" -> Codes 
+    
+  
+    Codes -> Accoustique 
+    Codes -> Sémantique 
+    "évènement devient trace mnésique" [shape=box, style=filled, fillcolor=lightyellow]
+    
+    MCT -> "Boucle phonologique" -> MDT 
+    Sémantique -> MLT 
+    Accoustique -> MCT -> Stocker -> "Oublie rapide / Stockage limité"
+    
+    MDT -> "Maintien actif de l'info" -> "But précis" -> Stocker -> temporaire
+    MLT -> Stocker -> "quasi-illimitée"
+    "quasi-illimitée"[shape=box, style=filled, fillcolor=lightblue1]
+    "Oublie rapide / Stockage limité" [shape=box, style=filled, fillcolor=cornflowerblue]
+    MDT [shape=box, style=filled, fillcolor=coral]
+    temporaire [shape=box, style=filled, fillcolor=coral]
+    MLT [shape=box, style=filled, fillcolor=lightblue1]
+    Sémantique [shape=box, style=filled, fillcolor=lightblue1]
+    MCT [shape=box, style=filled, fillcolor=cornflowerblue]
+    Accoustique [shape=box, style=filled, fillcolor=cornflowerblue]
+    
+    subgraph cluster_autorep {
+    rank=same;
+    MCT;
+    "auto-répétition";
+    MLT;
+    MCT -> "auto-répétition" [constraint=false];
+    "auto-répétition" -> MLT [constraint=false];}
+
+}
