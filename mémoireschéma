@@ -1,57 +1,68 @@
 digraph G {
 graph [ranksep=0.5, nodesep=0.5]
-    rankdir=TB
+    rankdir=LR
    Mémoire [shape=box, style=filled, fillcolor=darkorange]
-  
-
- Mémoire -> "Fonction mentale"   // Force A à gauche de B 
-
-
-"Fonction mentale" -> Encoder 
+ 
+subgraph {rank=same ; Accoustique ; Sémantiques}
+subgraph {rank=same ; MCT ; MLT ; MDT}
+subgraph {rank=same ; Encoder ; Récupération}
 
 
-subgraph{rank=same; Rappel; Reconnaissance; Réapprentissage}
-Rappel [shape=box, style=filled, fillcolor=lightyellow]
 Encoder  [shape=box, style=filled, fillcolor=lightyellow]
 Stocker  [shape=box, style=filled, fillcolor=lightyellow]
+"Se souvenir" [shape=box, style=filled, fillcolor=lightyellow]
+Récupération  [shape=box, style=filled, fillcolor=lightyellow]
 Codes  [shape=box, style=filled, fillcolor=lightyellow]
-Reconnaissance [shape=box, style=filled, fillcolor=lightyellow]
-Réapprentissage [shape=box, style=filled, fillcolor=lightyellow]
-Récupérer -> Rappel -> "retrouver et reproduire une infos"
-Récupérer -> Reconnaissance -> "déterminer si info connue et apprise"
-Récupérer -> Réapprentissage -> "réapprendre info"
-subgraph {rank=same; "infos maintenues dans le temps"; Stocker }
-Stocker -> "infos maintenues dans le temps"
-"infos maintenues dans le temps"[shape=box, style=filled, fillcolor=lightyellow]
-subgraph {rank=same; "évènement devient trace mnésique":Codes}
-    Encoder -> "évènement devient trace mnésique" -> Codes 
-    
-  
+"Admnistrateur central" [shape=box, style=filled, fillcolor=coral]
+Mémoire -> Codes 
+   Codes -> Sémantiques
     Codes -> Accoustique 
-    Codes -> Sémantique 
-    "évènement devient trace mnésique" [shape=box, style=filled, fillcolor=lightyellow]
+   
+   Encoder -> Stocker
+   subgraph {rank=same; "Se souvenir" ; Déclarative; Procédurale}
+    Sémantiques -> MLT 
+    "Se souvenir" -> Déclarative -> Sémantique -> "Connaissance du monde en général sans contexte"
+    "Connaissance du monde en général sans contexte" [shape=box, style=filled]
+    "Actions futures" [shape=box, style=filled]
+    "Actions passés" [shape=box, style=filled]
+    "Souvenirs avec contexte" [shape=box, style=filled]
+    Déclarative -> Episodique -> "Souvenirs avec contexte"-> Prospective -> "Actions futures"
+   "Souvenirs avec contexte" ->  Rétrospective -> "Actions passés"
+    Déclarative ->  Procédurale [style=invis]
+   
+subgraph {rank=same; "Admnistrateur central" ; "Centre exécutif"}
+    Accoustique -> MCT 
+    MDT -> MCT -> MDT -> "Admnistrateur central" -> Stocker 
+    "Admnistrateur central" -> "Centre exécutif" -> "Fonction exécutives"
+    Stocker -> "Stock verbal" -> "Boucle phonologique"
+    Stocker -> "Stock visuel" -> "Registre visuo-spatial" 
     
-    MCT -> "Boucle phonologique" -> MDT 
-    Sémantique -> MLT 
-    Accoustique -> MCT -> Stocker -> "Oublie rapide / Stockage limité"
     
-    MDT -> "Maintien actif de l'info" -> "But précis" -> Stocker -> temporaire
-    MLT -> Stocker -> "quasi-illimitée"
-    "quasi-illimitée"[shape=box, style=filled, fillcolor=lightblue1]
-    "Oublie rapide / Stockage limité" [shape=box, style=filled, fillcolor=cornflowerblue]
+    
+    //couleur
     MDT [shape=box, style=filled, fillcolor=coral]
-    temporaire [shape=box, style=filled, fillcolor=coral]
+    "Stock verbal"  [shape=box, style=filled, fillcolor=lightyellow]
+    "Boucle phonologique" [shape=box, style=filled, fillcolor=coral]
+    "Stock visuel"  [shape=box, style=filled, fillcolor=lightyellow]
+    "Registre visuo-spatial" [shape=box, style=filled, fillcolor=coral]
     MLT [shape=box, style=filled, fillcolor=lightblue1]
+    Sémantiques [shape=box, style=filled, fillcolor=lightblue1]
+    Déclarative [shape=box, style=filled, fillcolor=lightblue1]
+    Procédurale [shape=box, style=filled, fillcolor=lightblue1]
+    Prospective [shape=box, style=filled, fillcolor=lightblue1]
+    Rétrospective [shape=box, style=filled, fillcolor=lightblue1]
+    Episodique [shape=box, style=filled, fillcolor=lightblue1]
     Sémantique [shape=box, style=filled, fillcolor=lightblue1]
     MCT [shape=box, style=filled, fillcolor=cornflowerblue]
     Accoustique [shape=box, style=filled, fillcolor=cornflowerblue]
     
-    subgraph cluster_autorep {
-    rank=same;
-    MCT;
-    "auto-répétition";
-    MLT;
-    MCT -> "auto-répétition" [constraint=false];
-    "auto-répétition" -> MLT [constraint=false];}
+    
+    subgraph {rank=same; "Admnistrateur central" ; Stocker ; "Se souvenir"}
+MCT -> Encoder  
+Récupération -> MLT 
+Stocker -> "Se souvenir" -> Récupération 
+
+"Fonction exécutives" [shape=box, style=filled, fillcolor=aquamarine1]
+
 
 }
