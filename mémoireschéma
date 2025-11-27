@@ -4,8 +4,8 @@ graph [ranksep=0.5, nodesep=0.5]
    Mémoire [shape=box, style=filled, fillcolor=darkorange]
  
 subgraph {rank=same ; Accoustique ; Sémantiques}
-subgraph {rank=same ; MCT ; MLT ; MDT}
-subgraph {rank=same ; Encoder ; Récupération}
+subgraph {rank=same ; MCT ; MLT ; MDT; "Noeuds sémantiques"; "Liens associatifs"}
+subgraph {rank=same ; Encoder ; Récupération; "Action diffusante"; Concepts}
 
 
 Encoder  [shape=box, style=filled, fillcolor=lightyellow]
@@ -21,11 +21,13 @@ Mémoire -> Codes
    Encoder -> Stocker
    subgraph {rank=same; "Se souvenir" ; Déclarative; Procédurale}
     Sémantiques -> MLT 
-    "Se souvenir" -> Déclarative -> Sémantique -> "Connaissance du monde en général sans contexte"
-    "Connaissance du monde en général sans contexte" [shape=box, style=filled]
+    "Se souvenir" -> Déclarative -> Sémantique -> "Connaissances général sans contexte"
+    "Connaissances général sans contexte" [shape=box, style=filled]
     "Actions futures" [shape=box, style=filled]
     "Actions passés" [shape=box, style=filled]
+    "Liens associatifs" [shape=box, style=filled]
     "Souvenirs avec contexte" [shape=box, style=filled]
+    "Savoir-faire"[shape=box, style=filled]
     Déclarative -> Episodique -> "Souvenirs avec contexte"-> Prospective -> "Actions futures"
    "Souvenirs avec contexte" ->  Rétrospective -> "Actions passés"
     Déclarative ->  Procédurale [style=invis]
@@ -46,23 +48,30 @@ subgraph {rank=same; "Admnistrateur central" ; "Centre exécutif"}
     "Stock visuel"  [shape=box, style=filled, fillcolor=lightyellow]
     "Registre visuo-spatial" [shape=box, style=filled, fillcolor=coral]
     MLT [shape=box, style=filled, fillcolor=lightblue1]
+    "Action diffusante"  [shape=box, style=filled]
+     "Noeuds sémantiques"   [shape=box, style=filled]
     Sémantiques [shape=box, style=filled, fillcolor=lightblue1]
     Déclarative [shape=box, style=filled, fillcolor=lightblue1]
     Procédurale [shape=box, style=filled, fillcolor=lightblue1]
     Prospective [shape=box, style=filled, fillcolor=lightblue1]
+    Concepts [shape=box, style=filled, fillcolor=lightblue1]
     Rétrospective [shape=box, style=filled, fillcolor=lightblue1]
     Episodique [shape=box, style=filled, fillcolor=lightblue1]
     Sémantique [shape=box, style=filled, fillcolor=lightblue1]
     MCT [shape=box, style=filled, fillcolor=cornflowerblue]
     Accoustique [shape=box, style=filled, fillcolor=cornflowerblue]
-    
+
     
     subgraph {rank=same; "Admnistrateur central" ; Stocker ; "Se souvenir"}
+  
 MCT -> Encoder  
-Récupération -> MLT 
-Stocker -> "Se souvenir" -> Récupération 
-
+Procédurale -> "Savoir-faire"
 "Fonction exécutives" [shape=box, style=filled, fillcolor=aquamarine1]
+Récupération -> MLT 
+Stocker -> "Se souvenir" 
+Récupération -> "Action diffusante" -> Concepts
+Déclarative -> Concepts -> "Liens associatifs" -> "Noeuds sémantiques" 
+"Se souvenir" -> Récupération 
 
 
 }
