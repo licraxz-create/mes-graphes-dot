@@ -1,1 +1,83 @@
+digraph G { rankdir= TB
+graph [ranksep=0.55, nodesep=0.7]
+"Processus" -> Conatif -> Conation -> "Effort dirigé vers action" -> Volition 
+"Effort dirigé vers action" -> Motivation -> "Active, stimule et dirige"
+Conatif -> Cognition -> "Pensées, croyances"
+Conatif -> Affect -> Positif -> Satisfait 
+Affect -> Négatif -> Insatifsait 
+"Processus" -> Affectif 
 
+subgraph {rank=same ; Conation ; Cognition ; Affect}
+//couleurs 
+"Processus" [shape=box, style=filled, fillcolor=cornflowerblue]
+Conatif  [shape=box, style=filled, fillcolor=orange]
+Conation  [shape=box, style=filled, fillcolor=orange]
+Cognition  [shape=box, style=filled, fillcolor=orange]
+Affect  [shape=box, style=filled, fillcolor=orange]
+Affectif  [shape=box, style=filled, fillcolor=lightblue]
+"Effort dirigé vers action" [shape=box, style=filled, fillcolor=lightyellow]
+"Pensées, croyances"[shape=box, style=filled, fillcolor=lightyellow]
+Positif [shape=box, style=filled, fillcolor=lightyellow]
+Théories [shape=box, style=filled, fillcolor=lightyellow]
+Types [shape=box, style=filled, fillcolor=lightyellow]
+Compétence [shape=box, style=filled, fillcolor=lightyellow] 
+Affiliation [shape=box, style=filled, fillcolor=lightyellow]
+Autonomie [shape=box, style=filled, fillcolor=lightyellow] 
+Physiologiques [shape=box, style=filled, fillcolor=lightyellow]
+Psychologiques [shape=box, style=filled, fillcolor=lightyellow]
+Motifs [shape=box, style=filled, fillcolor=lightyellow]
+Inées [shape=box, style=filled, fillcolor=lightyellow]
+Acquis [shape=box, style=filled, fillcolor=lightyellow]
+Régulations [shape=box, style=filled, fillcolor=lightyellow]
+Biologiques [shape=box, style=filled, fillcolor=lightyellow]
+Psychosociales [shape=box, style=filled, fillcolor=lightyellow]
+Biopsychosociales [shape=box, style=filled, fillcolor=lightyellow]
+Négatif [shape=box, style=filled, fillcolor=lightyellow]
+Motivation [shape=box, style=filled, fillcolor=orange]
+Volition [shape=box, style=filled, fillcolor=orange]
+affiliation [shape=box, style=filled, fillcolor=lightyellow]
+Pouvoir [shape=box, style=filled, fillcolor=lightyellow]
+Réussite [shape=box, style=filled, fillcolor=lightyellow]
+Buts [shape=box, style=filled, fillcolor=lightyellow]
+attentes [shape=box, style=filled, fillcolor=lightyellow]
+//couleurs 
+
+
+
+"Active, stimule et dirige" [shape=box, style=filled, fillcolor=lightyellow]
+"Active, stimule et dirige" -> Comportement 
+Comportement -> Persistance -> Emotions 
+Emotions [shape=box, style=filled, fillcolor=aquamarine1]
+Comportement -> Energie -> Besoins 
+Besoins [shape=box, style=filled, fillcolor=orange]
+Motivation -> Théories 
+Théories -> Biopsychosociales -> Besoins 
+Théories -> Biologiques -> Instinct -> "déclenchement innée"
+Biologiques -> Pulsion -> homéostasie 
+Biologiques -> "activation opt"-> "atteinte stimulation"
+Théories -> Psychosociales 
+Psychosociales -> Incitateurs -> "environnement stimulant"
+Psychosociales -> Cognitives -> Attentes 
+Cognitives -> Attributions -> Internes 
+Attributions -> Externes 
+Besoins -> Types
+Types -> Acquis -> Motifs 
+Besoins -> Régulations 
+Motifs -> Réussite -> "désir bonne performances"
+Motifs -> Pouvoir -> "environnement conforme à projections individuelles"
+Motifs -> affiliation -> "maintenir relations positives"
+Types -> Physiologiques -> Faim 
+Types -> Inées ->  Psychologiques -> Autonomie -> "Agir selon choix" -> Autonome -> "Besoins activités particulières"
+"Agir selon choix" -> "Non autonome" -> "degré soutien faible"
+Psychologiques -> Compétence -> "effectuer des défis" -> flow -> "etat concentration max"
+Psychologiques -> Affiliation -> "appartenir à un groupe" -> "interaction sociales"
+Régulations -> homéostasie -> "mécanismes de défense" 
+homéostasie -> frustration 
+homéostasie -> refoulement 
+Régulations -> BPC
+Motivation -> Buts -> Subordonnées
+Buts -> Intermédiaires
+Buts -> Superdonnées
+Motivation -> attentes -> conséqunce 
+attentes -> éfficacité 
+}
