@@ -1,83 +1,142 @@
-digraph G { rankdir= TB
-graph [ranksep=0.55, nodesep=0.7]
-"Processus" -> Conatif -> Conation -> "Effort dirigé vers action" -> Volition 
-"Effort dirigé vers action" -> Motivation -> "Active, stimule et dirige"
-Conatif -> Cognition -> "Pensées, croyances"
-Conatif -> Affect -> Positif -> Satisfait 
-Affect -> Négatif -> Insatifsait 
-"Processus" -> Affectif 
+digraph MotivationModel {
+    rankdir=LR;
+    graph [ranksep=0.5, nodesep=0.5]
+   
+    // Nœuds
+    antecedents [label="Antécédents Conditions\n• Événements externes\n• Contextes sociaux", shape=box, style=filled, fillcolor=lightyellow];
+    besoins [label="Besoins", shape=box, style=filled, fillcolor=indianred1]
+    actions [label="Actions motivées stimulées, dirigées\nvers un but et persistantes", shape=box];
+    "Processus conatif" [shape=box, style=filled, fillcolor=cornflowerblue];
+    Conation [shape=box];
+   
+    Cognition [shape=box];
+    Affect [shape=box];
+    Motivation [shape=box, style=filled, fillcolor=orange];
+    effort [label="effort dirigé vers l'action", shape=box, style=filled, fillcolor=lightyellow]
+    Conation[shape=box, style=filled, fillcolor=lightyellow]
+    Cognition [shape=box, style=filled, fillcolor=lightyellow]
+    Affect [shape=box, style=filled, fillcolor=lightyellow]
+    Positif [shape=box, style=filled, fillcolor=lightyellow]
+    Négatif [shape=box, style=filled, fillcolor=lightyellow]
+    Buts [shape=box, style=filled, fillcolor=lightyellow]
+    subgraph {rank=same ; actions ; Buts ; Positif ; Négatif }
+    // Relations
+    antecedents -> "Processus conatif";
+    "Processus conatif" -> Conation -> effort 
+Conation -> Cognition 
+Cognition -> Affect 
+  Cognition -> Buts 
+  Affect -> Positif 
+    Affect -> Négatif 
+  
 
-subgraph {rank=same ; Conation ; Cognition ; Affect}
-//couleurs 
-"Processus" [shape=box, style=filled, fillcolor=cornflowerblue]
-Conatif  [shape=box, style=filled, fillcolor=orange]
-Conation  [shape=box, style=filled, fillcolor=orange]
-Cognition  [shape=box, style=filled, fillcolor=orange]
-Affect  [shape=box, style=filled, fillcolor=orange]
-Affectif  [shape=box, style=filled, fillcolor=lightblue]
-"Effort dirigé vers action" [shape=box, style=filled, fillcolor=lightyellow]
-"Pensées, croyances"[shape=box, style=filled, fillcolor=lightyellow]
-Positif [shape=box, style=filled, fillcolor=lightyellow]
-Théories [shape=box, style=filled, fillcolor=lightyellow]
-Types [shape=box, style=filled, fillcolor=lightyellow]
-Compétence [shape=box, style=filled, fillcolor=lightyellow] 
-Affiliation [shape=box, style=filled, fillcolor=lightyellow]
-Autonomie [shape=box, style=filled, fillcolor=lightyellow] 
-Physiologiques [shape=box, style=filled, fillcolor=lightyellow]
-Psychologiques [shape=box, style=filled, fillcolor=lightyellow]
-Motifs [shape=box, style=filled, fillcolor=lightyellow]
-Inées [shape=box, style=filled, fillcolor=lightyellow]
-Acquis [shape=box, style=filled, fillcolor=lightyellow]
-Régulations [shape=box, style=filled, fillcolor=lightyellow]
-Biologiques [shape=box, style=filled, fillcolor=lightyellow]
-Psychosociales [shape=box, style=filled, fillcolor=lightyellow]
-Biopsychosociales [shape=box, style=filled, fillcolor=lightyellow]
-Négatif [shape=box, style=filled, fillcolor=lightyellow]
-Motivation [shape=box, style=filled, fillcolor=orange]
-Volition [shape=box, style=filled, fillcolor=orange]
-affiliation [shape=box, style=filled, fillcolor=lightyellow]
-Pouvoir [shape=box, style=filled, fillcolor=lightyellow]
-Réussite [shape=box, style=filled, fillcolor=lightyellow]
-Buts [shape=box, style=filled, fillcolor=lightyellow]
-attentes [shape=box, style=filled, fillcolor=lightyellow]
-//couleurs 
-
-
-
-"Active, stimule et dirige" [shape=box, style=filled, fillcolor=lightyellow]
-"Active, stimule et dirige" -> Comportement 
-Comportement -> Persistance -> Emotions 
-Emotions [shape=box, style=filled, fillcolor=aquamarine1]
-Comportement -> Energie -> Besoins 
-Besoins [shape=box, style=filled, fillcolor=orange]
-Motivation -> Théories 
-Théories -> Biopsychosociales -> Besoins 
-Théories -> Biologiques -> Instinct -> "déclenchement innée"
-Biologiques -> Pulsion -> homéostasie 
-Biologiques -> "activation opt"-> "atteinte stimulation"
-Théories -> Psychosociales 
-Psychosociales -> Incitateurs -> "environnement stimulant"
-Psychosociales -> Cognitives -> Attentes 
-Cognitives -> Attributions -> Internes 
-Attributions -> Externes 
-Besoins -> Types
-Types -> Acquis -> Motifs 
-Besoins -> Régulations 
-Motifs -> Réussite -> "désir bonne performances"
-Motifs -> Pouvoir -> "environnement conforme à projections individuelles"
-Motifs -> affiliation -> "maintenir relations positives"
-Types -> Physiologiques -> Faim 
-Types -> Inées ->  Psychologiques -> Autonomie -> "Agir selon choix" -> Autonome -> "Besoins activités particulières"
-"Agir selon choix" -> "Non autonome" -> "degré soutien faible"
-Psychologiques -> Compétence -> "effectuer des défis" -> flow -> "etat concentration max"
-Psychologiques -> Affiliation -> "appartenir à un groupe" -> "interaction sociales"
-Régulations -> homéostasie -> "mécanismes de défense" 
-homéostasie -> frustration 
-homéostasie -> refoulement 
-Régulations -> BPC
-Motivation -> Buts -> Subordonnées
-Buts -> Intermédiaires
-Buts -> Superdonnées
-Motivation -> attentes -> conséqunce 
-attentes -> éfficacité 
+    "Processus conatif" -> actions;
+    actions -> Motivation;
+    
+    // Contraintes de positionnement
+   {
+        style=invis;
+        Conation;
+        Cognition;
+        Affect;
+    }
+    
+    {
+        rank=same; antecedents ; 
+        "Processus conatif";
+        Conation; Cognition ; Affect 
+    }
+    
+    
+    
+   
+    buts [label="Buts", shape=box, style=filled, fillcolor=orange]
+    Attentes [shape=box, style=filled, fillcolor=orange]
+    Types [shape=box, style=filled, fillcolor=orange]
+    Motivation -> Théories
+    Théories [shape=box, style=filled, fillcolor=orange]
+   
+    
+    subgraph {rank=same ; buts ; Attentes ; Types ; Théories}
+        subgraph {rank=same ; Biologiques; Psychosociales ; Biopsychosociales}
+        subgraph {rank=same ; besoins ; Régulation }
+        subgraph {rank=same ; croissance ; Faim ; innée}
+    
+    Théories -> Biologiques 
+    Biologiques -> Instinct 
+    Instinct [shape=box, style=filled, fillcolor=lightyellow]
+    Pulsion [shape=box, style=filled, fillcolor=lightyellow]
+    Incitateurs [shape=box, style=filled, fillcolor=lightyellow]
+    Cognitives [shape=box, style=filled, fillcolor=lightyellow]
+    opti [label="Activation optimale" shape=box, style=filled, fillcolor=lightyellow]
+    Biologiques -> Pulsion 
+    Biologiques -> opti 
+    Biologiques [shape=box, style=filled, fillcolor=lightyellow]
+    Théories -> Psychosociales 
+    Psychosociales -> Incitateurs 
+    Psychosociales -> Cognitives 
+    Psychosociales [shape=box, style=filled, fillcolor=lightyellow]
+    Théories -> Biopsychosociales -> besoins 
+    Biopsychosociales [shape=box, style=filled, fillcolor=lightyellow]
+    Motivation -> buts 
+    Motivation -> Attentes 
+    Motivation -> Types 
+    besoins ->condition 
+    condition [label="condition essentielle\n nécessaire à la vie", shape=box, style=filled, fillcolor=lightyellow];
+   besoins -> Régulation 
+    condition -> fondamentaux 
+    fondamentaux[shape=box, style=filled, fillcolor=lightyellow]
+    condition -> défience -> privation 
+    privation [label="Etat de privation" , shape=box, style=filled, fillcolor=lightyellow]
+    défience [shape=box, style=filled, fillcolor=lightyellow]
+    condition -> croissance -> positif 
+    positif  [ label="émotions positives", shape=box, style=filled, fillcolor=lightyellow]
+    croissance [shape=box, style=filled, fillcolor=lightyellow]
+    Régulation  [shape=box, style=filled, fillcolor=Indianred1]
+    besoins -> Physiologiques -> Faim 
+    Faim  [shape=box, style=filled, fillcolor=lightyellow]
+    Physiologiques  [shape=box, style=filled, fillcolor=Indianred1]
+    besoins -> Psychologique -> innée 
+    Psychologique -> acquis -> "Motifs implicites"
+    "Motifs implicites" [shape=box, style=filled, fillcolor=Indianred1]
+    subgraph {rank=same ; Psychologique ; acquis}
+    acquis [label="processus acquis et spécifiques", shape=box, style=filled, fillcolor=lightyellow]
+    innée [label="processus inée", shape=box, style=filled, fillcolor=lightyellow]
+    Psychologique  [shape=box, style=filled, fillcolor=Indianred1]
+    
+    innée -> Environnement -> Soutenant 
+    Soutenant -> Oui 
+    Oui  [shape=box, style=filled, fillcolor=lightyellow]
+    Soutenant -> Non 
+    Non  [shape=box, style=filled, fillcolor=lightyellow]
+    Environnement  [shape=box, style=filled, fillcolor=Indianred1]
+    Soutenant  [shape=box, style=filled, fillcolor=lightyellow]
+    innée -> dvlpp -> Autonomie 
+    Autonomie  [shape=box, style=filled, fillcolor=Indianred1]
+    dvlpp -> Compétence 
+    Compétence  [shape=box, style=filled, fillcolor=Indianred1]
+    dvlpp  [label="Développement perso", shape=box, style=filled, fillcolor=Indianred1]
+    innée -> dvlps -> Affiliation 
+    Affiliation  [shape=box, style=filled, fillcolor=Indianred1]
+    dvlps  [label="Développement social", shape=box, style=filled, fillcolor=Indianred1]
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
