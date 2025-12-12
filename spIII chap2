@@ -1,0 +1,119 @@
+digraph MotivationModel {
+    rankdir=LR ;
+    graph [ranksep=0.5, nodesep=0.5]
+
+    Emotions [shape=box, style=filled, fillcolor=aquamarine1]
+    // ordre 
+    subgraph {rank=same  ;Théories ;  Emotions ;   Situations ; Buts ; Présemption }
+
+     Identification -> Régulation -> Emotions 
+
+    Présemption [shape=box, style=filled, fillcolor=aquamarine1]
+    Théories [shape=box, style=filled, fillcolor=aquamarine1]
+    Buts [shape=box, style=filled, fillcolor=aquamarine1]
+    Situations [shape=box, style=filled, fillcolor=aquamarine1]
+    Identification [shape=box, style=filled, fillcolor=aquamarine1]
+    Régulation [shape=box, style=filled, fillcolor=aquamarine1]
+    "James-Lange" [shape=box, style=filled, fillcolor=darkseagreen1]
+    "Cannon Bard" [shape=box, style=filled, fillcolor=darkseagreen1]
+    "Rétroaction Faciale" [shape=box, style=filled, fillcolor=darkseagreen1]
+    "Identification cognitive"[shape=box, style=filled, fillcolor=darkseagreen1]
+    "modifications expression faciale"[shape=box, style=filled, fillcolor=darkseagreen1]
+     tjm [label="Réponses ou réactions \n organismes = émotions", shape=box,style=filled, fillcolor=darkseagreen1]
+     tcb [label="activation physio en même temps que \n  perception et émotion => toutes les émotions sont \n similaires sur plan physio", shape=box, style=filled, fillcolor=darkseagreen1]
+      activation[shape=box, style=filled, fillcolor=darkseagreen1]
+      interprétation [shape=box, style=filled, fillcolor=darkseagreen1]
+      facteurs[shape=box, style=filled, fillcolor=darkseagreen1]
+      Atteint[shape=box, style=filled, fillcolor=darkseagreen1]
+      "Non atteint" [shape=box, style=filled, fillcolor=darkseagreen1]
+      "E(+)"[shape=box, style=filled, fillcolor=darkseagreen1]
+      "E(-)"[shape=box, style=filled, fillcolor=darkseagreen1]
+      Attentes [shape=box, style=filled, fillcolor=aquamarine1]
+      "Confiance en soi" [shape=box, style=filled, fillcolor=aquamarine1]
+      "Estime de soi" [shape=box, style=filled, fillcolor=aquamarine1]
+      "Auto-efficacité" [shape=box, style=filled, fillcolor=aquamarine1]
+             prsmpt [ label= "théories sur causes et \n conséquences situations " shape=box, style=filled, fillcolor=darkseagreen1]
+       "fondée sur expériences et\n croyances"[shape=box, style=filled, fillcolor=darkseagreen1]
+      "Engagement à l'action" [shape=box, style=filled, fillcolor=darkseagreen1]
+      cf [label="Se sentir capable \n de réussir", shape=box, style=filled, fillcolor=darkseagreen1]
+      vl [ label= "valeurs qu'on se donne" shape=box, style=filled, fillcolor=darkseagreen1]
+      conviction [shape=box, style=filled, fillcolor=darkseagreen1]
+      Objectif[shape=box, style=filled, fillcolor=darkseagreen1]
+      "Guident comportement"[shape=box, style=filled, fillcolor=darkseagreen1]
+      Stables [shape=box, style=filled, fillcolor=darkseagreen1]
+     Dimensions [shape=box, style=filled, fillcolor=darkseagreen1]
+     
+
+
+     //liens 
+    Emotions -> Théories  
+    Théories -> "James-Lange" -> tjm
+    Théories -> "Cannon Bard" -> tcb 
+    Théories -> "Rétroaction Faciale" -> "modifications expression faciale"
+    Théories -> "Identification cognitive"-> facteurs -> activation 
+    facteurs -> interprétation 
+    Présemption -> Buts -> Emotions
+    "Sources d'informations" -> Buts -> Atteint -> "E(+)" -> "Besoins satisfait"
+    "Besoins satisfait"[shape=box, style=filled, fillcolor=darkseagreen1]
+    "Besoins insatisfaits"[shape=box, style=filled, fillcolor=darkseagreen1]
+    Buts -> "Non atteint" -> "E(-)" -> "Besoins insatisfaits"
+    Situations  -> Attentes 
+     Situations -> Présemption
+     Présemption -> prsmpt 
+    Attentes -> "fondée sur expériences et\n croyances"
+    "Engagement à l'action" -> Situations 
+    "Confiance en soi" ->"Engagement à l'action" -> Facilitateurs 
+     "s'adapte à l'environnemenent" -> "Engagement à l'action"
+    Facilitateurs [shape=box, style=filled, fillcolor=aquamarine1]
+    "s'adapte à l'environnemenent" [shape=box, style=filled, fillcolor=aquamarine1]
+    subgraph {rank=same ; "Engagement à l'action" ; Facilitateurs ; "s'adapte à l'environnemenent" }
+
+    "Estime de soi" -> "Engagement à l'action"
+    "Auto-efficacité" -> "Engagement à l'action"
+    cf -> "Confiance en soi"
+    vl -> "Estime de soi"
+    conviction -> "Auto-efficacité"
+    "fondée sur expériences et\n croyances" -> Valeurs 
+   
+
+    Valeurs [shape=box, style=filled, fillcolor=aquamarine1]
+    "Sources d'informations"[shape=box, style=filled, fillcolor=aquamarine1]
+    "Modèle de Schwartz" [shape=box, style=filled, fillcolor=aquamarine1]
+    Valeurs -> "Modèle de Schwartz" 
+"Modèle de Schwartz" -> Objectif 
+"Modèle de Schwartz" -> "Guident comportement"
+"Modèle de Schwartz"  -> Stables 
+  Valeurs -> Dimensions 
+  Dimensions -> "Dépassement de soi"
+  Dimensions -> "Ouverture au changement"
+  Dimensions -> "Affirmation de soi"
+  Dimensions -> "Conservation ordre"
+ "Dépassement de soi"[shape=box, style=filled, fillcolor=darkseagreen1]
+ "Ouverture au changement"[shape=box, style=filled, fillcolor=darkseagreen1]
+ "Affirmation de soi"[shape=box, style=filled, fillcolor=darkseagreen1]
+ "Conservation ordre"[shape=box, style=filled, fillcolor=darkseagreen1]
+  Emotions -> Primaire -> "Basiques et communes \n Joie, colère, peur, tristesse et surprise"
+  Emotions -> Secondaire -> "Combinaisons d'émotions primaires"
+  "Combinaisons d'émotions primaires"[shape=box, style=filled, fillcolor=darkseagreen1]
+  Primaire [shape=box,style=filled, fillcolor=aquamarine1] 
+  Secondaire [shape=box,style=filled,fillcolor=aquamarine1]
+ "Basiques et communes \n Joie, colère, peur, tristesse et surprise"[shape=box, style=filled, fillcolor=darkseagreen1]
+  
+ 
+ "Guident comportement" -> Dynamiser 
+ "Guident comportement" -> Orienter
+ Dynamiser -> "Fonction inter-personnelles"
+ Dynamiser [shape=box, style=filled, fillcolor=darkseagreen1]
+ Orienter [shape=box, style=filled, fillcolor=darkseagreen1]
+"Sources d'informations" -> "Support décisions" 
+"Support décisions" [shape=box, style=filled, fillcolor=darkseagreen1] 
+subgraph {rank=same ; "Sources d'informations" ;  "Support décisions"}
+ "Fonction inter-personnelles" [shape=box, style=filled, fillcolor=aquamarine1]
+"Fonction inter-personnelles" -> "communiquent sentiment"
+"communiquent sentiment" [shape=box, style=filled, fillcolor=darkseagreen1] 
+ subgraph {rank=same ; Dynamiser ; "Fonction inter-personnelles" ; "communiquent sentiment"}
+
+
+
+ 
+}
