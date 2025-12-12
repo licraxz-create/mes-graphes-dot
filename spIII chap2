@@ -57,6 +57,12 @@ digraph MotivationModel {
     "Besoins satisfait"[shape=box, style=filled, fillcolor=darkseagreen1]
     "Besoins insatisfaits"[shape=box, style=filled, fillcolor=darkseagreen1]
     Buts -> "Non atteint" -> "E(-)" -> "Besoins insatisfaits"
+    "E(+)" -> Atténuer 
+    "E(+)" -> Diminuer 
+    Atténuer[shape=box, style=filled, fillcolor=darkseagreen1] 
+    Diminuer [shape=box, style=filled, fillcolor=darkseagreen1] 
+    "E(-)" -> Atténuer 
+    "E(-)" -> Diminuer
     Situations  -> Attentes 
      Situations -> Présemption
      Présemption -> prsmpt 
@@ -112,8 +118,68 @@ subgraph {rank=same ; "Sources d'informations" ;  "Support décisions"}
 "Fonction inter-personnelles" -> "communiquent sentiment"
 "communiquent sentiment" [shape=box, style=filled, fillcolor=darkseagreen1] 
  subgraph {rank=same ; Dynamiser ; "Fonction inter-personnelles" ; "communiquent sentiment"}
+Cognitions [shape=box, style=filled, fillcolor=darkseagreen1] 
+Modifications [shape=box, style=filled, fillcolor=darkseagreen1] 
+Action [shape=box, style=filled, fillcolor=darkseagreen1] 
+"Intensité et type"[shape=box, style=filled, fillcolor=darkseagreen1] 
+"Intensité et type" -> Cognitions -> Identification
+ Modifications -> Identification
+Action -> Identification
+rgl -> Situations [style=invis]
+
+subgraph {rank=same ; Régulation ; rgl ; Formes }
+rgl [label="ensemble de processus \n influencent et modifient émotions",shape=box, style=filled, fillcolor=darkseagreen1]
+Régulation -> rgl 
+rgl -> Types 
+Types [shape=box, style=filled, fillcolor=darkseagreen1] 
+rgl -> Durée 
+Durée [shape=box, style=filled, fillcolor=darkseagreen1] 
+rgl -> Intensité 
+Intensité [shape=box, style=filled, fillcolor=darkseagreen1] 
+rgl -> Composantes 
+Composantes [shape=box, style=filled, fillcolor=darkseagreen1] 
+ rgl -> Formes 
+ Formes [shape=box, style=filled, fillcolor=darkseagreen1] 
+Types -> "Régulation à priori" -> Anticiper -> Sélectionner 
+Anticiper -> Evaluation 
+Sélectionner [shape=box, style=filled, fillcolor=darkseagreen1] 
+Evaluation [shape=box, style=filled, fillcolor=darkseagreen1] 
+Anticiper [shape=box, style=filled, fillcolor=darkseagreen1] 
+"Régulation à priori" [shape=box, style=filled, fillcolor=aquamarine1] 
+Types -> "Régulation à postériori"
+"Régulation à postériori"[shape=box, style=filled, fillcolor=aquamarine1] 
+perception  -> Accepter 
+Accepter [shape=box, style=filled, fillcolor=aquamarine1] 
+perception  -> Réevaluer 
+Réevaluer [shape=box, style=filled, fillcolor=aquamarine1] 
+Attention [shape=box, style=filled, fillcolor=darkseagreen1]
+modifications [shape=box, style=filled, fillcolor=darkseagreen1]  
+Directe [shape=box, style=filled, fillcolor=darkseagreen1] 
+Indirecte [shape=box, style=filled, fillcolor=darkseagreen1] 
+Orientation [shape=box, style=filled, fillcolor=darkseagreen1] 
+"Changement cognitif"[shape=box, style=filled, fillcolor=darkseagreen1] 
+
+
+"Régulation à postériori" -> Attention 
+"Régulation à postériori" -> modifications -> Directe 
+modifications -> Indirecte
+"Régulation à postériori"->"Changement cognitif"-> perception 
+perception[shape=box, style=filled, fillcolor=darkseagreen1] 
+"Régulation à postériori" -> Orientation
+Examiner [shape=box, style=filled, fillcolor=darkseagreen1] 
+"Différencier pensée et \n réalité"[shape=box, style=filled, fillcolor=darkseagreen1] 
+Relativiser [shape=box, style=filled, fillcolor=darkseagreen1] 
+"Points positifs et bénéfices"[shape=box, style=filled, fillcolor=darkseagreen1] 
+
+Réevaluer -> Examiner
+Réevaluer -> Relativiser
+Réevaluer -> "Différencier pensée et \n réalité"
+Réevaluer -> "Points positifs et bénéfices"
 
 
 
- 
+
+
+
+
 }
