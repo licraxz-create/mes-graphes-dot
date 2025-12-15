@@ -1,60 +1,162 @@
-digraph G { 
-    graph [ranksep=0.5, nodesep=0.5]
-    
-    rankdir=LR
-    
-Civilisations [shape=box style=filled fillcolor=lightyellow]
+digraph Hist {
+rankdir=LR
+  "Histoire \n de l'éducation" [shape=box, style=filled, fillcolor=lightblue]
+  définition -> "Histoire \n de l'éducation"
+  définition [label="Moyens qui assurent \n développement et formation"shape=box, style=filled, fillcolor=lightblue]
+subgraph {rank=same ; "Histoire \n de l'éducation" ; définition ; Civilisations ; Chrétienne}
+subgraph {rank=same ; Archaïques ; Antiques ; Romaine ; "Education rudimentaire" ; Ecoles  }
+"Histoire \n de l'éducation" -> Civilisations 
+Civilisations[shape=box, style=filled, fillcolor=lightblue]
+Civilisations -> Archaïques
+Civilisations -> Antiques
+Archaïques [shape=box, style=filled, fillcolor=burlywood1]
+"Pas d'écriture"[shape=box, style=filled, fillcolor=burlywood1]
+"Vie collective"[shape=box, style=filled, fillcolor=burlywood1]
+"Education conservative"[shape=box, style=filled, fillcolor=burlywood1]
+"transmissions savoir \n savoir-faire" [shape=box, style=filled, fillcolor=burlywood1]
+"Survie individuelle\n collective"[shape=box, style=filled, fillcolor=burlywood1]
+Archaïques -> "Pas d'écriture" 
+Archaïques -> "Vie collective" -> "Education conservative" -> "transmissions savoir \n savoir-faire"
+"Education conservative" -> "Survie individuelle\n collective"
+Antiques [shape=box, style=filled, fillcolor=lightblue]
+Antiques -> Sumériennes -> sendarisation -> écriture -> sumériennes 
+écriture -> égyptiennes 
+sendarisation [label="Sédentarisation \n complixification sociale", shape=box, style=filled, fillcolor=coral]
+écriture [shape=box, style=filled, fillcolor=coral]
+sumériennes [shape=box, style=filled, fillcolor=coral]
+égyptiennes [shape=box, style=filled, fillcolor=coral]
+Sumériennes [shape=box, style=filled, fillcolor=coral]
+Antiques -> Grecque -> politiques -> "Société féodale" -> Démocratie -> "éducation du \n citoyen"
+"Société féodale" -> Aristocratie
+Démocratie [shape=box, style=filled, fillcolor=darkolivegreen1]
+Aristocratie [shape=box, style=filled, fillcolor=darkolivegreen1]
+"Société féodale"[shape=box, style=filled, fillcolor=darkolivegreen1]
+Grecque -> éducative -> préceptorat -> fosterage 
+préceptorat -> "famille engage éducateur"
+fosterage -> "membre famille éduque"
+subgraph {rank=same ; préceptorat ; "famille engage éducateur"}
+subgraph {rank=same ; fosterage ; "membre famille éduque"}
+"famille engage éducateur" [shape=box, style=filled, fillcolor=darkolivegreen1]
+"membre famille éduque"[shape=box, style=filled, fillcolor=darkolivegreen1]
+éducative [label="évolution modèle\n éducatif" shape=box, style=filled, fillcolor=darkolivegreen1]
+politiques [label="transformation \n socio politique"shape=box, style=filled, fillcolor=darkolivegreen1 ]
+Grecque [shape=box, style=filled, fillcolor=darkolivegreen1]
+préceptorat [shape=box, style=filled, fillcolor=darkolivegreen1]
+fosterage [shape=box, style=filled, fillcolor=darkolivegreen1]
+éducative -> philosophie -> Sophistes -> Socrate 
+Sophistes -> Platon ->  "éducation du \n citoyen" -> "Pôle savoir" -> Enseignant 
+"éducation du \n citoyen" -> "Pôle apprenant" -> Elève 
 
-Civilisations -> Archaïques -> "éducation conservative" -> Survie -> Groupe
-Survie -> Individus 
-"éducation conservative" [shape=box style=filled fillcolor=lightyellow]
-"éducation conservative" -> "transmission valeurs" 
-Archaïques [shape=box style=filled fillcolor=lightyellow]
-Civilisations -> Antiques -> Grecque -> Politique 
-Grecque -> Philosophes
+"Pôle savoir" [shape=box, style=filled, fillcolor=darkolivegreen1]
+"Pôle apprenant"[shape=box, style=filled, fillcolor=darkolivegreen1]
+Elève [shape=box, style=filled, fillcolor=darkolivegreen1]
+Enseignant[shape=box, style=filled, fillcolor=darkolivegreen1]
+Platon [shape=box, style=filled, fillcolor=darkolivegreen1]
+Socrate [shape=box, style=filled, fillcolor=darkolivegreen1]
+ "éducation du \n citoyen"[shape=box, style=filled, fillcolor=darkolivegreen1]
+Sophistes[shape=box, style=filled, fillcolor=darkolivegreen1]
+Cyniques [shape=box, style=filled, fillcolor=darkolivegreen1]
+philosophie -> Cyniques 
+subgraph {rank=same ;philosophie ; Sophistes ; Socrate}
+philosophie [shape=box, style=filled, fillcolor=darkolivegreen1]
+Antiques -> Romaine 
+Romaine [shape=box, style=filled, fillcolor=Indianred1]
+Romaine -> "Education rudimentaire" -> Ecoles 
+Ecoles [shape=box, style=filled, fillcolor=Indianred1]
 
-Démocratie [shape=box style=filled fillcolor=darkolivegreen1]
-Philosophes [shape=box style=filled fillcolor=darkolivegreen1]
-Philosophes -> Sophistes
-Philosophes -> Cyniques -> Diogène 
-Diogène -> "Modèle transgression et contestation" -> "psychologie de l'éduaction"
-"Modèle transgression et contestation" -> "épistémologie de la connaissance"
-Socrate [shape=box style=filled fillcolor=darkolivegreen1]
-Platon [shape=box style=filled fillcolor=darkolivegreen1]
-Aristote [shape=box style=filled fillcolor=darkolivegreen1]
-Sophistes -> Platon -> "Relation éducative" 
-Platon -> Académie
-"Relation éducative" [shape=box style=filled fillcolor=darkolivegreen1]
-Sophistes -> Aristote 
-Aristote -> Scholé -> "Loisir d'apprendre"
-Aristote -> Lycée 
-Sophistes -> Socrate -> maïeutique
-maïeutique [shape=box style=filled fillcolor=darkolivegreen1]
-Epoques [shape=box style=filled fillcolor=darkolivegreen1]
-Grecque -> Epoques -> Classique -> Démocratie -> "citoyens libres ont accès à l'éducation"
-Epoques -> Homérique -> Préceptorat 
-Homérique -> Fosterage 
-Grecque [shape=box style=filled fillcolor=darkolivegreen1]
-Romaines [shape=box style=filled fillcolor=coral]
-Civilisations -> Sumériennes -> écriture -> scribe 
-Sumériennes [shape=box style=filled fillcolor=indianred]
-Antiques -> Romaines -> "Pensée éducative" -> Cicéron -> Rhétorique 
-"Pensée éducative" [shape=box style=filled fillcolor=coral]
-Romaines -> Ecoles -> Ludus 
-Ecoles -> Schola
-Ecoles -> "Arts libéraux" -> trivium 
-"Arts libéraux" -> quadrivium 
-"Arts libéraux" [shape=box style=filled fillcolor=cornflowerblue]
-Ecoles [shape=box style=filled fillcolor=coral]
-"Pensée éducative" -> Quintilien -> éducateurs
-Cicéron [shape=box style=filled fillcolor=coral]
-Quintilien[shape=box style=filled fillcolor=coral]
-Antiques ->"Antiquité chrétienne" -> "Eduquer=christianniser" -> "Arts libéraux"
-"Eduquer=christianniser" -> "culture chéretienne"
-"Antiquité chrétienne" [shape=box style=filled fillcolor=cornflowerblue]
-"Eduquer=christianniser" [shape=box style=filled fillcolor=cornflowerblue]
+"Education rudimentaire"[shape=box, style=filled, fillcolor=Indianred1]
+
+Civilisations  -> Chrétienne 
+Chrétienne [shape=box, style=filled, fillcolor=plum]
+
+Socrate -> Rhétorique -> "Art d'argumenter"
+"Art d'argumenter"[shape=box, style=filled, fillcolor=darkolivegreen1]
+Rhétorique [shape=box, style=filled, fillcolor=darkolivegreen1]
+Socrate -> Dialectique -> "Art de dialoguer"
+"Art de dialoguer"[shape=box, style=filled, fillcolor=darkolivegreen1]
+
+Dialectique[shape=box, style=filled, fillcolor=darkolivegreen1]
+Socrate -> Maïeutique -> "Art de persuader"
+"Art de persuader"[shape=box, style=filled, fillcolor=darkolivegreen1]
+Maïeutique [shape=box, style=filled, fillcolor=darkolivegreen1]
+
+Sophistes -> Aristote -> Lycée 
+Aristote [shape=box, style=filled, fillcolor=darkolivegreen1]
+
+Platon -> Académie -> Lycée 
+Lycée [shape=box, style=filled, fillcolor=darkolivegreen1]
+Académie [shape=box, style=filled, fillcolor=darkolivegreen1]
+
+
+Grecque -> Epoques 
+Epoques  [shape=box, style=filled, fillcolor=darkolivegreen1]
+subgraph {rank=same ; Grecque; Epoques} 
+
+Epoques -> Homérique -> "éducation = pensée,réalisé" 
+"éducation = pensée,réalisé" [shape=box, style=filled, fillcolor=darkolivegreen1]
+Homérique  [shape=box, style=filled, fillcolor=darkolivegreen1]
+Epoques -> Classique -> "Bon citoyen"
+"Bon citoyen" [shape=box, style=filled, fillcolor=darkolivegreen1]
+Classique  [shape=box, style=filled, fillcolor=darkolivegreen1]
+Epoques -> Helleniste 
+Helleniste  [shape=box, style=filled, fillcolor=darkolivegreen1]
+
+éducative -> "activité éducative"
+"activité éducative" [shape=box, style=filled, fillcolor=darkolivegreen1]
+ "activité éducative" -> "Savoir parler \n écouter \n argumenter"
+ "Savoir parler \n écouter \n argumenter"[shape=box, style=filled, fillcolor=darkolivegreen1]
+
+subgraph {rank=same ; éducative ; "activité éducative" ;   "Savoir parler \n écouter \n argumenter" } 
+
+
+"Education rudimentaire" -> "Education familiale"   
+
+"Education familiale"[shape=box, style=filled, fillcolor=Indianred1]
+
+Ecoles -> Elémentaire -> Ludus -> litterator 
+litterator [shape=box, style=filled, fillcolor=Indianred1]
+Ludus [shape=box, style=filled, fillcolor=Indianred1]
+Elémentaire[shape=box, style=filled, fillcolor=Indianred1]
+Ecoles -> Moyennes -> Grammaticus 
+Grammaticus [shape=box, style=filled, fillcolor=Indianred1]
+Moyennes [shape=box, style=filled, fillcolor=Indianred1]
+Ecoles -> Supérieure -> rhéteur -> Programme -> "Droit romain"
+Programme [shape=box, style=filled, fillcolor=Indianred1]
+"Droit romain"[shape=box, style=filled, fillcolor=Indianred1]
+rhéteur [shape=box, style=filled, fillcolor=Indianred1]
+Supérieure [shape=box, style=filled, fillcolor=Indianred1]
+
+
+Romaine -> "Pensée éducative"
+"Pensée éducative" [shape=box, style=filled, fillcolor=Indianred1]
+"Pensée éducative" -> Cicéron -> Humanitas 
+Humanitas [shape=box, style=filled, fillcolor=Indianred1]
+"Pensée éducative" -> Quintilien -> Educateurs
+Educateurs [shape=box, style=filled, fillcolor=Indianred1]
+Cicéron [shape=box, style=filled, fillcolor=Indianred1]
+Quintilien [shape=box, style=filled, fillcolor=Indianred1]
+
+Programme -> "Moyen Age"
+Programme -> "Arts libéraux"
+"Arts libéraux" -> trivium
+"Arts libéraux" -> quadrivium
+"Moyen Age"  [shape=box, style=filled, fillcolor=plum1]
+"Arts libéraux"[shape=box, style=filled, fillcolor=Indianred1]
+trivium [shape=box, style=filled, fillcolor=Indianred1]
+quadrivium [shape=box, style=filled, fillcolor=Indianred1]
+
+subgraph {rank=same ; Programme ; "Moyen Age"}
+
+Chrétienne ->"Eduquer=christianniser" -> "Pensée augustinienne"
+"Eduquer=christianniser"[shape=box, style=filled, fillcolor=plum]
+
+subgraph {rank=same ; Chrétienne ; "Eduquer=christianniser" ; "Pensée augustinienne"}
+"Pensée augustinienne" [shape=box, style=filled, fillcolor=plum]
+
+
+
+
+
+
 
 }
-
-
-
