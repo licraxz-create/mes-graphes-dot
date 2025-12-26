@@ -1,0 +1,95 @@
+digraph Chap3 { 
+    rankdir=LR 
+    Attachement [shape=box, style=filled, fillcolor=lightpink]
+    Systèmes  [shape=box, style=filled, fillcolor=lightyellow]
+    Signaux  [shape=box, style=filled, fillcolor=lightyellow]
+    Comportement  [shape=box, style=filled, fillcolor=lightpink]
+    Actif [shape=box, style=filled, fillcolor=lightyellow]
+    Aversif [shape=box, style=filled, fillcolor=lightyellow]
+    Signalisation [shape=box, style=filled, fillcolor=lightyellow]
+    Objectif [shape=box, style=filled, fillcolor=lightpink]
+    "Survie et sécurité"[shape=box, style=filled, fillcolor=lightyellow]
+    Motivationnels [shape=box, style=filled, fillcolor=lightyellow]
+    Activé [shape=box, style=filled, fillcolor=lightyellow]
+    Désactivé [shape=box, style=filled, fillcolor=lightyellow]
+    Peur [shape=box, style=filled, fillcolor=lightpink]
+    Exploration [shape=box, style=filled, fillcolor=lightblue]
+    
+   Objectif -> "Survie et sécurité"
+    Attachement -> Objectif 
+    Comportement -> Actif -> Aversif -> Signalisation
+    
+    subgraph {rank=same ; Comportement ; Signalisation ; Aversif ; Actif}
+    subgraph {rank=same ; Attachement ; Objectif}
+    subgraph {rank=same ; Peur ; Désactivé}
+
+Signaux -> Comportement -> Systèmes -> Motivationnels -> Attachement 
+Attachement -> Activé -> Peur 
+"Survie et sécurité" -> Protection -> "figure attachement"
+Protection [shape=box, style=filled, fillcolor=lightyellow]
+"figure attachement"[shape=box, style=filled, fillcolor=lightpink]
+Attachement -> Désactivé -> "Base sécurité"
+"figure attachement" -> "Soins enfant"
+"Soins enfant"[shape=box, style=filled, fillcolor=lightyellow]
+"figure attachement" -> "présence régulière"
+"présence régulière"[shape=box, style=filled, fillcolor=lightyellow]
+"figure attachement" -> "investissement émotionnel"
+"investissement émotionnel"[shape=box, style=filled, fillcolor=lightyellow]
+Réponse [shape=box, style=filled, fillcolor=lightyellow]
+Caregiving [shape=box, style=filled, fillcolor=lightpink]
+
+subgraph {rank=same ; Protection ; Réponse}
+subgraph {rank=same ; "figure attachement" ; Caregiving ; "Version parentale\n attachement"}
+
+Peur -> Réponse -> Caregiving 
+"figure attachement" -> Caregiving ->  "Version parentale\n attachement"
+"Base sécurité" [shape=box, style=filled, fillcolor=lightyellow]
+ "Version parentale\n attachement" [shape=box, style=filled, fillcolor=lightyellow]
+Exploration -> Autonomie 
+Autonomie [shape=box, style=filled, fillcolor=lightyellow]
+Exploration -> Adaptation 
+Adaptation [shape=box, style=filled, fillcolor=lightyellow]
+Exploration -> Apprentissage 
+Apprentissage [shape=box, style=filled, fillcolor=lightyellow]
+
+
+
+
+ "Version parentale\n attachement"
+
+Sécure -> Exploration 
+Insécure -> Evitant 
+Insécure -> Ambivalent
+
+Sécure  [shape=box, style=filled, fillcolor=lightblue]
+Insécure  [shape=box, style=filled, fillcolor=lightpink]
+Ambivalent  [shape=box, style=filled, fillcolor=lightyellow]
+Evitant  [shape=box, style=filled, fillcolor=lightyellow]
+
+subgraph {rank=same ; "Base sécurité" ; Exploration ; Réponse ; Sécure ; Flexible}
+
+Réponse -> "Base sécurité" -> Flexible -> Sécure 
+Flexible  [shape=box, style=filled, fillcolor=lightyellow]
+Domaines  [shape=box, style=filled, fillcolor=lightyellow]
+Domaines -> Comportement
+
+subgraph {rank=same ; Domaines ; Comportement }
+
+Aversif -> Externalisé 
+Externalisé  [shape=box, style=filled, fillcolor=lightpink]
+
+Domaines -> Caractéristiques 
+Caractéristiques  [shape=box, style=filled, fillcolor=lightyellow]
+Domaines -> Environnement 
+Environnement  [shape=box, style=filled, fillcolor=lightyellow]
+Domaines -> "Style parentale"
+"Style parentale" [shape=box, style=filled, fillcolor=lightyellow]
+Comportement -> Régulation -> Internalisation -> Modèles 
+
+Régulation  [shape=box, style=filled, fillcolor=lightyellow]
+Internalisation  [shape=box, style=filled, fillcolor=lightblue]
+Modèles  [shape=box, style=filled, fillcolor=lightyellow]
+Absences  [shape=box, style=filled, fillcolor=lightpink]
+"Base sécurité" -> Absences -> Insécure
+
+}
