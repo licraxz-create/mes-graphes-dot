@@ -1,0 +1,151 @@
+digraph G {
+    rankdir=LR
+    
+Psychologie [shape=box, style=filled, fillcolor=darkseagreen1]
+Psychologie -> Histoire -> "premières approches médicales"
+Histoire [shape=box, style=filled, fillcolor=lightyellow]
+"premières approches médicales" [shape=box, style=filled, fillcolor=lightyellow]
+
+"premières approches médicales" -> Hippocrate
+Empédocle -> "Théorie 4 éléments"  -> Galien 
+Hippocrate -> "Théorie des humeurs"-> Empédocle
+Empédocle [shape=box, style=filled, fillcolor=lightyellow]
+"Théorie 4 éléments"[shape=box, style=filled, fillcolor=darkseagreen1]
+Hippocrate [shape=box, style=filled, fillcolor=lightyellow]
+"Théorie des humeurs" [shape=box, style=filled, fillcolor=darkseagreen1]
+Hippocrate -> "Attitude clinique" -> Diagnostic -> Thérapie 
+
+"Attitude clinique"[shape=box, style=filled, fillcolor=darkseagreen1]
+Diagnostic[shape=box, style=filled, fillcolor=lightyellow]
+Thérapie [shape=box, style=filled, fillcolor=lightyellow]
+
+
+
+Galien [shape=box, style=filled, fillcolor=lightyellow] 
+Galien -> "4 tempéraments" 
+"4 tempéraments" [shape=box, style=filled, fillcolor=darkseagreen1]
+"premières approches médicales" -> Rhazès 
+Rhazès [shape=box, style=filled, fillcolor=darkseagreen1]
+"premières approches médicales" -> "influences philosophique"
+ "influences philosophique" -> Aristote -> "Observation introspective"
+"influences philosophique" -> Pythagore 
+"influences philosophique"[shape=box, style=filled, fillcolor=lightyellow]
+"influences philosophique" -> Platon -> âme 
+"Observation introspective" -> Sensation 
+Sensation [shape=box, style=filled, fillcolor=lightyellow]
+"Observation introspective" -> Conation 
+Conation [shape=box, style=filled, fillcolor=lightyellow]
+"Observation introspective" -> Affectivité 
+Affectivité [shape=box, style=filled, fillcolor=lightyellow]
+âme -> Raison 
+âme -> Désir 
+âme [shape=box, style=filled, fillcolor=lightyellow]
+Platon [shape=box, style=filled, fillcolor=darkseagreen1]
+Raison [shape=box, style=filled, fillcolor=lightyellow]
+Désir [shape=box, style=filled, fillcolor=lightyellow]
+Aristote [shape=box, style=filled, fillcolor=darkseagreen1]
+Pythagore [shape=box, style=filled, fillcolor=darkseagreen1]
+"Pères de l'Eglise" [shape=box, style=filled, fillcolor=lightyellow]
+"Observation introspective"[shape=box, style=filled, fillcolor=lightyellow]
+Galien -> "Pères de l'Eglise" -> "Doctrine ventriculaire" 
+"Pères de l'Eglise" -> "St Augustin" 
+"St Augustin"[shape=box, style=filled, fillcolor=lightyellow]
+"Doctrine ventriculaire" [shape=box, style=filled, fillcolor=lightyellow]
+Rhazès -> Observation -> Diagnostic 
+Observation [shape=box, style=filled, fillcolor=darkseagreen1]
+Empirisme  [shape=box, style=filled, fillcolor=darkseagreen1]
+Rationnalisme  [shape=box, style=filled, fillcolor=darkseagreen1]
+raison  [label=Raison shape=box, style=filled, fillcolor=lightyellow]
+Connaissances  [shape=box, style=filled, fillcolor=lightyellow]
+subgraph {rank=same ; Psychologie ; Mouvements}
+Psychologie -> Mouvements 
+Mouvements [shape=box, style=filled, fillcolor=lightyellow]
+Mouvements -> Connaissances -> raison -> Rationnalisme 
+Connaissances -> Expériences -> Empirisme -> Associationnisme
+Expériences [shape=box, style=filled, fillcolor=lightyellow]
+Associationnisme [shape=box, style=filled, fillcolor=lightyellow]
+"Modèles Esprit" [shape=box, style=filled, fillcolor=lightyellow]
+Locke [shape=box, style=filled, fillcolor=darkseagreen1]
+Histoire -> "Modèles Esprit" -> Locke -> "Tabula rasa"
+"Tabula rasa"[shape=box, style=filled, fillcolor=lightyellow]
+"Modèles Esprit" -> Pinel -> Psychiatrie -> Folie 
+Psychiatrie -> Manie 
+Pinel [shape=box, style=filled, fillcolor=darkseagreen1]
+Psychiatrie [shape=box, style=filled, fillcolor=lightyellow]
+Manie [shape=box, style=filled, fillcolor=lightyellow]
+Folie [shape=box, style=filled, fillcolor=lightyellow]
+Fonctionnalisme [shape=box, style=filled, fillcolor=darkseagreen1]
+Structuralisme [shape=box, style=filled, fillcolor=darkseagreen1]
+Mouvements -> Comportement 
+Comportement [shape=box, style=filled, fillcolor=lightyellow]
+Comportement -> Structuralisme -> "Introspection dirigée"
+"Introspection dirigée"[shape=box, style=filled, fillcolor=lightyellow]
+Comportement -> Fonctionnalisme -> Adaptation 
+Adaptation [shape=box, style=filled, fillcolor=lightyellow]
+Pensées [shape=box, style=filled, fillcolor=lightyellow]
+Behaviorisme [shape=box, style=filled, fillcolor=darkseagreen1]
+Psychanalyse [shape=box, style=filled, fillcolor=darkseagreen1]
+Humanisme[shape=box, style=filled, fillcolor=darkseagreen1]
+
+Mouvements -> Pensées 
+Pensées -> Behaviorisme -> Conditionnement 
+Conditionnement [shape=box, style=filled, fillcolor=darkseagreen1]
+Pensées -> Psychanalyse -> Personnalité -> Conflit 
+Conflit -> ça 
+Conflit -> Moi 
+Conflit -> Surmoi
+Pensées -> Humanisme
+Personnalité [shape=box, style=filled, fillcolor=lightyellow]
+Conflit [shape=box, style=filled, fillcolor=lightyellow]
+ça [shape=box, style=filled, fillcolor=darkseagreen1]
+Moi [shape=box, style=filled, fillcolor=darkseagreen1]
+Surmoi[shape=box, style=filled, fillcolor=darkseagreen1]
+
+Humanisme -> "Capacité de choix"
+"Capacité de choix"[shape=box, style=filled, fillcolor=lightyellow]
+Humanisme -> "Théories des besoins"
+"Théories des besoins"[shape=box, style=filled, fillcolor=darkseagreen1]
+
+
+Psychologie -> Cognitive -> Gestaltisme 
+Cognitive -> Cybernétique 
+Cognitive[shape=box, style=filled, fillcolor=lightyellow]
+Gestaltisme [shape=box, style=filled, fillcolor=lightyellow]
+Cybernétique [shape=box, style=filled, fillcolor=lightyellow]
+
+Cognitive -> Piaget -> Stades -> Actions -> Pensée 
+Piaget [shape=box, style=filled, fillcolor=lightyellow]
+Stades [shape=box, style=filled, fillcolor=lightyellow]
+Actions [shape=box, style=filled, fillcolor=lightyellow]
+Pensée [shape=box, style=filled, fillcolor=lightyellow]
+
+Psychologie -> Perspectives 
+Perspectives -> Biologique 
+Perspectives -> Comportementales 
+Perspectives -> Cognitif 
+Perspectives -> Humaniste 
+Biologique [shape=box, style=filled, fillcolor=darkseagreen1]
+Comportementales [shape=box, style=filled, fillcolor=darkseagreen1]
+Cognitif [shape=box, style=filled, fillcolor=darkseagreen1]
+Humaniste [shape=box, style=filled, fillcolor=darkseagreen1]
+Perspectives [shape=box, style=filled, fillcolor=lightyellow]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
