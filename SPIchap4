@@ -145,4 +145,102 @@ Symptômes [shape=box, style=filled, fillcolor=darkslategray1]
 Observation [shape=box, style=filled, fillcolor=darkslategray1]
 Approches [shape=box, style=filled, fillcolor=darkslategray1]
 
+
+    
+    rankdir=LR 
+    
+    Personnalité [shape=box, style=filled, fillcolor=springgreen]
+    "Différents traits" [shape=box, style=filled, fillcolor=lightyellow]
+    "Différentes attitudes" [shape=box, style=filled, fillcolor=lightyellow]
+    Modèles [shape=box, style=filled, fillcolor=springgreen]
+    Approches [shape=box, style=filled, fillcolor=springgreen]
+    Catégorielle [shape=box, style=filled, fillcolor=seagreen2]
+    Dimensionnelle [shape=box, style=filled, fillcolor=seagreen2]
+    Types [shape=box, style=filled, fillcolor=lightyellow]
+    Pycnique [shape=box, style=filled, fillcolor=seagreen2]
+    Leptosome [shape=box, style=filled, fillcolor=seagreen2]
+    Athlétique [shape=box, style=filled, fillcolor=seagreen2]
+    Dysplasique [shape=box, style=filled, fillcolor=seagreen2]
+    "Expansif, gai, spontané"[shape=box, style=filled, fillcolor=seagreen2] 
+    "Réservé, froid" [shape=box, style=filled, fillcolor=seagreen2]
+    "Impulsif, coléreux"[shape=box, style=filled, fillcolor=seagreen2]
+    "sentiment inférieur"[shape=box, style=filled, fillcolor=seagreen2]
+    "Caractéristiques évalués continuum"[shape=box, style=filled, fillcolor=lightyellow]
+    "Assemblage cohérent traits"[shape=box, style=filled, fillcolor=seagreen2]
+"Différentes attitudes"  -> "Différents traits" ->"Assemblage cohérent traits" ->Personnalité 
+    
+"Manière habituelles de\n percevoir \n se comporter\n interragir"[shape=box, style=filled, fillcolor=seagreen2]
+"Caractéristiques durables\n dispositions cognitives et affectives"   [shape=box, style=filled, fillcolor=seagreen2]
+    
+ "Manière habituelles de\n percevoir \n se comporter\n interragir" -> "Différents traits"
+   "Manière habituelles de\n percevoir \n se comporter\n interragir" -> "Caractéristiques durables\n dispositions cognitives et affectives"  
+subgraph {rank=same ; "Différents traits" ;"Manière habituelles de\n percevoir \n se comporter\n interragir"; "Stabilité des traits" }  
+subgraph {rank=same ; "Représentation mentale"; "Concept de soi" ; Personnalité ; Modèles ; Approches ; Catégorielle}
+subgraph {rank=same; Dimensionnelle ;"Caractéristiques évalués continuum" }
+"Représentation mentale" [shape=box, style=filled, fillcolor=lightyellow]
+"Représentation mentale" -> "Concept de soi"
+Personnalité -> Modèles -> Approches 
+
+Approches -> Catégorielle -> Types 
+
+Types -> Pycnique -> "Expansif, gai, spontané"
+Types -> Leptosome -> "Réservé, froid"
+Types -> Athlétique -> "Impulsif, coléreux"
+Types -> Dysplasique -> "sentiment inférieur"
+
+Approches -> Dimensionnelle -> "Caractéristiques évalués continuum"
+
+Modèles -> "Big five" 
+"Big five" [shape=box, style=filled, fillcolor=seagreen2]
+
+"Big five" -> Nevrosisme 
+Nevrosisme [shape=box, style=filled, fillcolor=springgreen]
+Extraversion [shape=box, style=filled, fillcolor=springgreen]
+Ouverture [shape=box, style=filled, fillcolor=springgreen]
+Agréabilité [shape=box, style=filled, fillcolor=springgreen]
+"Concept de soi" [shape=box, style=filled, fillcolor=seagreen2]
+Conscience [shape=box, style=filled, fillcolor=springgreen]
+ "Collection schémas" [shape=box, style=filled, fillcolor=springgreen]
+"Big five" -> Extraversion 
+"Big five" -> Ouverture
+"Big five" -> Agréabilité 
+"Big five" -> Conscience 
+
+"Concept de soi" -> Permanence -> Passé 
+"Concept de soi" -> Personnalité 
+Permanence -> Présent 
+Permanence -> Futur 
+Permanence [shape=box, style=filled, fillcolor=lightyellow]
+Passé [shape=box, style=filled, fillcolor=lightyellow]
+Présent [shape=box, style=filled, fillcolor=lightyellow]
+Futur [shape=box, style=filled, fillcolor=lightyellow]
+
+"Concept de soi" -> "Collection schémas" -> Domaines 
+Passé -> "Généralisation tirées \n expériences"
+Domaines [shape=box, style=filled, fillcolor=springgreen]
+"Dirigent comportement\n vers vision établie"[shape=box, style=filled, fillcolor=springgreen]
+"Généralisation tirées \n expériences" [shape=box, style=filled, fillcolor=springgreen]
+Présent -> "Dirigent comportement\n vers vision établie"
+"Concept de soi" -> "Soi cohérent" 
+"Soi cohérent" [shape=box, style=filled, fillcolor=springgreen]
+"Sois possibles" [shape=box, style=filled, fillcolor=springgreen]
+"Stabilité des traits" [shape=box, style=filled, fillcolor=lightyellow]
+"Intégration dynamique\n traits de personnalité" [shape=box, style=filled, fillcolor=seagreen2]
+Futur -> "Sois possibles" 
+
+Personnalité -> "Intégration dynamique\n traits de personnalité"
+
+"Différents traits" -> "Stabilité des traits" 
+"Différentes attitudes" -> "Caractére unique" 
+"Caractére unique"[shape=box, style=filled, fillcolor=lightyellow]
+subgraph {rank=same ; "Différentes attitudes" ; "Caractére unique"}
+
+
+
+
+
+
+
+
+
 }
