@@ -1,0 +1,126 @@
+// ===== CARTE 1 : Intelligence collective (vert) + Connaissances cognitives (orange) =====
+
+digraph Module4_Carte1 {
+    // Configuration générale
+    graph [fontname="Arial", bgcolor="#ffffff", pad="0.5", ranksep="1.2", nodesep="0.8"];
+    node [fontname="Arial", fontsize=11, style="filled,rounded", shape=box];
+    edge [fontname="Arial", fontsize=9, color="#666666"];
+    
+    // Noeud central
+    centre [label="Cartes mentales comme\nsupport de structuration\npartagée", 
+            shape=ellipse, fillcolor="#4A90E2", fontcolor=white, 
+            width=3, height=1.5, fontsize=13, penwidth=3];
+    
+    // ===== BRANCHE 1 : Intelligence collective (VERT) =====
+    ic [label="Intelligence\ncollective", fillcolor="#7CB342", fontcolor=white, penwidth=2];
+    
+    ic_dist [label="Distribution\ndes savoirs", fillcolor="#AED581"];
+    ic_mem [label="Système de mémoire\ntransactive", fillcolor="#AED581"];
+    ic_var [label="Variété des\nperspectives", fillcolor="#AED581"];
+    
+    ic_dist_det [label="• Visualiser diversité\n  des contributions\n• Mémoire externe\n  collective", 
+                 fillcolor="#C5E1A5", shape=note];
+    ic_mem_det [label="• Complémentarité\n  au sein du groupe", 
+                fillcolor="#C5E1A5", shape=note];
+    ic_var_det [label="• Interface de\n  l'intelligence collective", 
+                fillcolor="#C5E1A5", shape=note];
+    
+    // ===== BRANCHE 2 : Connaissances cognitives (ORANGE) =====
+    cc [label="Connaissances cognitives\net intelligence sociale", 
+        fillcolor="#FF7043", fontcolor=white, penwidth=2];
+    
+    cc_equi [label="Équilibrer les\nparticipations", fillcolor="#FFAB91"];
+    cc_trans [label="Transformer\nles savoirs", fillcolor="#FFAB91"];
+    cc_part [label="Capacité à partager une\nreprésentation commune", fillcolor="#FFAB91"];
+    
+    cc_equi_det [label="• Assure équité\n• Régule interactions", 
+                 fillcolor="#FFCCBC", shape=note];
+    cc_trans_det [label="• Convertit connaissances\n  complexes en schémas\n• Travail collaboratif", 
+                  fillcolor="#FFCCBC", shape=note];
+    cc_part_det [label="• Efficacité du groupe\n(Perkins, Nonaka, Takeuchi)", 
+                 fillcolor="#FFCCBC", shape=note];
+    
+    // ===== CONNEXIONS =====
+    centre -> ic [penwidth=2, color="#7CB342"];
+    centre -> cc [penwidth=2, color="#FF7043"];
+    
+    // Connexions Intelligence collective
+    ic -> ic_dist;
+    ic -> ic_mem;
+    ic -> ic_var;
+    ic_dist -> ic_dist_det [style=dashed];
+    ic_mem -> ic_mem_det [style=dashed];
+    ic_var -> ic_var_det [style=dashed];
+    
+    // Connexions Connaissances cognitives
+    cc -> cc_equi;
+    cc -> cc_trans;
+    cc -> cc_part;
+    cc_equi -> cc_equi_det [style=dashed];
+    cc_trans -> cc_trans_det [style=dashed];
+    cc_part -> cc_part_det [style=dashed];
+}
+
+
+// ===== CARTE 2 : Connectivisme (mauve) + Dimension sociale (jaune) =====
+
+digraph Module4_Carte2 {
+    // Configuration générale
+    graph [fontname="Arial", bgcolor="#ffffff", pad="0.5", ranksep="1.2", nodesep="0.8"];
+    node [fontname="Arial", fontsize=11, style="filled,rounded", shape=box];
+    edge [fontname="Arial", fontsize=9, color="#666666"];
+    
+    // Noeud central
+    centre [label="Cartes mentales comme\nsupport de structuration\npartagée", 
+            shape=ellipse, fillcolor="#4A90E2", fontcolor=white, 
+            width=3, height=1.5, fontsize=13, penwidth=3];
+    
+    // ===== BRANCHE 3 : Connectivisme (MAUVE) =====
+    conn [label="Connectivisme", fillcolor="#AB47BC", fontcolor=white, penwidth=2];
+    
+    conn_outil [label="Usage d'outils comme\nmémoire externe", fillcolor="#CE93D8"];
+    conn_mult [label="Multiplication et variété\ndes connexions", fillcolor="#CE93D8"];
+    conn_maj [label="Mise à jour\ndu savoir", fillcolor="#CE93D8"];
+    
+    conn_outil_det [label="• Prothèse cognitive", 
+                    fillcolor="#E1BEE7", shape=note];
+    conn_mult_det [label="• Analogies, associations\n• Décisions\n• Chaque noeud connecté", 
+                   fillcolor="#E1BEE7", shape=note];
+    conn_maj_det [label="• Capacité de modifier,\n  relier ou ajouter\n• Création de liens", 
+                  fillcolor="#E1BEE7", shape=note];
+    
+    // ===== BRANCHE 4 : Dimension sociale (JAUNE) =====
+    ds [label="Dimension sociale\nde l'apprentissage", 
+        fillcolor="#FFA726", fontcolor=white, penwidth=2];
+    
+    ds_outil [label="Outils\ncollaboratifs", fillcolor="#FFCC80"];
+    ds_vision [label="Vision\ncommune", fillcolor="#FFCC80"];
+    ds_part [label="Participation", fillcolor="#FFCC80"];
+    
+    ds_outil_det [label="• Permet visualiser\n  contributions\n• Favorise synthèse", 
+                  fillcolor="#FFE0B2", shape=note];
+    ds_vision_det [label="• Orchestration des\n  activités", 
+                   fillcolor="#FFE0B2", shape=note];
+    ds_part_det [label="• Apprentissage\n  collaboratif", 
+                 fillcolor="#FFE0B2", shape=note];
+    
+    // ===== CONNEXIONS =====
+    centre -> conn [penwidth=2, color="#AB47BC"];
+    centre -> ds [penwidth=2, color="#FFA726"];
+    
+    // Connexions Connectivisme
+    conn -> conn_outil;
+    conn -> conn_mult;
+    conn -> conn_maj;
+    conn_outil -> conn_outil_det [style=dashed];
+    conn_mult -> conn_mult_det [style=dashed];
+    conn_maj -> conn_maj_det [style=dashed];
+    
+    // Connexions Dimension sociale
+    ds -> ds_outil;
+    ds -> ds_vision;
+    ds -> ds_part;
+    ds_outil -> ds_outil_det [style=dashed];
+    ds_vision -> ds_vision_det [style=dashed];
+    ds_part -> ds_part_det [style=dashed];
+}
