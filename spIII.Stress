@@ -1,0 +1,159 @@
+digraph G {
+rankdir=LR 
+ graph [ranksep=0.5, nodesep=0.5]
+   
+subgraph {rank=same ; Personnes ; Environnement}
+subgraph {rank=same ; Modèles ; Stress ;Impact ; Modérateurs}
+subgraph {rank=same ; Chronique ; Aigus}
+Stress [shape=box, style=filled, fillcolor=plum1]
+Personnes [shape=box, style=filled, fillcolor=lightyellow]
+Environnement [shape=box, style=filled, fillcolor=lightyellow]
+
+Personnes -> Stress
+Environnement -> Stress
+Personnes -> Environnement [label=Interaction]
+ 
+Stress -> Modérateurs -> Impact  
+Impact  [shape=box, style=filled, fillcolor=lightyellow]
+
+Impact -> Chronique -> chronique 
+chronique [label="confrontation à stresseurs", shape=box, style=filled, fillcolor=plum]
+
+Impact -> Aigus -> aigus 
+Chronique [shape=box, style=filled, fillcolor=plum]
+Aigus [shape=box, style=filled, fillcolor=plum]
+aigus [label ="évènements aigus\n provoque crise cardiaque",shape=box, style=filled, fillcolor=plum ]
+ 
+ 
+Chronique -> Aigus 
+Aigus -> Chronique 
+ 
+Modérateurs [shape=box, style=filled, fillcolor=plum1]
+ 
+Modérateurs -> rôle 
+
+rôle [label="L’exercice physique\n le style de coping\nLe soutien social\nLa personnalité\nl’hostilité\nLe contrôle perçu\nLes loisirs" shape=box, style=filled, fillcolor=lightyellow]
+ 
+ Modèles -> Stress 
+ Modèles [shape=box, style=filled, fillcolor=lightyellow]
+ 
+  "ressources\n s'épuisent"[shape=box, style=filled, fillcolor=lightyellow]
+ subgraph {rank=same ; Alarme ; Résistance ; Epuisement} 
+ 
+ Modèles -> Limites -> "Ne prends pas variabilité individuelles"
+ Limites -> "Réactions physio constantes"
+ Limites [shape=box, style=filled, fillcolor=plum1]
+ "Ne prends pas variabilité individuelles"[shape=box, style=filled, fillcolor=lightyellow]
+ "Réactions physio constantes" [shape=box, style=filled, fillcolor=lightyellow]
+Modèles  -> Changements -> "Evenements vie\n malheureu\n heureux"
+ 
+ Modèles -> Cannon -> "fight or flight" -> "Réponses adaptatives \n fuite ou confrontation"
+ Cannon [shape=box, style=filled, fillcolor=plum]
+ "fight or flight"[shape=box, style=filled, fillcolor=plum]
+ "Réponses adaptatives \n fuite ou confrontation" [shape=box, style=filled, fillcolor=lightyellow]
+ "Réponses adaptatives \n fuite ou confrontation" -> Evitement -> "l’écart attention agent stresseur"
+  "l’écart attention agent stresseur"[shape=box, style=filled, fillcolor=lightyellow]
+ 
+ Evitement [shape=box, style=filled, fillcolor=plum]
+ Confrotation [shape=box, style=filled, fillcolor=plum]
+ "mise en place d’actions" [shape=box, style=filled, fillcolor=lightyellow]
+ "Réponses adaptatives \n fuite ou confrontation" -> Confrotation -> "mise en place d’actions"
+ Modèles -> Selye -> Syndrôme 
+ Selye  [shape=box, style=filled, fillcolor=plum1]
+ Syndrôme  [shape=box, style=filled, fillcolor=plum1]
+ Phases [shape=box, style=filled, fillcolor=plum1]
+ Alarme [shape=box, style=filled, fillcolor=plum1]
+ Résistance [shape=box, style=filled, fillcolor=plum1]
+ Epuisement[shape=box, style=filled, fillcolor=plum1]
+ Syndrôme -> Phases -> Alarme -> "réponse immédiate au facteur de stress" -> "combat ou fuite"
+ "réponse immédiate au facteur de stress"[shape=box, style=filled, fillcolor=lightyellow]
+ "combat ou fuite" [shape=box, style=filled, fillcolor=lightyellow]
+ Phases -> Résistance -> "Si le stress persiste\n adaptation et maitient\n état d'équilibre"
+ "Si le stress persiste\n adaptation et maitient\n état d'équilibre" [shape=box, style=filled, fillcolor=lightyellow]
+ Phases -> Epuisement -> "ressources\n s'épuisent"
+ Changements  [shape=box, style=filled, fillcolor=plum1]
+  "Evenements vie\n malheureu\n heureux"[shape=box, style=filled, fillcolor=plum1]
+ 
+Stress -> Evaluation -> "caractéristiques de la personnalité" -> Primaires 
+Evaluation -> Secondaires -> Contrôle ->  "tel comportement peut conduire à tel résultat"
+"tel comportement peut conduire à tel résultat"[shape=box, style=filled, fillcolor=lightyellow]
+Secondaires -> "Capacités \n aptitudes" -> "Capable d’exécuter le comportement"
+"Capable d’exécuter le comportement"[shape=box, style=filled, fillcolor=lightyellow]
+Primaires -> Positive -> Inoffensive
+Positive -> Bénéfique
+Primaires -> stress
+stress -> Menaçante 
+stress -> Nuisible 
+stress -> Challenge 
+ Evaluation [shape=box, style=filled, fillcolor=plum1]
+ stress [shape=box, style=filled, fillcolor=plum1]
+ Contrôle [shape=box, style=filled, fillcolor=plum1]
+ "Capacités \n aptitudes"[shape=box, style=filled, fillcolor=plum1]
+ Menaçante [shape=box, style=filled, fillcolor=lightyellow]
+ Nuisible [shape=box, style=filled, fillcolor=lightyellow]
+ Challenge [shape=box, style=filled, fillcolor=lightyellow]
+Primaires  [shape=box, style=filled, fillcolor=lightyellow]
+Secondaires  [shape=box, style=filled, fillcolor=lightyellow]
+
+ Positive [shape=box, style=filled, fillcolor=lightyellow]
+ Bénéfique [shape=box, style=filled, fillcolor=lightyellow]
+ Inoffensive [shape=box, style=filled, fillcolor=lightyellow]
+ "caractéristiques de la personnalité" [shape=box, style=filled, fillcolor=plum1]
+ 
+ Stress ->  "efforts cognitifs\n comportementaux" -> "dépend situation\npersonnes" -> Coping 
+ 
+ 
+ Coping [shape=box, style=filled, fillcolor=plum1]
+ "efforts cognitifs\n comportementaux"[shape=box, style=filled, fillcolor=plum1]
+ "dépend situation\npersonnes"[shape=box, style=filled, fillcolor=plum1]
+ 
+ 
+ Coping -> "Centrée problèmes" -> Actif 
+ Actif [shape=box, style=filled, fillcolor=lightyellow]
+ "Centrée problèmes" -> Planification 
+ Planification [shape=box, style=filled, fillcolor=lightyellow]
+ "Centrée problèmes" -> Réinterprétation 
+ Réinterprétation [shape=box, style=filled, fillcolor=lightyellow]
+ "Centrée problèmes" -> Humour 
+ Humour [shape=box, style=filled, fillcolor=lightyellow]
+ "Centrée problèmes" -> Acceptation 
+Acceptation [shape=box, style=filled, fillcolor=lightyellow]
+ Coping -> "Centrée émotions" -> "diminution détresse"
+ "Centrée problèmes"[shape=box, style=filled, fillcolor=plum1]
+ "Centrée émotions"[shape=box, style=filled, fillcolor=plum1]
+ "diminution détresse"[shape=box, style=filled, fillcolor=plum1]
+ "diminution détresse" -> Soutien 
+ Soutien [shape=box, style=filled, fillcolor=lightyellow]
+ Soutien -> Instrumental 
+ Instrumental [shape=box, style=filled, fillcolor=lightyellow]
+ Soutien -> Emotionnel 
+ Emotionnel [shape=box, style=filled, fillcolor=lightyellow]
+ "diminution détresse"-> "expression sentiments"
+ "expression sentiments"[shape=box, style=filled, fillcolor=lightyellow]
+ "diminution détresse"-> "auto-accusation"
+ "auto-accusation"[shape=box, style=filled, fillcolor=lightyellow]
+ Coping -> Evitante 
+ Evitante -> désengagement 
+ Evitante -> déni 
+ Evitante -> substances
+ désengagement [shape=box, style=filled, fillcolor=lightyellow]
+ déni [shape=box, style=filled, fillcolor=lightyellow]
+ substances [shape=box, style=filled, fillcolor=lightyellow]
+ Evitante [shape=box, style=filled, fillcolor=plum1]
+ Coping -> Distraction 
+ Distraction [shape=box, style=filled, fillcolor=plum1]
+ Coping -> religions 
+religions [shape=box, style=filled, fillcolor=plum1]
+ 
+ Soutien -> Social 
+ Social [shape=box, style=filled, fillcolor=plum1]
+ 
+ Social -> Sources -> personnes 
+ Sources [shape=box, style=filled, fillcolor=lightyellow]
+ personnes [shape=box, style=filled, fillcolor=lightyellow]
+ Social -> Type 
+ Type [shape=box, style=filled, fillcolor=lightyellow]
+ 
+ 
+ 
+}
