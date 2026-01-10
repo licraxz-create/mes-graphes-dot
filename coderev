@@ -1,0 +1,133 @@
+digraph G {
+graph [nodesep=0.5, ranksep=0.5]
+rankdir=LR
+
+Perception [shape=box, style=filled, fillcolor=orange]
+Motivation [shape=box, style=filled, fillcolor=aquamarine1]
+
+Perception -> Motivation [label=influence]
+
+subgraph cluster_evaluations {
+    label="Évaluations cognitives"
+    cogni 
+    
+    Valeurs 
+}
+
+
+ motivation  -> Motivation 
+ motivation -> but [style=invis]
+Besoins -> Cognitions [style=invis]
+ subgraph {rank=same; Cognitions ; Besoins }
+motivation [label="Stimule, dirige et\n  maintient comportement", shape=box, style=filled, fillcolor=lightyellow]
+motif [label="Motifs interne", shape=box, style=filled, fillcolor=aquamarine1]
+antécédents -> motif -> motivation
+antécédents [label="Antécédents conditions", shape=box, style=filled, fillcolor=lightyellow]
+Evénements [shape=box, style=filled, fillcolor=lightyellow]
+Contextes [shape=box, style=filled, fillcolor=lightyellow]
+Schémas [shape=box, style=filled, fillcolor=lightyellow]
+Evénements -> antécédents 
+Contextes -> antécédents 
+Contextes -> Perception 
+Schémas -> Perception 
+subgraph{rank=same ; motif ; motivation ; Motivation }
+
+motif -> Besoins -> besoins 
+besoins -> Biologique -> bio 
+bio  [label="synchronisation systèmes\n physiologique pour équilibre corporel"shape=box, style=filled, fillcolor=lightyellow]
+Biologique  [shape=box, style=filled, fillcolor=aquamarine3]
+besoins -> Psychologique ->psycho 
+psycho -> Autonomie -> auto -> Engagement 
+Engagement [shape=box, style=filled, fillcolor=aquamarine3]
+auto [label="Soutien : \n Ecoute, se base sur informations, \n valorisation, accept expression affects négatifs "shape=box, style=filled, fillcolor=lightyellow]
+Autonomie [shape=box, style=filled, fillcolor=aquamarine3]
+Compétence [shape=box, style=filled, fillcolor=aquamarine3]
+Affiliation [shape=box, style=filled, fillcolor=aquamarine3]
+psycho -> Compétence -> comp -> Engagement
+comp  [label="Structure : \n communication attentes, défi optimaux \n encouragement, feed-back"shape=box, style=filled, fillcolor=lightyellow]
+
+psycho -> Affiliation -> afi -> Engagement 
+afi  [label="Implication :\n être soucieux d'autrui, \n  exprimer affection et appréciation "shape=box, style=filled, fillcolor=lightyellow]
+psycho  [label="Innée, désir proactif cherche\n  intéraction avec environnement"shape=box, style=filled, fillcolor=lightyellow]
+Psychologique  [shape=box, style=filled, fillcolor=aquamarine3]
+besoins -> motifs -> def
+def -> Réussite 
+Réussite [shape=box, style=filled, fillcolor=aquamarine2]
+def -> affiliation 
+affiliation [shape=box, style=filled, fillcolor=aquamarine2]
+Pouvoir [shape=box, style=filled, fillcolor=aquamarine2]
+def -> Pouvoir 
+
+def  [label="Acquis par socialisation\n cherche émotions positives"shape=box, style=filled, fillcolor=lightyellow]
+motifs  [label="Motifs implicite"shape=box, style=filled, fillcolor=aquamarine3]
+besoins [label="Conditions interne,\n essentielle et nécessaire" shape=box, style=filled, fillcolor=lightyellow]
+Besoins [shape=box, style=filled, fillcolor=aquamarine3]
+motif -> Cognitions -> cogni -> Valeurs 
+subgraph {rank=same ; Valeurs ; cogni ; besoins ; Superordonnés}
+cogni [label="Pensées, croyances, attentes"shape=box, style=filled, fillcolor=lightyellow]
+Cognitions [shape=box, style=filled, fillcolor=lightblue]
+
+motif -> Emotions 
+Emotions [shape=box, style=filled, fillcolor=aquamarine2]
+
+Réussite -> réu 
+réu [label="Défis, liés à affects positifs", shape=box,style=filled, fillcolor=lightyellow]
+
+affiliation -> af 
+af [label="S'engager dans relation\n, liés à affects positifs", shape=box,style=filled, fillcolor=lightyellow]
+
+Pouvoir -> pouvoir 
+pouvoir [label="Opportunités liés à affects positifs", shape=box,style=filled, fillcolor=lightyellow]
+
+subgraph {rank=same ; Emotions ; Buts ; but  }
+
+Motivation -> Buts 
+Buts [shape=box, style=filled, fillcolor=aquamarine1]
+but [label="Représentation mentale\n d'un état ou résultat\n à atteindre", shape=box, style=filled, fillcolor=lightyellow]
+Emotions -> but -> Buts
+Buts -> Superordonnés 
+Valeurs -> Superordonnés [style=invis]
+Emotions -> Valeurs 
+Valeurs [shape=box, style=filled, fillcolor=aquamarine1]
+Superordonnés [shape=box, style=filled, fillcolor=aquamarine1]
+Buts -> Intermédiaire -> Plan 
+Plan [shape=box, style=filled, fillcolor=lightyellow]
+Intermédiaire [shape=box, style=filled, fillcolor=aquamarine1]
+Buts -> Subordonnées -> Actions
+Actions [shape=box, style=filled, fillcolor=lightyellow]
+Subordonnées [shape=box, style=filled, fillcolor=aquamarine1]
+Contextes -> Attentes 
+Attentes  [shape=box, style=filled, fillcolor=lightyellow] 
+Attentes -> motivation 
+Motivation -> Types 
+Types  [shape=box, style=filled, fillcolor=lightyellow]
+subgraph {rank=same ; Motivation ; Types  }
+Types -> Extrinsèque -> Introjectée -> peur 
+peur [label="Peur de culpabiliser"shape=box, style=filled, fillcolor=lightyellow]
+Extrinsèque -> Indentifiée -> valeur 
+valeur [label="Valeur sous-jacente,\n influence comportement"shape=box, style=filled, fillcolor=lightyellow]
+Extrinsèque -> Intégrée -> integ 
+integ [label="Comportement motivé par\n facteurs externe et clairement\n mis en place"shape=box, style=filled, fillcolor=lightyellow]
+Extrinsèque [shape=box, style=filled, fillcolor=aquamarine1]
+Types -> Intrinsèque -> intra 
+intra  [label="Emane du plaisir\n que procure la tâche" shape=box, style=filled, fillcolor=lightyellow]
+Intrinsèque [shape=box, style=filled, fillcolor=aquamarine1]
+
+Introjectée [shape=box, style=filled, fillcolor=aquamarine1]
+Indentifiée [shape=box, style=filled, fillcolor=aquamarine1]
+Intégrée [shape=box, style=filled, fillcolor=aquamarine1]
+
+Extrinsèque -> extri 
+extri [label="Incitation externes, récompense" shape=box, style=filled, fillcolor=lightyellow]
+subgraph {rank=same ; Extrinsèque ; extri}
+
+
+
+
+
+
+
+
+
+  
+}
