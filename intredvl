@@ -1,0 +1,126 @@
+digraph G {
+rankdir=LR
+graph [nodesep=0.5, ranksep=0.4]
+ 
+dvl [label=Développement, shape=box, style=filled, fillcolor=orange]
+ fct -> def 
+ def -> dvl 
+  def [label="phénomènes\n de changements \n de continuité", style=filled, fillcolor=orange, shape=box]
+  fct [label="Facteurs",shape=box, style=filled, fillcolor=lightyellow ]
+subgraph {rank=same ; def ; fct } 
+ 
+ concpt -> dvl 
+ concpt [label="Concepts"shape=box, style=filled, fillcolor=cornflowerblue]
+ dx [label="Changements"shape=box, style=filled, fillcolor=lightblue]
+ concpt -> dx 
+ dom [label=Domaines, shape=box, style=filled, fillcolor=lightblue]
+ concpt -> dom 
+ dlp [label=Développement shape=box, style=filled, fillcolor=lightblue]
+ concpt -> dlp 
+ 
+dx -> dxs 
+dxs [label="Qualitatif=Discontinus \n Quantitatif=Continus", shape=box, style=filled, fillcolor=lightyellow ]
+dom -> doms
+doms [label="Physique = biologique\n cognitif = apprentissage \n social = relation \n personnalité", shape=box, style=filled, fillcolor=lightyellow]
+
+dlp -> onto 
+dlp -> ylo 
+
+onto [label="Ontogénétique (individu)" shape=box, style=filled, fillcolor=lightyellow ]
+ylo[label="Phylogénétique (espèce) " shape=box, style=filled, fillcolor=lightyellow ]
+ 
+ 
+ dvl -> fond
+ 
+ subgraph {rank=same ; dvl ; concpt ;  persp}
+ subgraph {rank=same ; dx ; dlp}
+ 
+ 
+ fond [label="Fondements" shape=box, style=filled, fillcolor=lightyellow]
+ 
+ dvl ->persp
+ persp -> actu 
+ actu [label=Actuelles, shape=box, style=filled, fillcolor=lightyellow ]
+ persp [label=Perspectives, shape=box, style=filled, fillcolor=lightgreen]
+ persp -> theo 
+ theo [label=Théories, shape=box,  style=filled, fillcolor=lightyellow]
+ actu -> actus 
+ actus [label="Life-Span \n inné/acquis \n Diversité \n Multi-disciplinarité" shape=box, style=filled, fillcolor=lightgreen]
+ 
+ fond -> metho 
+ metho [label=Méthodes, shape=box, style=filled, fillcolor=lightgreen]
+
+
+metho -> obs 
+obs [label=Observation shape=box, style=filled, fillcolor=lightyellow]
+obs -> exp -> exps 
+exps [label="Observation provoquée\n investigation phénomène modifié" shape=box, style=filled, fillcolor=lightgreen]
+exp [label=Expérimentation shape=box, style=filled, fillcolor=lightyellow]
+metho ->apro
+apro [label=Approches  shape=box, style=filled, fillcolor=lightyellow]
+ 
+apro -> apros 
+apros [label="Longitudinale=Même groupe à différents moments\n Transversale=Comparaison à un moment donnée \n Séquentielle= Plusieurs groupes à un moment", shape=box, style=filled, fillcolor=lightgreen]
+
+
+
+
+
+
+theo -> pcd -> Freud -> top 
+top [label=Topiques shape=box, style=filled, fillcolor=coral]
+Freud [shape=box, style=filled, fillcolor=coral]
+pcd [label=Psychodynamique, shape=box, style=filled, fillcolor=coral]
+
+theo -> bio -> Gessell 
+Gessell [shape=box, style=filled, fillcolor=lightgreen]
+bio [label=Biologique, shape=box, style=filled, fillcolor=lightgreen]
+theo -> hum 
+hum [label=Humanistes, shape=box, style=filled, fillcolor=lightgreen]
+theo -> cog -> Vygotski 
+Vygotski [ shape=box, style=filled, fillcolor=coral]
+cog [label=Cognitives, shape=box, style=filled, fillcolor=coral]
+
+theo -> com -> Skinner 
+Skinner [shape=box, style=filled, fillcolor=lightgreen]
+
+com [label=Comportementales, shape=box, style=filled, fillcolor=lightgreen]
+ 
+ persp -> piag 
+ piag [label=Piaget, shape=box, style=filled, fillcolor=coral]
+ 
+ 
+ piag -> conct 
+ piag -> constru -> stades -> std 
+ 
+ conct [label="Concepts",shape=box, style=filled, fillcolor=lightyellow ]
+ stades [label=Stades shape=box, style=filled, fillcolor=lightyellow]
+ 
+ constru [label=Constructivisme, shape=box, style=filled, fillcolor=lightyellow]
+ 
+ hum -> Rogers 
+ Rogers [shape=box, style=filled, fillcolor=lightgreen]
+ 
+ 
+ std [shape=box, style=filled, fillcolor=lightgreen, label="Sensori-moteur\n Pré-opératoire\n Opérations concrètes\n Opérations formelles"]
+ 
+ conct -> equi 
+ equi [label="Equilibre, déséquilibre, nouvel équilibre"shape=box, style=filled, fillcolor=lightyellow  ]
+ 
+ equi  -> acco 
+ equi -> assi 
+ assi [label=Assimilation, shape=box, style=filled, fillcolor=lightgreen ]
+ acco [label=Accomodation, shape=box, style=filled, fillcolor=lightgreen]
+ 
+ 
+ Rogers -> roger 
+ roger [label="Congruence\nEmpathie\n" shape=box, style=filled, fillcolor=lightyellow]
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+}
