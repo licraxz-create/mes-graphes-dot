@@ -1,0 +1,96 @@
+digraph G {
+
+rankdir=LR 
+ 
+psydiff [label="Psy. différentielle", shape=box, style=filled, fillcolor=lightpink]
+ 
+int [label="Intelligence" shape=box, style=filled, fillcolor=lightpink]
+persp [label=Perspectives  shape=box, style=filled, fillcolor=lightyellow]
+
+
+int -> persp 
+exp [label="Psy.Expérimentale"shape=box, style=filled, fillcolor=lightyellow ]
+dvlpmt [label="Psy.Développementale"shape=box, style=filled, fillcolor=lightyellow ]
+neuro [label="Neuropsy"shape=box, style=filled, fillcolor=lightyellow ]
+ 
+
+persp -> exp -> dvldef 
+persp -> dvlpmt -> dvlpdiff
+dvldef [label="Manipule environnement, situation"shape=box, style=filled, fillcolor=lightyellow ]
+dvlpdiff[label="Développement pdt vie"shape=box, style=filled, fillcolor=lightyellow ]
+persp -> neuro -> neuros 
+neuros [label="Bases neurobio"shape=box, style=filled, fillcolor=lightyellow ]
+persp -> psydiff 
+
+psydiff -> dx 
+dx -> inter 
+dx -> intra 
+psydiff -> metho
+dx [label="Variabilité"shape=box, style=filled, fillcolor=lightyellow]
+inter [label=Interindividuelle shape=box, style=filled, fillcolor=lightyellow]
+intra [label=Intraindividuelle shape=box, style=filled, fillcolor=lightyellow]
+metho [label=Méthodes shape=box, style=filled, fillcolor=lightyellow ]
+
+metho -> tests
+tests [label=Tests shape=box, style=filled, fillcolor=salmon]
+metho -> cas 
+cas [label="Cas anormaux" shape=box, style=filled, fillcolor=lightyellow ]
+metho -> exps 
+exps [label=Expérimentale shape=box, style=filled, fillcolor=lightyellow ]
+
+
+subgraph {rank=same ; int ; cap ; caps }
+subgraph {rank=same ; persp ; psydiff ; mod }
+
+int -> cap -> caps 
+
+cap [label="Capacités" shape=box, style=filled, fillcolor=lightyellow]
+caps [label="•Apprendre \n •Acquérir connaissance\n •S'adapter\n •Abstraction" shape=box, style=filled, fillcolor=lightpink]
+
+psydiff -> mod 
+
+mod [label=Modèles, shape=box, style=filled, fillcolor=lightyellow]
+mod -> uni -> BS -> bsd 
+uni -> Stern -> QI 
+QI [shape=box, style=filled, fillcolor=lightyellow]
+Stern [shape=box, style=filled, fillcolor=lightblue]
+uni -> Terman 
+Terman [shape=box, style=filled, fillcolor=lightblue]
+uni -> Spearman 
+Spearman [shape=box, style=filled, fillcolor=lightblue]
+bsd [label="Dépister enfant difficulté\n Buts état consciences\n Echelle processus en f(âge)" shape=box, style=filled, fillcolor=lightyellow]
+BS [label="Binet-Simon" shape=box, style=filled, fillcolor=lightblue]
+mod -> pluri 
+
+uni  [label=Unidimensionnelle, shape=box, style=filled, fillcolor=lightblue]
+pluri [label=Pluridimensionnelle, shape=box, style=filled, fillcolor=orange]
+
+Spearman -> fg 
+fg [label="Facteur G\n Théorie bifactorielle\n Batterie test"shape=box, style=filled, fillcolor=lightyellow]
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+}
