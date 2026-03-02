@@ -1,34 +1,12 @@
 digraph G {
 
 rankdir=LR 
- 
+
 psydiff [label="Psy. différentielle", shape=box, style=filled, fillcolor=lightpink]
  
 int [label="Intelligence" shape=box, style=filled, fillcolor=lightpink]
-persp [label=Perspectives  shape=box, style=filled, fillcolor=lightyellow]
 
-
-int -> persp 
-exp [label="Psy.Expérimentale"shape=box, style=filled, fillcolor=lightyellow ]
-dvlpmt [label="Psy.Développementale"shape=box, style=filled, fillcolor=lightyellow ]
-neuro [label="Neuropsy"shape=box, style=filled, fillcolor=lightyellow ]
- 
-
-persp -> exp -> dvldef 
-persp -> dvlpmt -> dvlpdiff
-dvldef [label="Manipule environnement, situation"shape=box, style=filled, fillcolor=lightyellow ]
-dvlpdiff[label="Développement pdt vie"shape=box, style=filled, fillcolor=lightyellow ]
-persp -> neuro -> neuros 
-neuros [label="Bases neurobio"shape=box, style=filled, fillcolor=lightyellow ]
-persp -> psydiff 
-
-psydiff -> dx 
-dx -> inter 
-dx -> intra 
-psydiff -> metho
-dx [label="Variabilité"shape=box, style=filled, fillcolor=lightyellow]
-inter [label=Interindividuelle shape=box, style=filled, fillcolor=lightyellow]
-intra [label=Intraindividuelle shape=box, style=filled, fillcolor=lightyellow]
+int -> psydiff -> metho 
 metho [label=Méthodes shape=box, style=filled, fillcolor=lightyellow ]
 
 metho -> tests
@@ -39,15 +17,9 @@ metho -> exps
 exps [label=Expérimentale shape=box, style=filled, fillcolor=lightyellow ]
 
 
-subgraph {rank=same ; int ; cap ; caps }
-subgraph {rank=same ; persp ; psydiff ; mod }
 
-int -> cap -> caps 
-
-cap [label="Capacités" shape=box, style=filled, fillcolor=lightyellow]
-caps [label="•Apprendre \n •Acquérir connaissance\n •S'adapter\n •Abstraction" shape=box, style=filled, fillcolor=lightpink]
-
-psydiff -> mod 
+subgraph {rank=same ;psydiff ; mod }
+int -> mod 
 
 mod [label=Modèles, shape=box, style=filled, fillcolor=lightyellow]
 mod -> uni -> BS -> bsd 
@@ -69,11 +41,70 @@ Spearman -> fg
 fg [label="Facteur G\n Théorie bifactorielle\n Batterie test"shape=box, style=filled, fillcolor=lightyellow]
  
  
+ pluri -> th -> apt 
+ pluri -> CHC -> chc 
+ pluri -> ch -> fct 
+ pluri -> bv  
+ 
+ch [label="Cattel-Horn" shape=box, style=filled, fillcolor=lightyellow]
+ th [label=Thrustone shape=box, style=filled, fillcolor=lightyellow]
+ bv [label="Burt-Vernon"shape=box, style=filled, fillcolor=lightyellow]
+ CHC [label=CHC shape=box, style=filled, fillcolor=lightyellow]
+ apt [label="Aptitudes primaires" shape=box, style=filled, fillcolor=lightyellow]
+ fct [label="Facteurs généraux\n Gf, Gc, Gv,.."shape=box, style=filled, fillcolor=lightyellow]
+ 
+ chc [label="Cadre de référence pour échantilloner tâches\n identifier et mesurer composants"shape=box, style=filled, fillcolor=lightyellow]
+ 
+ tests -> echelle -> echd 
+ tests -> facto -> factod
+ tests -> piaget -> pd 
+ 
+ echelle [label="Echelle de dvlpmt"shape=box, style=filled, fillcolor=lightyellow]
+ facto [label=Factoriels shape=box, style=filled, fillcolor=lightyellow]
+ piaget [label=Piagetiens shape=box, style=filled, fillcolor=lightyellow]
+ 
+ echd [label="Niveau dvlpmt intellectuel"shape=box, style=filled, fillcolor=lightgreen]
+ factod [label="Niveau aptitudes spécifiques"shape=box, style=filled, fillcolor=coral]
+ pd [label="Niveau dvlpmt cognitif"shape=box, style=filled, fillcolor=orange]
+ 
+ echd -> wais -> wd 
+ wais [label="WAIS-IV" shape=box, style=filled, fillcolor=lightyellow]
+ wd [label="QI total"shape=box, style=filled, fillcolor=lightgreen]
+ wd -> cv 
+ cv [label="Compréhension verbale"shape=box, style=filled, fillcolor=lightgreen]
+ wd -> rp 
+ rp [label="Raisonnement perceptif"shape=box, style=filled, fillcolor=lightgreen]
+ wd -> mdt 
+ mdt [label=MDT shape=box, style=filled, fillcolor=lightgreen]
+ wd -> vdt 
+ vdt [label="vitesse de traitement" shape=box, style=filled, fillcolor=lightgreen]
+ wd -> iag 
+ iag [label="Indice aptitude générale"shape=box, style=filled, fillcolor=lightgreen]
+ 
+ echd -> wisc 
+ wisc [label=WISC shape=box, style=filled, fillcolor=lightyellow] 
+ wisc -> wid 
+ wid [label="CV, MDT, VDT" shape=box, style=filled, fillcolor=lightgreen]
+ wid -> raiso 
+ raiso [label="Raisonnement visuospatial\n fluide"shape=box, style=filled, fillcolor=lightgreen]
+ 
+ 
+ echd -> SB 
+ SB [label="Standfort-Binet"shape=box, style=filled, fillcolor=lightyellow]
+ 
+ factod -> mpr 
+ factod -> DAT 
+ 
+ mpr [label="Matrices de Raven"shape=box, style=filled, fillcolor=coral]
+ DAT [shape=box, style=filled, fillcolor=coral]
  
  
  
  
  
+ 
+ 
+}
  
  
  
