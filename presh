@@ -1,105 +1,63 @@
 digraph G {
 
  rankdir=LR 
-graph [ranksep=0.75]
- as [label="Approche scientifique" shape=box style=filled, fillcolor=IndianRed1]
-
- asd [label="Rassembler les informations\n de manière objective et systématique\n fonder conclusions sur preuves" style=filled, fillcolor=lightyellow shape=box]
  
- as -> asd -> dem 
+ P [label=Principe shape=box, style=filled, fillcolor=IndianRed1]
+ R [label= Recherche shape=box, style=filled, fillcolor=lightblue]
  
- dem [label=Démarches shape=box style=filled, fillcolor=IndianRed1]
+ subgraph {rank=same ; P ; R ; sh ; d ; pd ; xp ; v }
  
- hy [label=Hypothèse  shape=box style=filled, fillcolor=lightyellow]
-
- dem -> hy 
- subgraph {rank=same ; ltp ; hy ; ofc }
+ P -> R [style=invis]
+ R -> sh [style=invis]
  
-ofc [label="Observations" shape=box style=filled, fillcolor=lightblue]
-ltp [label="Lois et théories\n principes généraux"shape=box style=filled, fillcolor=lightblue]
-
-ofc -> hy [label=Empirisme]
-hy -> ltp 
-ltp -> hy [label=Raisonnement]
-ltp -> sp [style=invis]
-
-sp [label=Spécifique shape=box style=filled, fillcolor=Indianred1]
-ofc -> gen [style=invis]
-
-gen [label=Général shape=box style=filled, fillcolor=lightblue]
+ P -> p -> re -> in -> as 
+ R -> r -> in 
  
-gen -> sp 
-sp -> in [style=invis]
-in [label=Inductive shape=box style=filled, fillcolor=IndianRed1]
-sp -> gen 
-gen -> de [style=invis]
-de [label=Déductive shape=box style=filled, fillcolor=lightblue]
-
-subgraph {rank=same ; gen ; sp}
+ p [label="Ensemble structuré de procédures" shape=box, style=filled, fillcolor=lightyellow]
+ r [label="Construire savoir et connaissances"shape=box, style=filled, fillcolor=lightyellow]
+ re [label=Receuillir shape=box, style=filled, fillcolor=lightyellow]
+ 
+ in [label=Infos shape=box, style=filled, fillcolor=lightblue]
+ 
+ subgraph {rank=same ; re ; in ; as }
+ 
+ as [label="Approche scientifique" shape=box, style=filled, fillcolor=IndianRed1]
  
  
-subgraph {rank=same ; ltp ; re}
-
-re [label=Recherches shape=box style=filled, fillcolor=plum1]
-re -> fon -> fd 
-fd [label="Tester des théories, expliquer phénomènes" shape=box style=filled, fillcolor=lightyellow]
-re -> app 
-app -> appd 
-appd [label="Résoudre problèmes, situations concrètes"shape=box style=filled, fillcolor=lightyellow]
-
-fon [label=Fondamentale shape=box style=filled, fillcolor=lightblue]
-app [label=Appliquée shape=box style=filled, fillcolor=IndianRed1]
-
- ltp -> re [style=invis]
  
- fd -> dsc 
- dsc [label=Déscriptive shape=box style=filled, fillcolor=lightblue]
- fd -> exp 
- exp [label=Explicative shape=box style=filled, fillcolor=lightblue]
- fd -> explo 
- explo [label=Exploratoire shape=box style=filled, fillcolor=lightblue]
+ sh [label="Sciences humaines" shape=box, style=filled, fillcolor=orange]
  
- appd -> or -> ord 
- ord [label="Perception de son intérêt\n pour la recherche appliquée"  shape=box style=filled, fillcolor=lightyellow]
- appd -> st -> std 
- std [label="Retombées certaines \n pour la recherche appliquée" shape=box style=filled, fillcolor=lightyellow]
- or [label=Orienté shape=box style=filled, fillcolor=IndianRed1]
- st [label=Stratégique shape=box style=filled, fillcolor=IndianRed1]
+sh -> d -> pd -> xp -> v 
+
+d [label=Décrire shape=box, style=filled, fillcolor=lightyellow]
+pd [label=Prédire shape=box, style=filled, fillcolor=lightyellow]
+xp [label=Expliquer shape=box, style=filled, fillcolor=lightyellow]
+v [label=Vérifier shape=box, style=filled, fillcolor=lightyellow]
  
  
- ofc -> mes -> expé 
- mes [label=Mesure  shape=box style=filled, fillcolor=lightyellow]
- expé [label=Expérimentation  shape=box style=filled, fillcolor=IndianRed1]
+ d -> dd 
+ dd [label="Compte rendu comportements" shape=box, style=filled, fillcolor=lightyellow]
+ pd -> pdd 
+ pdd [label="Capacité à connaitre comportement"shape=box, style=filled, fillcolor=lightyellow]
+ xp -> xpd 
+ xpd [label="Connaissance des causes" shape=box, style=filled, fillcolor=lightyellow]
+ 
+ v -> vd 
+ vd [label="Application pratique"shape=box, style=filled, fillcolor=lightyellow]
+ 
+ as -> mse 
+ 
+ mse [label="Méthode scientifique expérimentale"shape=box, style=filled, fillcolor=IndianRed1]
  
  
- subgraph {rank=same ; ofc ; ofcd }
- ofcd [label="Rapporter systématiquement\n des événements"shape=box style=filled, fillcolor=lightyellow]
- subgraph {rank=same ; mes ; mesd }
- mesd [label="Valeurs numériques" shape=box style=filled, fillcolor=lightyellow]
- subgraph {rank=same ; expé ; expéd }
- expéd [label="Procédé mis en oeuvre\n vérifier une prédiction"shape=box style=filled, fillcolor=lightyellow]
-
-subgraph {rank=same ; dem ; quoi ; qui ; cmt }
-
-quoi [label=Quoi shape=box style=filled, fillcolor=lightyellow ]
-qui [label=Qui shape=box style=filled, fillcolor=lightyellow]
-cmt [label="Comment" shape=box style=filled, fillcolor=lightyellow]
-
-dem -> quoi [style=invis]
-dem -> qui [style=invis]
-dem -> cmt [style=invis]
-
-
-
-
-
-
-
-
-
-
-
-
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
