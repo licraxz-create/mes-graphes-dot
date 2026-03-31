@@ -119,6 +119,166 @@ com [label=Comportementales, shape=box, style=filled, fillcolor=lightgreen]
  
  
  
+
+aps [label="Age pré scolaire" shape=box style=filled, fillcolor=IndianRed1 ]
+
+aps -> d 
+
+d [label=Domaines shape=box style=filled, fillcolor=lightyellow]
+
+d -> p 
+d -> c 
+d -> f 
+d -> r 
+
+subgraph {rank=same ; p ; c ; f ; r }
+
+p [label=Physique shape=box style=filled, fillcolor=lightgreen]
+
+c [label=Cognitif shape=box style=filled, fillcolor=lightblue]
+
+f [label=Personnalité shape=box style=filled, fillcolor=coral]
+
+r [label=Relation shape=box style=filled, fillcolor=orange]
+
+
+p -> cp -> dc 
+
+cp [label="Croissance physique"shape=box style=filled, fillcolor=lightyellow]
+
+subgraph {rank=same ; cpd ; cp }
+
+
+cpd -> cp 
+ 
+
+cpd [label="Changements proportions, déplacement centre gravité\n évolutions habilités motrices\n variabilité de la stature"shape=box style=filled, fillcolor=lightgreen]
+
+
+dc[label="Développement du cerveau" shape=box style=filled, fillcolor=lightyellow]
+
+dc -> cc 
+
+cc [label="Corps Calleux" shape=box style=filled, fillcolor=lightgreen]
+
+cc -> ccd 
+
+ccd [label="Faisceau fibres nerveuses comminications hémisphères"shape=box style=filled, fillcolor=lightyellow]
+dc -> cpf -> cpfd 
+
+cpf [label="Cortex pré-frontal" shape=box style=filled, fillcolor=lightgreen]
+
+cpfd [label="Siège nombreuses fonctions cognitives supérieurs\n sommeil régulier\n capacité attention\fonctions exécutives"shape=box style=filled, fillcolor=lightyellow]
+
+dc -> sl 
+
+sl [label="Système limbique"shape=box style=filled, fillcolor=lightgreen]
+ sl -> sld 
+ 
+ sld [label="Amygdable, hippocampe, hypothalamus\n compréhension, expression, régulation émotuions"shape=box style=filled, fillcolor=lightyellow]
+ 
+ cp -> hm 
+ 
+ hm [label="Habilité motrices"shape=box style=filled, fillcolor=lightyellow]
+
+
+hm -> mg -> mgd 
+hm -> mf -> mfd 
+
+mg [label="Motricité globale" shape=box style=filled, fillcolor=lightgreen]
+mf [label="Motricité fine"shape=box style=filled, fillcolor=lightgreen]
+
+mgd [label="Ensemble réponses motrices qui \n assurent activités corporelles ludiques, sportives"shape=box style=filled, fillcolor=lightyellow]
+
+mfd [label="Produit de mvts fin, préci et minutieux \n qui font appel contrôle musculaires"shape=box style=filled, fillcolor=lightyellow]
+
+
+hm -> l -> ld 
+
+l [label=Latéralité shape=box style=filled, fillcolor=lightgreen]
+
+ld [label="Prégérences utilisation parties symétriques du corps : \n asymétrie fonctionelle du corps"shape=box style=filled, fillcolor=lightyellow]
+
+c -> ppo 
+
+ppo [label="Période pré-opératoire" shape=box style=filled, fillcolor=lightblue]
+
+ppo -> ps 
+ppo -> pi 
+
+ps [label="Pensée symbolique" shape=box style=filled, fillcolor=lightblue]
+pi [label="Pensée intuitive"shape=box style=filled, fillcolor=lightblue]
+
+ps -> ego 
+
+ego [label="Egocentrisme intellectuel\n = incapacité de sortir de son propre point de vue"shape=box style=filled, fillcolor=lightyellow]
+
+ps -> an 
+
+an [label="Animisme \n = objets des intentions, motivation.\nTout est vivant et doté d'une conscience"shape=box style=filled, fillcolor=lightyellow]
+
+ps -> af 
+
+af [label="Artificialisme\n = tout a été construit par l'homme ou être au service de l'homme"shape=box style=filled, fillcolor=lightyellow]
+
+ps -> fi 
+
+fi [label="Finalisme\n = tout doit avoir une explication"shape=box style=filled, fillcolor=lightyellow]
+
+pi -> cco
+pi -> dr 
+
+cco [label="Concentration"shape=box style=filled, fillcolor=lightyellow]
+
+dr [label="Difficulté raisonnement"shape=box style=filled, fillcolor=lightyellow]
+
+c -> lg 
+lg [label=Langage shape=box style=filled, fillcolor=lightblue]
+
+
+c -> the 
+
+the [label="Théorie de l'esprit"shape=box style=filled, fillcolor=lightblue]
+
+f -> cdsd 
+f -> stades 
+f -> idts 
+
+cds [label="Concept de soi"shape=box style=filled, fillcolor=coral]
+stades [label=Stades shape=box style=filled, fillcolor=lightyellow]
+idts [label="Identité sexuée"shape=box style=filled, fillcolor=coral]
+
+
+cdsd -> cds 
+
+cdsd [label="Perception de soi pour répondre à ses questions d'identité"shape=box style=filled, fillcolor=lightyellow]
+
+cds -> soii 
+cds -> sois 
+
+soii -> soim 
+soii -> soip 
+
+
+soii [label="Soi individualiste"shape=box style=filled, fillcolor=coral]
+sois [label="Soi social"shape=box style=filled, fillcolor=coral]
+
+soim [label="Soi matériel"shape=box style=filled, fillcolor=coral]
+soip [label="Soi personnel"shape=box style=filled, fillcolor=coral]
+
+stades -> ana -> phall 
+
+ana [label="Anales" shape=box style=filled, fillcolor=coral]
+phall [label="Phallique"shape=box style=filled, fillcolor=coral]
+
+
+
+
+
+
+
+
+
  
  
  
