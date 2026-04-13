@@ -170,7 +170,110 @@ llg [label=Langage shape=box, style=filled, fillcolor=lightblue]
     
     
 
+r [label=Relations style=filled, shape=box, fillcolor=orange]
+ps [label=Personnalité style=filled, shape=box, fillcolor=IndianRed1]
 
+
+r -> pef 
+
+pef [label="Parents-enfants"style=filled, shape=box, fillcolor=lightyellow ]
+
+r -> attt 
+attt [label=Attachement style=filled, shape=box, fillcolor=orange]
+
+pef -> rem 
+
+rem [label="Mère-enfants" style=filled, shape=box, fillcolor=lightyellow]
+
+rem -> ipr 
+
+ipr [label="Intéractions précoces"style=filled, shape=box, fillcolor=lightyellow]
+
+r -> rbe 
+
+rbe [label="Bébé-entourage" style=filled, shape=box, fillcolor=lightyellow]
+
+rbe -> rbd 
+
+rbd [label="Processus bidirectionnels" style=filled, shape=box, fillcolor=orange]
+
+
+rbd -> ico 
+
+ico [label="Interactions comportementales observables"style=filled, shape=box, fillcolor=lightyellow]
+
+ico -> cp
+voc -> pleurs 
+pleurs [label=Pleurs style=filled, shape=box, fillcolor=lightyellow]
+ico -> vis 
+vis -> ef 
+ef [label="Expression faciale"style=filled, shape=box, fillcolor=lightyellow]
+
+ico -> voc 
+
+cp [label=Corporelles style=filled, shape=box, fillcolor=lightyellow]
+vis [label=Visuels style=filled, shape=box, fillcolor=lightyellow]
+voc [label=Vocales style=filled, shape=box, fillcolor=lightyellow]
+
+attt -> cbsp 
+cbsp [label="Besoin social primaire" style=filled, shape=box, fillcolor=lightyellow]
+
+cbsp -> e1 -> e2 -> e3 
+
+e1 [label="pré-attachement\n pas de differenciation"style=filled, shape=box, fillcolor=lightyellow]
+e2 [label="Différenciation\n et substitution"style=filled, shape=box, fillcolor=lightyellow]
+e3 [label="Plus de substitution"style=filled, shape=box, fillcolor=lightyellow]
+
+ps -> stf 
+
+stf [label="Stades Freud" style=filled, shape=box, fillcolor=lightyellow]
+
+stf -> or -> an -> ph -> lt 
+
+or -> ord 
+ord [label="Succion, centré bouche"style=filled, shape=box, fillcolor=lightyellow]
+an -> and 
+and [label="Changements zone érogène, propreté"style=filled, shape=box, fillcolor=lightyellow]
+ph -> phd 
+phd [label="Identité sexuelle"style=filled, shape=box, fillcolor=lightyellow]
+
+
+or [label="Oral"style=filled, shape=box, fillcolor=IndianRed1]
+an [label="Anal"style=filled, shape=box, fillcolor=IndianRed1]
+ph [label="Phallique" style=filled, shape=box, fillcolor=IndianRed1]
+lt [label="Période de latecne" style=filled, shape=box, fillcolor=IndianRed1]
+
+ps -> ccpts 
+
+ccpts [label="Concept de Soi" style=filled, shape=box, fillcolor=IndianRed1]
+ccpts -> cd 
+cd [label="Façon dont une personne se perçoit"style=filled, shape=box, fillcolor=lightyellow]
+
+cd -> cds 
+cds [label="Système multidimensionnel, dynamlique et évolutif"style=filled, shape=box, fillcolor=lightyellow]
+
+subgraph {rank=same ; ccpts ; cd ; cds }
+subgraph {rank=same ; ps ; stf ; or ; an ; ph ; lt }
+
+
+ccpts -> si 
+ccpts -> ss 
+
+si -> sm 
+si -> sp 
+ss -> sod 
+    
+    
+si [label="Soi individualiste"style=filled, shape=box, fillcolor=IndianRed1]
+ss [label="Soi sociale" style=filled, shape=box, fillcolor=IndianRed1]
+sm [label="Soi matériel"style=filled, shape=box, fillcolor=IndianRed1]
+sp [label="Soi personnel"style=filled, shape=box, fillcolor=IndianRed1]
+sod [label="Indentités sociales multiples"style=filled, shape=box, fillcolor=lightyellow]
+
+pef -> eds -> edd 
+edd [label="Jugement personnel de mérite"style=filled, shape=box, fillcolor=lightyellow]
+eds [label="Estime de soi"style=filled, shape=box, fillcolor=IndianRed1]
+    
 
 
 
