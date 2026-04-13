@@ -109,7 +109,66 @@ my -> n -> sy
  sb [label="Substance blanche"shape=box, style=filled, fillcolor=lightyellow]
  sg [label="Substance grise" shape=box, style=filled, fillcolor=lightyellow]
  
- 
+ c [label="Domaine cognitif" shape=box, style=filled, fillcolor=lightblue] 
+
+c -> pia -> st 
+pia -> ccp 
+ccp [label=Concepts shape=box, style=filled, fillcolor=lightyellow]
+ccp -> scheme -> schemed 
+scheme [label=Schème shape=box, style=filled, fillcolor=lightyellow]
+schemed [label="Structure cognitive communue à un E.\n de conduites, représentations actions\mentales et physiques" shape=box, style=filled, fillcolor=lightblue]
+schemed -> ass -> assd 
+schemed -> acc -> accd 
+assd [label="Incorporation de nouvelles données" shape=box, style=filled, fillcolor=lightblue]
+accd [label="Modificatuon structure existantes\n réaction expérience ou acquisition nlle données"shape=box, style=filled, fillcolor=lightblue]
+ass [label=Assimilation shape=box, style=filled, fillcolor=lightyellow]
+acc [label=Accomodation shape=box, style=filled, fillcolor=lightyellow]
+
+pia [label=Piaget shape=box, style=filled, fillcolor=lightyellow]
+st [label=Stades shape=box, style=filled, fillcolor=lightyellow]
+
+st -> sm -> po -> oc 
+
+sm [label="Sensori-moteur" shape=box, style=filled, fillcolor=lightblue]
+po [label="Préopératoire" shape=box, style=filled, fillcolor=lightblue]
+oc [label="Opératoire concret" shape=box, style=filled, fillcolor=lightblue]
+
+subgraph {rank=same ; c ; pia ; ccp ; scheme ; schemed }
+
+subgraph {rank=same ; sm ; S1 ; S2 ; S3 ; S4 ; S5 ; S6 }
+
+sm -> S1 -> S2 -> S3 -> S4 -> S5 -> S6 
+
+S1 [label="Stades réflexes"shape=box, style=filled, fillcolor=lightyellow]
+S2 [label="RCP"shape=box, style=filled, fillcolor=lightyellow]  
+S3 [label="RCS"shape=box, style=filled, fillcolor=lightyellow]
+S4 [label="CRS"shape=box, style=filled, fillcolor=lightyellow]
+S5 [label="RCT" shape=box, style=filled, fillcolor=lightyellow]
+S6 [label="CRM"shape=box, style=filled, fillcolor=lightyellow]
+
+
+S1 -> S1D 
+S1D [label="Exercices réflexes\n dépasse biologique\n assimilation généralisatrice et recognitive" shape=box, style=filled, fillcolor=lightyellow]
+S2 -> S2D 
+S3 -> S3D 
+S4 -> S4D 
+S5 -> S5D 
+S6 -> S6D 
+    
+S2D [label="Activités simples et répétitives centrés sur le corps\n pas de permanence de l'objet, anticipation\n assimilation, accomodations"shape=box, style=filled, fillcolor=lightyellow]
+
+S3D [label="Répétition action externe, pas d'anticiaption\n recherche objet partiellement visible"shape=box, style=filled, fillcolor=lightyellow]
+
+S4D [label="Dissociation moyens, buts\n intentionnalité, anticipation\n émergence de la causalité"shape=box, style=filled, fillcolor=lightyellow]
+
+S5D [label="nouveaux moynes\n suivis déplacement\n médiateurs actions"shape=box, style=filled, fillcolor=lightyellow]
+S6D [label="Anticipation\n suivis invisibles\n manipulation symboles"shape=box, style=filled, fillcolor=lightyellow]
+
+c -> llg 
+
+llg [label=Langage shape=box, style=filled, fillcolor=lightblue]
+    
+    
 
 
 
