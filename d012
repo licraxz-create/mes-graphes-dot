@@ -1,0 +1,137 @@
+digraph G {
+
+rankdir=LR 
+
+p [label="Domaine Physique" shape=box, style=filled, fillcolor=lightgreen]
+
+ a02 -> m 
+
+m [label=Motricité shape=box, style=filled, fillcolor=lightgreen]
+ a02 [label="0-2ans"shape=box, style=filled, fillcolor=lightyellow]
+ 
+ m -> r -> ii 
+ ii [label=Involontaires shape=box, style=filled, fillcolor=lightgreen]
+ r [label=Réflexes  shape=box, style=filled, fillcolor=lightyellow]
+ tm [label="Tonus musculaire" shape=box, style=filled, fillcolor=lightyellow]
+ ps [label=Posture shape=box, style=filled, fillcolor=lightyellow]
+ l [label=Locomotion shape=box, style=filled, fillcolor=lightyellow]
+ pcv [label="Préhension, coordination visuo-manuelle" shape=box, style=filled, fillcolor=lightyellow]
+ m -> tm 
+ m -> ps 
+ m -> l -> m4p -> mpd -> pp -> msam -> ms 
+ m4p [label="Marche à 4 pattes" shape=box, style=filled, fillcolor=lightyellow]
+ mpd [label="Position debout"shape=box, style=filled, fillcolor=lightyellow]
+ pp [label="Premiers pas" shape=box, style=filled, fillcolor=lightyellow]
+ msam [label="Marche seul avec appui" shape=box, style=filled, fillcolor=lightyellow]
+ ms [label="Marche seul"shape=box, style=filled, fillcolor=lightyellow]
+ m -> pcv 
+
+p -> i 
+
+i [label="Indices de croissances" shape=box, style=filled, fillcolor=lightyellow]
+
+i -> ids 
+ids [label="Variété et qualité actes moteurs\n diagnostic descriptif et explicatif"shape=box, style=filled, fillcolor=lightyellow]
+
+ids -> res 
+
+ids -> me 
+
+res [label="Echelles standardisé" shape=box, style=filled, fillcolor=lightgreen]
+me [label="Observation actes moteurs\n comparaison normes" shape=box, style=filled, fillcolor=lightgreen]
+p -> sn 
+subgraph {rank=same ; m ; mf ; mg }
+
+a26 -> mf 
+a26 -> mg 
+mf [label="Motricité fine" shape=box, style=filled, fillcolor=lightgreen]
+mg [label="Motricité globale" shape=box, style=filled, fillcolor=lightgreen]
+
+
+sn [label="Développement SN" shape=box, style=filled, fillcolor=lightgreen]
+
+
+
+sn -> rf -> dv -> my 
+sn -> dac 
+dac [label="Développement aires cérébrales" shape=box, style=filled, fillcolor=lightyellow]
+
+dac -> cc -> ccd 
+cc [label="Corps calleux" shape=box, style=filled, fillcolor=lightgreen]
+ccd [label="Fibres nerveuses\n assurent communication hémisphères" shape=box, style=filled, fillcolor=lightyellow]
+dac -> cpf -> cpfd 
+cpf [label="Cortex pré-frontal"shape=box, style=filled, fillcolor=lightgreen]
+cpfd [label="Maturation ; sommeil régulier,\n attention, émotions\n fonctions exécutives"shape=box, style=filled, fillcolor=lightyellow]
+
+sl [label="Sytème limbique" shape=box, style=filled, fillcolor=lightgreen]
+sl -> sld 
+sld [label="Expression et régulation émotions"shape=box, style=filled, fillcolor=lightyellow]
+dac -> sl 
+
+
+rf [label="Fermeture progressive fontanelle"shape=box, style=filled, fillcolor=lightyellow]
+dv [label="Synaptogénèse" shape=box, style=filled, fillcolor=lightyellow]
+my [label=Myélinisation shape=box, style=filled, fillcolor=lightyellow]
+sn -> lds 
+lds [label="Lois de successions"shape=box, style=filled, fillcolor=lightyellow]
+lds -> l1 
+lds-> l2 
+l1 [label="Céphalo-codale" shape=box, style=filled, fillcolor=lightgreen]
+l2 [label="Proximo-distale"shape=box, style=filled, fillcolor=lightgreen]
+
+
+ a02 -> a26 -> a12 
+ a26 -> stv -> dcg 
+ a12 -> vc 
+ vc [label="Vitesse croissance ralentit" shape=box, style=filled, fillcolor=lightyellow]
+ stv [label="Variabilité stature" shape=box, style=filled, fillcolor=lightgreen]
+ dcg [label="Déplacement centre gravité" shape=box, style=filled, fillcolor=lightgreen]
+
+a26 [label="2-6ans" shape=box, style=filled, fillcolor=lightyellow ]
+a12 [label="6-12ans" shape=box, style=filled, fillcolor=lightyellow ]
+subgraph {rank=same ; a02 ; a26 ; a12 }
+
+mf -> mfd 
+mfd [label="Réponse motrices, contrôle corps, ensemble parties corps"shape=box, style=filled, fillcolor=lightyellow]
+
+mg -> mgd -> f 
+mgd -> mn 
+f [label="Faciale (obs. jeu)" shape=box, style=filled, fillcolor=lightyellow]
+mn [label="Manuelle" shape=box, style=filled, fillcolor=lightyellow]
+mgd [label="Produit fin, précis, contrôle musculaire"shape=box, style=filled, fillcolor=lightyellow]
+
+my -> n -> sy 
+ n [label=Neurogénèse shape=box, style=filled, fillcolor=lightyellow]
+ 
+ sn -> sb 
+ sn -> sg 
+ 
+ sb [label="Substance blanche"shape=box, style=filled, fillcolor=lightyellow]
+ sg [label="Substance grise" shape=box, style=filled, fillcolor=lightyellow]
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
