@@ -6,7 +6,7 @@ ps -> d
 
 d [label="Explique comment les pensées, les sentiments\n et les comportementsdes individus sont influencés par \nla présence réelle, imaginaire ou implicite" shape=box, style=filled, fillcolor=lightyellow]
 
-subgraph {rank=same ; ps ; d}
+subgraph {rank=same ; ps ; d ; s ; sy }
 subgraph {rank=same ; ob ; al }
 ps -> pt 
 
@@ -22,8 +22,75 @@ ob [label=Objet shape=box, style=filled, fillcolor=lightblue]
 eg [label=Ego shape=box, style=filled, fillcolor=lightblue]
 al [label=Alter shape=box, style=filled, fillcolor=lightblue]
 
-pt -> de 
+d -> de 
 
 de [label="Discipline empirique"shape=box, style=filled, fillcolor=lightblue]
 
+subgraph {rank=same ; de ; oj }
 
+de -> oj 
+
+oj [label="Concevoir des théories et des modèles\n expliquant des objets psycho-sociaux"shape=box, style=filled, fillcolor=lightyellow]
+
+oj -> idd -> app 
+app -> qt 
+app -> hd 
+
+idd [label="Comparer mesure comportement" shape=box, style=filled, fillcolor=lightyellow] 
+
+app [label=Approches shape=box, style=filled, fillcolor=lightblue]
+
+qt [label=Quantitative shape=box, style=filled, fillcolor=lightblue]
+hd [label="Hypothético-déductive"shape=box, style=filled, fillcolor=lightblue]
+
+s [label=Soi shape=box, style=filled, fillcolor=lightblue]
+
+d -> s -> sy -> syd 
+
+syd [label="Malléabilité due à\n changement de concept de Soi de travail\n non pas de concept de Soi"shape=box, style=filled, fillcolor=lightblue]
+
+sy [label="Système Dynamique" shape=box, style=filled, fillcolor=lightyellow]
+
+syd -> aes 
+aes [label="Auto-évaluation de soi" shape=box, style=filled, fillcolor=IndianRed1]
+
+aes -> et 
+
+et [label="Estime de soi" shape=box, style=filled, fillcolor=IndianRed1]
+
+
+et -> n 
+et -> p 
+
+n [label="Négative" shape=box, style=filled, fillcolor=lightyellow]
+p [label="Positive" shape=box, style=filled, fillcolor=lightyellow]
+
+n -> fr 
+
+fr [label="Facteur de risque"shape=box, style=filled, fillcolor=lightyellow]
+p -> mdp 
+
+mdp [label="Mécanisme de protection"shape=box, style=filled, fillcolor=lightyellow]
+mdp -> mpdd 
+
+mpdd [label="Comparaison sociale descendante\n Biais égocentrique\n Biais faux consensus\n effet projecteur\n biais unicité\n biais auto-complaisance\n handicap intentionnel"shape=box, style=filled, fillcolor=lightyellow]
+
+subgraph {rank=same ; syd ; pds }
+
+syd -> pds [style=invis]
+
+pds [label="Présentation de soi"shape=box, style=filled, fillcolor=coral1]
+
+pds -> pdd 
+pdd [label="Régulation de la manière/n de se présenter à autrui" shape=box, style=filled, fillcolor=lightyellow]
+
+
+
+
+
+
+
+
+
+
+}
