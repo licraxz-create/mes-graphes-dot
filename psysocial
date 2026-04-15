@@ -1,0 +1,29 @@
+digraph G {
+rankdir=LR 
+ps [label="Psychologie sociale" shape=box, style=filled, fillcolor=lightblue]
+
+ps -> d 
+
+d [label="Explique comment les pensées, les sentiments\n et les comportementsdes individus sont influencés par \nla présence réelle, imaginaire ou implicite" shape=box, style=filled, fillcolor=lightyellow]
+
+subgraph {rank=same ; ps ; d}
+subgraph {rank=same ; ob ; al }
+ps -> pt 
+
+pt [label="Paradigme ternaire" shape=box, style=filled, fillcolor=lightblue]
+
+pt -> ob [style=invis]
+ob -> eg 
+pt -> al [style=invis]
+ob -> al 
+al -> eg 
+
+ob [label=Objet shape=box, style=filled, fillcolor=lightblue]
+eg [label=Ego shape=box, style=filled, fillcolor=lightblue]
+al [label=Alter shape=box, style=filled, fillcolor=lightblue]
+
+pt -> de 
+
+de [label="Discipline empirique"shape=box, style=filled, fillcolor=lightblue]
+
+
