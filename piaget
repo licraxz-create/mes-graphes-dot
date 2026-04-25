@@ -1,13 +1,11 @@
 digraph G {
 rankdir=LR 
+nodesep=1.5
+ranksep=0.2
 
 p [label=Piaget shape=box style=filled, fillcolor=lightblue]
 
-p -> s 
-
-s [label=Stades shape=box style=filled, fillcolor=lightyellow]
-
-subgraph {rank=same ; p ; s }
+subgraph {rank=same ; p ; sm  }
 
 p -> c 
 
@@ -17,7 +15,7 @@ c -> cd
 
 cd [label="Echange individu-milieu"shape=box style=filled, fillcolor=lightyellow]
 
-s -> d 
+
 
 d [label=Développement shape=box style=filled, fillcolor=lightyellow]
 
@@ -31,9 +29,8 @@ e [label=Expériences shape=box style=filled, fillcolor=lightyellow]
 fs [label="Facteurs sociaux"shape=box style=filled, fillcolor=lightyellow]
 eq [label=Equilibration shape=box style=filled, fillcolor=lightblue]
 
-subgraph {rank=same ; s ; sm ; po ; oc ; of }
-
-s -> sm -> po -> oc -> of 
+subgraph {rank=same  ; sm ; po ; oc ; of }
+p -> sm -> po -> oc -> of 
 
 sm [label="Sensori-moteur"shape=box style=filled, fillcolor=lightblue]
 po [label="Pré-opératoire"shape=box style=filled, fillcolor=lightblue]
@@ -58,12 +55,57 @@ ass [label=Assimilation shape=box style=filled, fillcolor=lightblue]
 ass -> asd 
 
 asd [label="Intégration changement au schème"shape=box style=filled, fillcolor=lightyellow]
+acd [label="Modification schèmes"shape=box style=filled, fillcolor=lightyellow]
 acc -> acd 
-acd [label="Modification schème"shape=box style=filled, fillcolor=lightyellow]
+sm  -> s1 -> s2 -> s3 -> s4 -> s5 -> s6 
+s1 [label="Réflexe" shape=box style=filled, fillcolor=lightyellow]
+s2 [label=RCP shape=box style=filled, fillcolor=lightyellow]
+s3 [label=RCS shape=box style=filled, fillcolor=lightyellow]
+s4 [label=CRS shape=box style=filled, fillcolor=lightyellow]
+s5 [label=DSA shape=box style=filled, fillcolor=lightyellow]
+s6 [label=CRM shape=box style=filled, fillcolor=lightyellow]
+
+
+subgraph {rank=same ; s1 ; rd }
+subgraph {rank=same ; s2 ; rcpd }
+s1 -> rd 
+rd [label="•Exercices de réflexes\n •Dépasse bio\n •Assimilation généralisatrice et récognitves"shape=box style=filled, fillcolor=lightyellow]
+
+s2 -> rcpd 
+
+rcpd [label="Activités simples et répétitices centrées corps\n accomodation accrue schèmes fondamentaux\n pas de permanence objet, anticipation"shape=box style=filled, fillcolor=lightyellow]
+
+subgraph {rank=same ; s3 ; rcsd }
+subgraph {rank=same ; s4 ; crsd}
+subgraph {rank=same ; s5 ; dsad }
+subgraph {rank=same ; s6 ; crmd }
+
+s3 -> rcsd 
+s4 -> crsd 
+s5 -> dsad 
+s6 -> crmd 
+
+rcsd [label="Découverte fortuite, pas d'anticipation\n recherche objet partiel"shape=box style=filled, fillcolor=lightyellow]
+
+crsd [label="Dissociation moyen et buts\n intentionnalité, anticipation\n émergence causalité"shape=box style=filled, fillcolor=lightyellow]
+
+dsad [label="Médiateurs action\n suivi déplacement\n expérimentation active"shape=box style=filled, fillcolor=lightyellow]
+
+crmd [label="anticipation\n symbole\n suivis mvts invisibles"shape=box style=filled, fillcolor=lightyellow]
 
 
 
 
+po -> ps -> pi 
+
+pi [label="Pensée intuitive" shape=box style=filled, fillcolor=lightyellow ]
+ps [label="Pensée symbolique"shape=box style=filled, fillcolor=lightyellow ]
+
+subgraph {rank=same ; ps ; psd }
+
+ps -> psd 
+psd [label="Représentation symbolique\n Langage\ imitation différée\n jeu symbolique" shape=box style=filled, fillcolor=lightyellow]
+}
 
 
 
