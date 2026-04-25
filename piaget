@@ -1,0 +1,74 @@
+digraph G {
+rankdir=LR 
+
+p [label=Piaget shape=box style=filled, fillcolor=lightblue]
+
+p -> s 
+
+s [label=Stades shape=box style=filled, fillcolor=lightyellow]
+
+subgraph {rank=same ; p ; s }
+
+p -> c 
+
+c [label=Constructivisme shape=box style=filled, fillcolor=lightblue]
+
+c -> cd 
+
+cd [label="Echange individu-milieu"shape=box style=filled, fillcolor=lightyellow]
+
+s -> d 
+
+d [label=Développement shape=box style=filled, fillcolor=lightyellow]
+
+d -> msn 
+d -> e 
+d -> fs 
+d -> eq 
+
+msn [label="Maturation SN"shape=box style=filled, fillcolor=lightgreen]
+e [label=Expériences shape=box style=filled, fillcolor=lightyellow]
+fs [label="Facteurs sociaux"shape=box style=filled, fillcolor=lightyellow]
+eq [label=Equilibration shape=box style=filled, fillcolor=lightblue]
+
+subgraph {rank=same ; s ; sm ; po ; oc ; of }
+
+s -> sm -> po -> oc -> of 
+
+sm [label="Sensori-moteur"shape=box style=filled, fillcolor=lightblue]
+po [label="Pré-opératoire"shape=box style=filled, fillcolor=lightblue]
+oc [label="Opérations concrètes"shape=box style=filled, fillcolor=lightblue]
+of [label="Opérations formelles"shape=box style=filled, fillcolor=lightblue]
+
+e -> sc [style=invis]
+
+sc [label=Schèmes shape=box style=filled, fillcolor=lightblue]
+
+sc -> scd 
+scd [label="Structure cognitive processus interne"shape=box style=filled, fillcolor=lightyellow]
+
+subgraph {rank=same ; sc ; ass ; acc }
+
+acc -> sc [style=invis]
+sc -> ass [style=invis]
+
+acc [label=Accomodation shape=box style=filled, fillcolor=lightblue]
+ass [label=Assimilation shape=box style=filled, fillcolor=lightblue]
+
+ass -> asd 
+
+asd [label="Intégration changement au schème"shape=box style=filled, fillcolor=lightyellow]
+acc -> acd 
+acd [label="Modification schème"shape=box style=filled, fillcolor=lightyellow]
+
+
+
+
+
+
+
+
+
+
+
+}
