@@ -1,0 +1,127 @@
+digraph G {
+
+rankdir=LR 
+
+pd [label="Psy développement" shape=box style=filled, fillcolor=lightblue]
+
+pd -> d 
+
+subgraph {rank=same ; pd ; d ; dx ; ob ; ex }
+
+ob [label=Observation shape=box style=filled, fillcolor=lightblue]
+ex [label=Expérimentation shape=box style=filled, fillcolor=lightblue]
+
+dx -> ob [style=invis]
+ob -> ex [style=invis]
+
+d [label="Etude scientifique des\n phénomènes de changements\n et de continuité" shape=box style=filled, fillcolor=lightyellow]
+
+d -> dx 
+
+dx [label=Changements shape=box style=filled, fillcolor=lightyellow]
+dx -> ql 
+dx -> qt 
+ql [label=Qualitatif shape=box style=filled, fillcolor=lightgreen]
+qt [label=Quantitatif shape=box style=filled, fillcolor=lightgreen]
+
+pdd [label="Décrire aspect stables et changeant\n expliquer mécanismes\n prédire changements" shape=box style=filled, fillcolor=lightyellow]
+
+
+
+subgraph {rank=same ; pdd ; mt }
+
+pdd -> mt 
+
+mt [label=Méthodes shape=box style=filled, fillcolor=lightgreen]
+
+pd -> ps
+
+ps [label=Persepctives shape=box style=filled, fillcolor=lightyellow]
+
+ps -> a 
+
+a [label=Actuelles shape=box style=filled, fillcolor=lightyellow]
+
+a -> pls 
+
+pls [label="Life-Span"shape=box style=filled, fillcolor=lightblue]
+a -> dia 
+
+dia [label="Innée vs Acquis"shape=box style=filled, fillcolor=lightblue]
+
+pls -> ld 
+
+ld [label="Processus continu qui se déroule\n conception à mort" shape=box style=filled, fillcolor=lightyellow]
+
+dia -> e
+dia -> ac 
+
+e [label=Empirisme shape=box style=filled, fillcolor=lightblue]
+ac [label=Nativisme shape=box style=filled, fillcolor=lightblue]
+
+e -> ed 
+
+ed [label="pas de connaissances à la naissances"shape=box style=filled, fillcolor=lightyellow]
+
+ac -> acd 
+
+acd [label="Connaissances à la naissances"shape=box style=filled, fillcolor=lightyellow]
+
+
+acd -> hb 
+
+hb [label="Horloge biologique" shape=box style=filled, fillcolor=lightblue]
+
+
+ob -> obs 
+ex -> exs 
+
+obs [label="Phénomène naturel"shape=box style=filled, fillcolor=lightyellow]
+exs [label="Observation provoquée"shape=box style=filled, fillcolor=lightyellow]
+
+subgraph {rank=same ; mt ; app }
+
+app [label=Approches shape=box style=filled, fillcolor=lightyellow]
+
+mt -> app 
+
+app -> a1 -> d1 
+a1 [label=Longitudianle shape=box style=filled, fillcolor=lightblue]
+app -> a2 -> d2 
+a2 [label=Transversale shape=box style=filled, fillcolor=lightblue]
+app -> a3 -> d3 
+a3 [label="Méthode mixte" shape=box style=filled, fillcolor=lightblue]
+
+d1 [label="Permet de suivre même personnes durant une période donnée"shape=box style=filled, fillcolor=lightyellow]
+d2 [label="Comparer des groupes à un moment donnée"shape=box style=filled, fillcolor=lightyellow]
+d3 [label="Suivi de plusieurs groupes durant une période donnée"shape=box style=filled, fillcolor=lightyellow]
+
+ps -> psy 
+
+psy [label=Psychodynamique shape=box style=filled, fillcolor=lightyellow]
+
+psy -> f 
+
+f [label=Freud shape=box style=filled, fillcolor=coral1]
+
+ps -> c -> pia 
+
+c [label=Cognitif shape=box style=filled, fillcolor=lightyellow]
+pia [label=Piaget shape=box style=filled, fillcolor=lightblue]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
