@@ -118,6 +118,236 @@ pia [label=Piaget shape=box style=filled, fillcolor=lightblue]
 
 
 
+p [label=Physique shape=box, style=filled, fillcolor=lightgreen]
+
+p -> dp 
+
+dp [label="Développement psycho-moteur"shape=box, style=filled, fillcolor=lightyellow]
+
+
+dp -> msn 
+dp -> e 
+dp -> ea 
+
+msn [label="Maturation SN"shape=box, style=filled, fillcolor=lightgreen]
+
+e [label="Environnement propice"shape=box, style=filled, fillcolor=lightyellow]
+
+ea [label="Acteurs développement"shape=box, style=filled, fillcolor=lightyellow]
+
+msn -> sc 
+msn -> s 
+msn -> m -> ls 
+
+sc [label="Structures cérébrales"shape=box, style=filled, fillcolor=green]
+
+s [label=Synaptogénèse shape=box, style=filled, fillcolor=lightyellow]
+
+m [label=Myélinisation shape=box, style=filled, fillcolor=lightyellow]
+
+ls [label="Loi successions"shape=box, style=filled, fillcolor=lightgreen]
+
+
+sc -> a02 
+
+a02 [label="Entre 0-2ans\n vol cerveau x3\n bulbe rachidient et cervelet développé"shape=box, style=filled, fillcolor=lightyellow]
+
+ls -> l1 
+ls -> l2
+
+l1 [label="Loi céphalo-caudale" shape=box, style=filled, fillcolor=lightyellow]
+l2 [label="Loi proximo-distale"shape=box, style=filled, fillcolor=lightyellow]
+
+p -> cs 
+
+cs [label="Capacités sensorielles"shape=box, style=filled, fillcolor=lightyellow]
+
+cs -> n 
+
+n [label="Sens fonctionnels dès la naissances"shape=box, style=filled, fillcolor=lightyellow]
+
+ 
+n -> v -> fv 
+
+fv [label="Falaise visuelle\n bébé évitent le vide\n perception profondeur inné ou acquises" shape=box, style=filled, fillcolor=lightyellow]
+
+v [label=Vision shape=box, style=filled, fillcolor=lightyellow]
+
+cs -> pe 
+
+pe [label=Perception shape=box, style=filled, fillcolor=lightyellow]
+
+pe -> i 
+pe -> t 
+
+i [label="Intermodale\n mise en correspondances modalités" shape=box, style=filled, fillcolor=lightgreen]
+t [label="Transmodale\n transfert d'une modalité à une autre"shape=box, style=filled, fillcolor=lightgreen]
+
+p -> hm 
+
+hm [label="Habilité motrices" shape=box, style=filled, fillcolor=lightyellow]
+
+hm -> r 
+hm -> tm 
+hm -> po 
+hm -> lo 
+hm -> ph 
+
+r [label=Réflèxes shape=box, style=filled, fillcolor=lightblue]
+
+tm [label="Tonus musculuaire" shape=box, style=filled, fillcolor=lightgreen]
+
+lo [label=Locomotion shape=box, style=filled, fillcolor=lightyellow]
+
+po [label=Posture shape=box, style=filled, fillcolor=lightyellow]
+
+ph [label=Préhension shape=box, style=filled, fillcolor=lightgreen]
+
+r -> rd 
+
+rd [label="Involontaire\n stimulation\n rigide et stéréotypes" shape=box, style=filled, fillcolor=lightyellow]
+
+po -> pod 
+
+pod [label="1e mois : tête instable\n 6mois : dos incliné + appui\n 8 mois : position assise" shape=box, style=filled, fillcolor=lightyellow]
+
+lo -> lod 
+
+lod [label="4 pattes, position débout, premiers pas, seul"shape=box, style=filled, fillcolor=lightyellow]
+
+c [label=Cognitif shape=box, style=filled, fillcolor=lightblue]
+
+c -> pi 
+
+pi [label=Piaget shape=box, style=filled, fillcolor=lightyellow]
+
+pi -> sce 
+sce [label=Schèmes shape=box, style=filled, fillcolor=lightblue]
+
+sce -> scd 
+scd [label="Structure cognitive commune"shape=box, style=filled, fillcolor=lightyellow]
+
+scd -> ass 
+scd -> acc 
+ass [label=Assimilation shape=box, style=filled, fillcolor=lightblue]
+acc [label=Accomodation shape=box, style=filled, fillcolor=lightblue]
+
+pi -> st 
+
+st [label=Stades shape=box, style=filled, fillcolor=lightyellow]
+
+st -> s1 -> s2 -> s3 -> s4 
+
+subgraph {rank=same ; st ; s1 ; s2 ; s3 ; s4 }
+
+s1 [label="Sensori-moteur"shape=box, style=filled, fillcolor=aquamarine]
+s2 [label=Préopératoire shape=box, style=filled, fillcolor=lightgreen]
+s3 [label="Opératoire concret"shape=box, style=filled, fillcolor=green]
+s4 [label="Opératoire formelles" shape=box, style=filled, fillcolor=aquamarine1]
+
+s1 -> sr -> rcp -> rcs -> crs -> dsa -> crm 
+
+sr [label="Stade réflexe" shape=box, style=filled, fillcolor=lightyellow]
+rcp [label=RCP shape=box, style=filled, fillcolor=lightyellow]
+rcs [label=RCS shape=box, style=filled, fillcolor=lightyellow]
+crs [label=CRS shape=box, style=filled, fillcolor=lightyellow]
+dsa [label=DSA shape=box, style=filled, fillcolor=lightyellow]
+crm [label=CRM shape=box, style=filled, fillcolor=lightyellow]
+
+subgraph {rank=same ; rcp ; rcpd }
+subgraph {rank=same ; sr  ; srd }
+subgraph {rank=same ; rcs ; rcsd }
+subgraph {rank=same ; dsa ; dsad }
+subgraph {rank=same ; crm ; crmd }
+
+sr -> srd 
+
+srd [label="fonction adaptation\n assimilation généralisatrice"shape=box, style=filled, fillcolor=lightyellow]
+rcp -> rcpd 
+
+rcpd [label="Activité simples et répétitives centrées sur le corps\n pas de permanence de l'objet\n pas d'anticipation"shape=box, style=filled, fillcolor=lightyellow]
+
+rcs -> rcsd 
+
+rcsd [label="Début différenciation moyens/buts\n appairiton causalité/n corridnation moyens buts\n cherche objet partielle"shape=box, style=filled, fillcolor=lightyellow]
+
+dsa -> dsad 
+dsad [label="Nouveaux moyens\n conduits, médiateurs action"shape=box, style=filled, fillcolor=lightyellow]
+
+crm -> crmd 
+
+crmd [label="Anticipation\n imitation différée"shape=box, style=filled, fillcolor=lightyellow]
+
+
+
+l  [label=Langage shape=box, style=filled, fillcolor=lightblue] 
+l -> mc 
+mc [label="Modalités communicatives"shape=box, style=filled, fillcolor=lightyellow] 
+
+mc -> mcd 
+
+mcd [label="Gestes, verbal, non verbal\n intonation-prosodie"shape=box, style=filled, fillcolor=lightblue]
+
+mc -> pr 
+
+pr [label="Préférence néo-natale\n adaption sons quotidiens\n manifestation reconnaissance" shape=box, style=filled, fillcolor=lightblue]
+
+mcd -> pro 
+
+pro [label="Prosodie : première structure lingustiques" shape=box, style=filled, fillcolor=lightyellow]
+
+mcd -> voc 
+voc [label="Vocalisation 2-6mois" shape=box, style=filled, fillcolor=lightyellow]
+
+voc -> bba 
+
+bba [label="Babillage" shape=box, style=filled, fillcolor=lightyellow]
+
+bba -> ca 
+bba -> pa 
+
+ca [label="Canonique : 6-10mois, consonne + voyelle" shape=box, style=filled, fillcolor=lightyellow]
+pa [label="Panachée : 10-12 mois, suite polysyllabiques" shape=box, style=filled, fillcolor=lightyellow]
+
+rel 
+
+rel [label="Relations social" shape=box, style=filled, fillcolor=orange]
+
+
+rel -> ip 
+
+ip [label="Intéractions précoces" shape=box, style=filled, fillcolor=lightyellow]
+
+rel -> tha 
+
+tha [label="Théorie attachement" shape=box, style=filled, fillcolor=lightyellow]
+
+ip -> ipd 
+
+ipd [label="Procesus bidirectionnels\n interactions comportementales" shape=box, style=filled, fillcolor=lightyellow]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
