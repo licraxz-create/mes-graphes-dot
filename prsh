@@ -1,0 +1,140 @@
+digraph G {
+rankdir=LR 
+
+ms [label="Méthode scientifique" shape=box, style=filled, fillcolor=lightblue]
+
+ms -> ex 
+
+ex [label=Expérimentale shape=box, style=filled, fillcolor=lightyellow]
+
+
+ex -> exd 
+
+exd [label="Processus structuré qui\n consiste rassembler infos\n objective et systématiques"shape=box, style=filled, fillcolor=lightyellow]
+
+subgraph {rank=same ; ms  ; ob ; q ;  hy ;  exp }
+
+ms -> ob 
+
+ob [label=Observation shape=box, style=filled, fillcolor=lightblue]
+
+ob -> q -> hy -> exp 
+
+q [label=Questions shape=box, style=filled, fillcolor=lightyellow]
+hy [label=Hypothèse shape=box, style=filled, fillcolor=lightyellow]
+
+exp [label=Expérimentation shape=box, style=filled, fillcolor=coral1]
+
+exd -> d -> dd 
+exd -> p -> pd 
+exd -> exi -> xd 
+exd -> v -> vd 
+
+dd [label="Compte rendu systématique comportements"shape=box, style=filled, fillcolor=lightyellow]
+pd [label="Capacité conaître comportements avances" shape=box, style=filled, fillcolor=lightyellow]
+xd [label="Identification causes" shape=box, style=filled, fillcolor=lightyellow]
+vd [label="Application connaissances" shape=box, style=filled, fillcolor=lightyellow]
+
+
+d [label=Description shape=box, style=filled, fillcolor=lightyellow]
+p [label=Prédiction shape=box, style=filled, fillcolor=lightyellow]
+exi [label=Explication shape=box, style=filled, fillcolor=lightyellow]
+v [label=Vérification shape=box, style=filled, fillcolor=lightyellow]
+
+ob -> obs 
+
+obs [label="Rapporter systématiquement événements" shape=box, style=filled, fillcolor=lightyellow]
+
+exp -> expd 
+
+expd [label="Procédé vérifie prédiction"shape=box, style=filled, fillcolor=lightyellow]
+
+hy -> pr -> expd 
+
+subgraph {rank=same ; pr ; expd }
+
+pr [label=Prédiction shape=box, style=filled, fillcolor=lightyellow]
+
+
+ds -> ms 
+
+subgraph {rank=same ; ds ; ms ; b }
+
+ds [label="Démarche scientifique" shape=box, style=filled, fillcolor=lightyellow]
+
+ b -> ds  
+
+b [label="Base et fondements" shape=box, style=filled, fillcolor=lightyellow]
+
+b -> mi 
+b -> md 
+
+mi [label="Méthode inductive" shape=box, style=filled, fillcolor=lightblue]
+md [label="Méthode déductive"shape=box, style=filled, fillcolor=lightblue]
+
+mi -> mid 
+md -> mdd 
+
+mid [label="Particulier -> générale" shape=box, style=filled, fillcolor=lightyellow]
+mdd [label="Générale -> particulier" shape=box, style=filled, fillcolor=lightyellow]
+
+ms -> r -> rf 
+r [label=Recherche shape=box, style=filled, fillcolor=lightyellow]
+rf [label="Recherches fondamentale" shape=box, style=filled, fillcolor=lightblue]
+ra 
+r -> ra 
+
+ra [label="Recherche appliquée"shape=box, style=filled, fillcolor=lightblue]
+
+
+rf -> rfd 
+
+rfd [label="Absence intention\n décrire et comprendre\n compréhension approfondie"shape=box, style=filled, fillcolor=lightyellow]
+
+rfd -> d1 
+rfd -> d2 
+rfd -> d3 
+
+d1 [label=Descriptive shape=box, style=filled, fillcolor=lightblue]
+d2 [label=Explicative shape=box, style=filled, fillcolor=lightblue]
+d3 [label=Exploratoire shape=box, style=filled, fillcolor=lightblue]
+
+d1 -> dd1 
+d2 -> dd2 
+d3 -> dd3 
+
+dd1 [label="Décrire phénomène"shape=box, style=filled, fillcolor=lightyellow]
+dd2 [label="Phénomène connus mis en lumière mécanismes" shape=box, style=filled, fillcolor=lightyellow]
+dd3 [label="Phénomène peu connus, clarifie"shape=box, style=filled, fillcolor=lightyellow]
+
+ra -> rad 
+rad [label="Exploitation connaissances préexistantes\n problèmes concrets ou développer produits"shape=box, style=filled, fillcolor=lightyellow]
+
+rf -> ro [style=invis]
+
+ra -> rs [style=invis]
+
+ro [label="Recherche orientée" shape=box, style=filled, fillcolor=lightblue]
+
+rs [label="Recherche stratégique" shape=box, style=filled, fillcolor=lightblue]
+
+ro -> rod 
+rs -> rsd 
+
+rod [label="Intérête recherche appliquée"shape=box, style=filled, fillcolor=lightyellow]
+rsd [label="Retombée certaiens pour recherche appliquée" shape=box, style=filled, fillcolor=lightyellow]
+
+
+
+obs -> q1 
+obs -> q2 
+obs -> q3 
+
+q1 -> q1d 
+q2 -> q2d 
+q3 -> q3d 
+
+q1 [label=Quoi shape=box, style=filled, fillcolor=lightyellow]
+q2 [label=Qui shape=box, style=filled, fillcolor=lightyellow]
+q3 [label="Comment" shape=box, style=filled, fillcolor=lightyellow] 
+
