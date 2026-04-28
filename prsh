@@ -132,9 +132,62 @@ obs -> q3
 
 q1 -> q1d 
 q2 -> q2d 
-q3 -> q3d 
+
 
 q1 [label=Quoi shape=box, style=filled, fillcolor=lightyellow]
 q2 [label=Qui shape=box, style=filled, fillcolor=lightyellow]
 q3 [label="Comment" shape=box, style=filled, fillcolor=lightyellow] 
 
+    
+q1d [label="Objet de l'observation\n facilite comparaison" shape=box, style=filled, fillcolor=lightyellow ]
+q2d [label="Echantillon"  shape=box, style=filled, fillcolor=lightblue]
+
+q2d -> e1 -> e1d 
+q2d -> e2 -> e2d 
+q2d -> e3 -> e3d 
+
+e1 [label="Aléatoire simple" shape=box, style=filled, fillcolor=lightblue]
+e2 [label=Stratifié  shape=box, style=filled, fillcolor=lightblue]
+e3 [label=Systématique  shape=box, style=filled, fillcolor=lightblue]
+
+e1d [label="Représentativité, tirage au sort"  shape=box, style=filled, fillcolor=lightyellow]
+e2d [label="Critère spécifique" shape=box, style=filled, fillcolor=lightyellow]
+e3d [label=Hasard  shape=box, style=filled, fillcolor=lightyellow]
+
+q3 -> od 
+q3 -> ao 
+q3 -> oi 
+
+od [label="Observation directe"  shape=box, style=filled, fillcolor=lightblue]
+ao [label="Auto-observation"  shape=box, style=filled, fillcolor=lightblue]
+oi [label="Observation indirect" shape=box, style=filled, fillcolor=lightblue]
+
+od -> odd 
+ao -> aod 
+oi -> oid 
+
+odd [label="Receuil info sans s'addresser directement"  shape=box, style=filled, fillcolor=lightyellow]
+ado [label="Propre fonctionnement"  shape=box, style=filled, fillcolor=lightyellow]
+oid [label="Construction instruments adaptés" shape=box, style=filled, fillcolor=lightyellow]
+
+    
+exp -> exp1 
+exp -> exp2 
+exp -> exp3 
+
+exp1 [label="procédures manipuler variables"  shape=box, style=filled, fillcolor=lightyellow]
+exp2 [label="Observables, nécessaire accés données" shape=box, style=filled, fillcolor=lightyellow]
+exp3 [label="Critères éthiques"  shape=box, style=filled, fillcolor=lightyellow]
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
