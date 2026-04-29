@@ -344,6 +344,144 @@ ipd [label="Procesus bidirectionnels\n interactions comportementales" shape=box,
 
 
 
+l [label=Langage shape=box, style=filled, fillcolor=lightblue]
+
+l -> mc 
+
+mc [label="Modalité communicatives" shape=box, style=filled, fillcolor=lightyellow]
+
+mc -> cl 
+mc -> c 
+c -> v 
+c -> nv 
+
+cl [label="Composantes langagières" shape=box, style=filled, fillcolor=lightgreen]
+c [label=Communication shape=box, style=filled, fillcolor=darkolivegreen1]
+
+v [label=Verbale shape=box, style=filled, fillcolor=darkolivegreen1]
+nv [label="Non-verbale" shape=box, style=filled, fillcolor=darkolivegreen1]
+
+cl -> p -> pps 
+
+pps [label="Processus phonologique simplificateurs" shape=box, style=filled, fillcolor=lightyellow]
+cl -> le 
+cl -> g
+cl -> d 
+cl -> pra 
+
+p [label=Phonologie shape=box, style=filled, fillcolor=lightgreen]
+le [label=Lexique shape=box, style=filled, fillcolor=lightgreen]
+g [label=Grammaire shape=box, style=filled, fillcolor=lightgreen]
+d [label=Discours shape=box, style=filled, fillcolor=lightgreen]
+pra [label=Pragmatique shape=box, style=filled, fillcolor=lightgreen]
+
+
+v -> vd 
+nv -> nvd 
+
+vd [label="Sous-phonèmes\n mots\n phrases\n textes" shape=box, style=filled, fillcolor=darkolivegreen1]
+nvd [label="Gestes\n regards\n intonation" shape=box, style=filled, fillcolor=darkolivegreen1]
+
+l -> cpr 
+
+cpr [label="Communication précoce" shape=box, style=filled, fillcolor=lightyellow]
+cpr -> evm 
+evm [label="Effets de la voix maternelle" shape=box, style=filled, fillcolor=lightyellow]
+
+l -> apr 
+
+apr [label="Acquisitions auditives prénatales\n et réponses néo-natales" shape=box, style=filled, fillcolor=lightblue]
+
+apr -> p1 
+apr -> a2 
+apr -> mr 
+
+p1 [label="Préférence néo-nat pour voix mat." shape=box, style=filled, fillcolor=lightyellow]
+a2 [label="Adaptation sons quotidiennes env. ext"shape=box, style=filled, fillcolor=lightyellow]
+mr [label="Manifestation de reconnaissance" shape=box, style=filled, fillcolor=lightyellow]
+
+l -> pro 
+
+pro [label=Prosodie shape=box, style=filled, fillcolor=lightblue]
+
+pro -> prod 
+
+prod [label="Indices prosodiques, première structure linguistiques perçue" shape=box, style=filled, fillcolor=lightyellow]
+
+mc -> pv 
+
+pv [label="Production" shape=box, style=filled, fillcolor=lightblue]
+
+pv -> pv1 -> p2 
+pv1 [label="Pleurer" shape=box, style=filled, fillcolor=lightyellow]
+p2 [label="0-2mois productions vocales lié états\n 2-6mois vocalisation couché et jeux vocaux" shape=box, style=filled, fillcolor=lightyellow]
+p2 -> p3 
+
+p3 [label=Babillage shape=box, style=filled, fillcolor=lightgreen]
+
+p3 -> bc 
+p3 -> bp 
+
+bc [label=Canoniques shape=box, style=filled, fillcolor=lightyellow]
+bp [label=Panaché shape=box, style=filled, fillcolor=lightyellow]
+
+
+
+le -> le1 
+le1 [label="Explosion lexicale" shape=box, style=filled, fillcolor=lightyellow]
+
+le1 -> drl 
+le1 -> dva 
+le1 -> ala 
+
+drl [label="Développement répertoire lexicale" shape=box, style=filled, fillcolor=darkolivegreen1]
+dva [label="Dissociation vocabiulaire passif\actif" shape=box, style=filled, fillcolor=lightblue]
+ala [label="Activité liées au langage" shape=box, style=filled, fillcolor=aquamarine]
+
+ala -> d1 
+ala -> d2 
+
+d1 [label=Désignation shape=box, style=filled, fillcolor=lightyellow]
+d2 [label=Dénomination shape=box, style=filled, fillcolor=lightyellow]
+
+l -> lo 
+
+lo [label="Langage oral : 6-8 ans" shape=box, style=filled, fillcolor=cornflowerblue] 
+
+lo -> vol 
+vol [label=Volet shape=box, style=filled, fillcolor=cornflowerblue]
+
+vol -> vold 
+vold [label="Volet phonétique : améliore articulation\n volet lexical : voca enrichi\n volet syntaxique : structure canonique\n volet discursif : structure récit"shape=box, style=filled, fillcolor=lightyellow]
+
+lo -> lo2 
+
+lo2 [label="Langage oral : 9-10ans" shape=box, style=filled, fillcolor=cornflowerblue]
+
+lo2 -> lo2d 
+
+lo2d [label="Volet phonétique : prononciation fluidité correctes\n volet discurisif : prise de paroles complexes" shape=box, style=filled, fillcolor=lightyellow]
+
+lo2 -> lo3 -> lo3d 
+
+lo3 [label="Langage oral : 10-12ans" shape=box, style=filled, fillcolor=cornflowerblue]
+
+lo3d [label="Volet phonétique\n volet discursif : progression discussion\n volet linguistique : phrases plus complexes" shape=box, style=filled, fillcolor=lightyellow]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
