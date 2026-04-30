@@ -468,6 +468,163 @@ lo3 [label="Langage oral : 10-12ans" shape=box, style=filled, fillcolor=cornflow
 
 lo3d [label="Volet phonétique\n volet discursif : progression discussion\n volet linguistique : phrases plus complexes" shape=box, style=filled, fillcolor=lightyellow]
 
+A0 -> A2 -> A6 -> A12 
+
+subgraph {rank=same ; A0 ;  A2 ; A6 ; A12 }
+
+A0 [label="0 ans" shape=box style=filled, fillcolor=lightyellow] 
+A2  [label="2 ans" shape=box style=filled, fillcolor=lightyellow]
+A6 [label="6 ans" shape=box style=filled, fillcolor=lightyellow]
+
+A12 [label="12 ans" shape=box style=filled, fillcolor=lightyellow]
+
+A2 -> ism 
+
+ism [label="Intelligence sensori-motrice" shape=box style=filled, fillcolor=lightblue]
+
+ism -> sc [style=invis]
+
+sc [label=Schèmes shape=box style=filled, fillcolor=lightblue]
+
+sc -> scd
+scd [label="Structure cognitive : ensemble conduites et représentations" shape=box style=filled, fillcolor=lightyellow]
+
+subgraph {rank=same ; ass ; sc ; acc }
+
+ass [label=Assimilation shape=box style=filled, fillcolor=lightyellow]
+acc [label=Accomodation shape=box style=filled, fillcolor=lightyellow]
+
+ass -> sc [label=Incorporation]
+sc -> acc [label=Modification]
+
+ass -> assr 
+ass -> assg 
+
+assr [label=Recognitive shape=box style=filled, fillcolor=lightyellow]
+assg [label=Généralisatrice shape=box style=filled, fillcolor=lightyellow]
+
+assg -> S1 [style=invis]
+
+subgraph {rank=same ; S1 ; S2 ; S3 ; S4 ; S5 ; S6 }
+S1 -> S2 ->  S3 ->  S4 ->  S5 ->  S6
+
+S1 [label="Réflexe"  shape=box style=filled, fillcolor=lightblue]
+S2 [label="Réactions circulaires 1" shape=box style=filled, fillcolor=lightblue]
+S3 [label="Réactions circulaires 2" shape=box style=filled, fillcolor=lightblue]
+S4 [label="Coordination RCS" shape=box style=filled, fillcolor=lightblue]
+S5 [label="Réactions circulaire 3"  shape=box style=filled, fillcolor=lightblue]
+S6 [label="Coordination et représenation"  shape=box style=filled, fillcolor=lightblue]
+
+
+S1 -> sd 
+sd [label="Réflexe répétes vers schèmes"  shape=box style=filled, fillcolor=lightyellow]
+S2 -> sd2 
+
+sd2 [label="Activité répétés centré corps/plaisir" shape=box style=filled, fillcolor=lightyellow]
+S3 -> s3
+
+s3 [label="Activité répétés centré ext"shape=box style=filled, fillcolor=lightyellow ] 
+
+
+S4 -> s4 
+
+s4 [label="Dissociation moyen / but \n intentionnalité\n causalité \n recherche objet partiel"shape=box style=filled, fillcolor=lightyellow]
+
+S5 -> s5 
+
+s5 [label="Médiateurs de l'action" shape=box style=filled, fillcolor=lightyellow]
+S6 -> s6 
+
+s6 [label="Anticipation, permanence objet" shape=box style=filled, fillcolor=lightyellow]
+
+A6 -> ppo 
+
+ppo [label="Pré-opératoire" shape=box style=filled, fillcolor=lightblue]
+
+ppo -> ps 
+ppo -> pi 
+
+ps [label="Pensée symbolique" shape=box style=filled, fillcolor=lightyellow]
+pi [label="Pensée intuitive" shape=box style=filled, fillcolor=lightyellow]
+
+ps -> psd 
+
+psd [label="Représentation à l'aide de symboles" shape=box style=filled, fillcolor=lightyellow]
+
+psd -> ei -> eid 
+
+ei [label="Egocentrisme intellectuel" shape=box style=filled, fillcolor=lightblue]
+eid [label="Incapacité int. de sortir de son propre point de vue" shape=box style=filled, fillcolor=lightyellow]
+
+psd -> an -> and 
+
+an [label="Animisme" shape=box style=filled, fillcolor=lightblue]
+
+and [label="Âme à objets inanimés" shape=box style=filled, fillcolor=lightyellow]
+
+psd -> ar -> ard 
+
+ar [label=Artificialisme shape=box style=filled, fillcolor=lightblue]
+
+ard [label="Tout construit par hô" shape=box style=filled, fillcolor=lightyellow]
+
+psd -> f -> fd  
+
+f [label=Finalisme shape=box style=filled, fillcolor=lightyellow]
+fd [label="Tout à explication"shape=box style=filled, fillcolor=lightyellow]
+
+pi -> pid 
+
+pid [label="Influence perception\n concetration apparence" shape=box style=filled, fillcolor=lightyellow]
+
+pid -> cco
+
+cco [label=Conservation shape=box style=filled, fillcolor=lightyellow]
+
+A12 -> oc 
+
+oc [label="Opérations concrètes" shape=box style=filled, fillcolor=lightblue]
+
+oc -> co 
+
+subgraph {rank=same ; oc ; co }
+
+co [label="Conduites opératoires" shape=box style=filled, fillcolor=lightyellow]
+
+co -> rv 
+rv [label=Réversibilité shape=box style=filled, fillcolor=lightyellow]
+rv -> rvd 
+rvd [label="Inversion action" shape=box style=filled, fillcolor=lightyellow]
+co -> se -> sed 
+
+se [label=Seriation shape=box style=filled, fillcolor=lightyellow]
+sed [label="Ordonner éléments en séquences" shape=box style=filled, fillcolor=lightyellow]
+
+co -> opn 
+opn [label="Opérations nombres" shape=box style=filled, fillcolor=lightyellow]
+co -> conv 
+conv [label="Conservation" shape=box style=filled, fillcolor=lightyellow]
+conv -> convd 
+
+convd [label="nombre, liquide, lonueur, substance, poids, volume" shape=box style=filled, fillcolor=lightyellow]
+
+co -> cla 
+
+cla [label=Classification shape=box style=filled, fillcolor=lightyellow]
+cla -> clad 
+clad [label="Capacité regrouper objet" shape=box style=filled, fillcolor=lightyellow]
+
+co -> li -> lid 
+
+li [label="Logique déductive" shape=box style=filled, fillcolor=lightyellow]
+lid [label="déduire observation et informations" shape=box style=filled, fillcolor=lightyellow]
+
+co -> mor -> mord 
+
+mor [label=Moralité shape=box style=filled, fillcolor=lightyellow]
+mord [label="Intention geste"shape=box style=filled, fillcolor=lightyellow]
+
+
 
 
 
