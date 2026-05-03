@@ -1,0 +1,140 @@
+digraph G {
+
+rankdir = LR
+sn [label=SN shape=box, style=filled, fillcolor=lightgreen]
+
+snc [label=SNC shape=box, style=filled fillcolor=lightblue]
+    
+snp [label=SNP shape=box, style=filled fillcolor=lightyellow]
+
+sn -> snc 
+sn -> snp 
+
+snc -> c 
+snc -> me 
+
+c [label=Cerveau shape=box, style=filled fillcolor=lightblue]
+me [label="Moëlle épinière" shape=box, style=filled fillcolor=lightblue]
+
+
+snp -> soma 
+snp -> sympa 
+snp -> sne 
+
+sne [label=SNE shape=box, style=filled fillcolor=orange]
+soma [label=Somatique shape=box, style=filled fillcolor=lightblue]
+sympa [label=Sympathique shape=box, style=filled fillcolor=plum1]
+
+sympa -> ortho 
+sympa -> para 
+
+ortho [label=Orthosympatique shape=box, style=filled fillcolor=coral1]
+para [label=Parasympathique shape=box, style=filled fillcolor=lightblue]
+
+ortho -> o 
+para -> p 
+
+o [label="Ergotrope, situation alerte"shape=box, style=filled fillcolor=coral1]
+
+p [label= "Tropotropes, réserve énergie" shape=box, style=filled fillcolor=lightblue]
+    
+c -> tc 
+
+tc [label="Tronc cérébrale" shape=box, style=filled fillcolor=lightyellow]
+
+tc -> b 
+tc -> po
+
+b [label="Buble rachidien" shape=box, style=filled fillcolor=lightgreen]
+
+b -> bd 
+
+bd [label="Relais influx sensitif"shape=box, style=filled fillcolor=lightyellow]
+
+po [label=Pont shape=box, style=filled fillcolor=lightgreen]
+
+po -> pd 
+
+pd [label="Relais,respiration" shape=box, style=filled fillcolor=lightyellow]
+
+tc -> mc 
+
+mc [label=Mésencéphale shape=box, style=filled fillcolor=lightgreen]
+
+mc -> mcd 
+
+mcd [label="Coordination mouvement occulaire, motricité" shape=box, style=filled fillcolor=lightyellow]
+
+c -> ct 
+
+ct [label=Cervelet shape=box, style=filled fillcolor=orange]
+
+ct -> ctd 
+
+ctd [label="Traite info cortex moteur, équilibre posture" shape=box, style=filled fillcolor=lightyellow]
+
+c -> dsl 
+
+dsl [label="Dicéphale et système limbique" shape=box, style=filled fillcolor=lightyellow]
+
+dsl -> th 
+dsl -> hyp 
+dsl -> epi 
+dsl -> sl 
+
+th [label=Thalamus shape=box, style=filled fillcolor=lightpink]
+hyp [label=Hypothalamus shape=box, style=filled fillcolor=lightpink]
+epi [label=Epiphyse shape=box, style=filled fillcolor=lightpink]
+sl [label="Système lymbique" shape=box, style=filled fillcolor=lightpink]
+
+c -> cx 
+
+cx [label=Cortex shape=box, style=filled fillcolor=lightblue]
+
+th -> thd 
+thd [label="Relais infos sensorielles" shape=box, style=filled fillcolor=lightyellow]
+thd -> rc 
+rc [label="Régions corticales" shape=box, style=filled fillcolor=lightpink]
+
+hyp -> hypd 
+
+hypd [label="Contrôle fonctions végétatives" shape=box, style=filled fillcolor=lightyellow]
+epi -> epd 
+
+epd [label="Mélatonine" shape=box, style=filled fillcolor=lightyellow]
+
+sl -> sld 
+
+sld [label="Structures centrale autour thalamus, comportement émotionnel et mémoire" shape=box, style=filled fillcolor=lightyellow]
+
+cx -> cxd 
+
+cxd [label="couche neurones superficie" shape=box, style=filled fillcolor=lightyellow]
+
+
+o -> od 
+p -> pdd 
+
+od [label="neurones préganglionnaire -> acht -> neurones postganglionnaire -> noradrénaline" shape=box, style=filled fillcolor=lightyellow]
+pdd [label="neurones préganglionnaire et postganglionnaire -> Acht" shape=box, style=filled fillcolor=lightyellow]
+
+sne -> sned 
+sned [label="M.longitudinale -> PM -> m. circulaire -> PS -> m. muqueuse -> m. intestinale" shape=box, style=filled fillcolor=orange]
+
+sned -> snedd 
+snedd [label="distorsion musculaire et muqueuse\n nature chimique composé" shape=box, style=filled fillcolor=lightyellow]
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
