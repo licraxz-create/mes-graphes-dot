@@ -1,6 +1,6 @@
 digraph G {
 
-rankdir = LR
+rankdir = LR 
 sn [label=SN shape=box, style=filled, fillcolor=lightgreen]
 
 snc [label=SNC shape=box, style=filled fillcolor=lightblue]
@@ -108,7 +108,30 @@ sl -> sld
 sld [label="Structures centrale autour thalamus, comportement émotionnel et mémoire" shape=box, style=filled fillcolor=lightyellow]
 
 cx -> cxd 
+cxd -> ai 
 
+ai [label=Aires shape=box, style=filled fillcolor=lightyellow]
+ai -> vs -> vs1 
+vs -> vs2 
+ai -> aud -> aud1 
+aud -> aud2 
+ai -> w 
+ai -> sp 
+ai -> B 
+ai -> P 
+ai -> mot
+
+vs [label=Visuelles shape=box, style=filled fillcolor=lightyellow]
+vs1 [label=Primaire shape=box, style=filled fillcolor=lightyellow]
+vs2 [label=Associative shape=box, style=filled fillcolor=lightyellow]
+aud [label=Auditive shape=box, style=filled fillcolor=lightyellow]
+aud1 [label=Primaire shape=box, style=filled fillcolor=lightyellow]
+w [label=Wernicke shape=box, style=filled fillcolor=lightyellow]
+sp [label="Somesthésique primaire" shape=box, style=filled fillcolor=lightyellow]
+B [label=Broca shape=box, style=filled fillcolor=lightyellow]
+P [label=Motrice shape=box, style=filled fillcolor=lightyellow]
+mot [label=Prémotrice shape=box, style=filled fillcolor=lightyellow]
+aud2 [label=Associative shape=box, style=filled fillcolor=lightyellow] 
 cxd [label="couche neurones superficie" shape=box, style=filled fillcolor=lightyellow]
 
 
@@ -123,17 +146,48 @@ sned [label="M.longitudinale -> PM -> m. circulaire -> PS -> m. muqueuse -> m. i
 
 sned -> snedd 
 snedd [label="distorsion musculaire et muqueuse\n nature chimique composé" shape=box, style=filled fillcolor=lightyellow]
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+re [label=Retine shape=box, style=filled fillcolor=lightgreen]
+
+
+
+re -> red 
+
+red [label="Succession cellules réceptrices et nerveuse" shape=box, style=filled fillcolor=lightyellow]
+
+red -> cpr 
+
+cpr [label="Cellules photoreceptrice,Cellules bipolaires\n , Cellules ganglionnaire, se rejoignent au point aveugle"shape=box, style=filled fillcolor=lightyellow]
+
+cpr -> no -> dsl 
+no [label="Nerf optique" shape=box, style=filled fillcolor=lightblue]
+
+
+nf [label="Nerfs" shape=box, style=filled fillcolor=orange]
+
+nf -> snc
+snc -> nf 
+
+nf -> nc 
+
+nf -> ns 
+
+nc [label="12 paires nerfs craniaux" shape=box, style=filled fillcolor=lightyellow]
+ns [label="31 paires nerfs spinaux" shape=box, style=filled fillcolor=lightyellow]
+
+
+
+
+
+
+
+
+
+
+
+
+   
     
     
     
