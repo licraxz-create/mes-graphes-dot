@@ -629,6 +629,149 @@ mord [label="Intention geste"shape=box style=filled, fillcolor=lightyellow]
 
 
 
+c [label="Concept de soi" shape=box, style=filled, fillcolor=lightpink]
+
+c -> c1 
+
+c1 [label="Façon dont une personne se perçoit\n dont elle est appelé à répondre" shape=box, style=filled, fillcolor=lightyellow]
+
+c1 -> c2 
+
+c2 [label="Elements font partie de la personnalité (composante cognitive)" shape=box, style=filled, fillcolor=lightyellow]
+
+c1 -> c3 
+
+c3 [label="Système multidimensionnel, dyanmique et évolutif" shape=box, style=filled, fillcolor=lightyellow]
+
+subgraph {rank=same ; c ; s ; si ; ss ; cd ; cd2 ; cd3  }
+
+s [label=Soi style=invis]
+
+c -> s [style=invis]
+
+s -> si [style=invis]
+s -> ss [style=invis]
+
+si [label="Soi individualiste" shape=box, style=filled, fillcolor=lightpink]
+ss [label="Soi social" shape=box, style=filled, fillcolor=lightpink]
+
+si -> sm 
+si -> sp 
+
+sm [label="Soi matériel" shape=box, style=filled, fillcolor=lightpink]
+sp [label="Soi personnel" shape=box, style=filled, fillcolor=lightpink]
+
+
+sid -> si 
+
+sid [label="Concercen l'ensemble des perceptuons que \n l'individu entretiens avec lui-même"shape=box, style=filled, fillcolor=lightyellow]
+
+sm -> smd 
+
+smd [label="comprend toutes les référecnes relatives au corps" shape=box, style=filled, fillcolor=lightyellow]
+
+sp -> spd 
+
+spd [label="Réfère caractère intimes ou conscience" shape=box, style=filled, fillcolor=lightyellow]
+
+ss -> ssd 
+
+ssd [label="Abordé sous l'angle de la perception % aux autres, relations"  shape=box, style=filled, fillcolor=lightyellow]
+
+cd [label="Symbiose"  shape=box, style=filled, fillcolor=lightyellow]
+cd2 [label="Processus individuation-séparation"  shape=box, style=filled, fillcolor=lightyellow]
+cd3 [label="Relation objectale"  shape=box, style=filled, fillcolor=lightyellow]
+
+cd -> cd2 -> cd3 -> c 
+
+cd2 -> cddd 
+
+cddd [label="Spération ; ni totale, ni définitive"  shape=box, style=filled, fillcolor=lightyellow]
+cddd -> o1 
+cddd -> o2 
+
+o1 [label="Espace transitionnel" shape=box, style=filled, fillcolor=lightblue]
+o2 [label="Objet transitionnel"  shape=box, style=filled, fillcolor=lightblue]
+
+
+e [label="Estime de soi"  shape=box, style=filled, fillcolor=lightblue]
+
+subgraph {rank=same ; si ; e }
+
+si -> e [style=invis]
+
+f -> st 
+
+f [label=Freud  shape=box, style=filled, fillcolor=lightyellow]
+st [label=Stades  shape=box, style=filled, fillcolor=coral1]
+
+st -> s1 
+
+s1 [label="Stade anale"  shape=box, style=filled, fillcolor=coral1]
+
+subgraph {rank=same ; st ; s1 ; st2 }
+
+s1 -> st2 
+
+st2 [label="Stade phallique"  shape=box, style=filled, fillcolor=coral1]
+
+s1 -> s1d
+
+s1d [label="Changement zone érogène, apprentissage propreté, pouvoir décision\n frustrations et conflits intérieurs"  shape=box, style=filled, fillcolor=lightyellow]
+
+st2 -> s2D 
+
+s2D [label="identité sexuelle"  shape=box, style=filled, fillcolor=lightyellow]
+
+ek -> ek1 
+
+ek [label="Erikson"  shape=box, style=filled, fillcolor=lightyellow]
+ek1 [label="initiative vs culpabilité"  shape=box, style=filled, fillcolor=lightblue]
+
+is [label="Identité sexuée"  shape=box, style=filled, fillcolor=lightgreen]
+
+is -> isd 
+
+isd [label="Concept qui fait référence aux différentes étapes\n pour construire par rapport à culture" shape=box, style=filled, fillcolor=lightyellow]
+
+isd -> i1 
+isd -> i2 
+
+i1 [label="Identité sexuelle, composante biologiques (sexe)"  shape=box, style=filled, fillcolor=lightyellow]
+i2 [label="Genre, dimension sociale (identité sexuée)"  shape=box, style=filled, fillcolor=lightyellow]
+
+i2 -> b 
+i2 -> ef 
+i2 -> so 
+
+b [label=Biologique  shape=box, style=filled, fillcolor=lightgreen]
+ef [label="Enfant (dvp et choix)"  shape=box, style=filled, fillcolor=lightgreen]
+so [label=Social  shape=box, style=filled, fillcolor=lightgreen]
+
+ef -> kh 
+
+kh [label=Kohlberg  shape=box, style=filled, fillcolor=lightyellow]
+
+kh -> k1 
+kh -> k2 
+kh -> k3 
+
+k1 [label="Identité de genre vers 2ans\n reconnaissance sexes par critères"  shape=box, style=filled, fillcolor=lightyellow]
+k2 [label="Stabilité de genre vers 3-4ans\n stable dans le temsp" shape=box, style=filled, fillcolor=lightyellow]
+k3 [label="Constance de genre vers 5-7ans\n perçu stables défini biologiquement"  shape=box, style=filled, fillcolor=lightyellow]
+
+
+
+so -> r 
+so -> pe 
+
+r [label=Renforcement  shape=box, style=filled, fillcolor=lightyellow]
+pe [label="Prise exemple"  shape=box, style=filled, fillcolor=lightyellow]
+
+
+
+
+
 
 
 
