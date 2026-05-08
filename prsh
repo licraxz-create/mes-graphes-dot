@@ -181,6 +181,180 @@ exp3 [label="Critères éthiques"  shape=box, style=filled, fillcolor=lightyello
 
 
     
+me [label="Méthode expérimentale" shape=box, style=filled, fillcolor=lightblue]
+  
+ me -> q 
+ me -> pq 
+ me -> cm 
+ 
+ q [label=Quoi shape=box, style=filled, fillcolor=lightyellow]
+  pq [label=Pourquoi shape=box, style=filled, fillcolor=lightyellow]
+ cm [label="Comment" shape=box, style=filled, fillcolor=lightyellow]
+ 
+ 
+  q -> q1
+  
+  q1 [label="Créer situation particulière" shape=box, style=filled, fillcolor=lightyellow]
+
+pq -> p1 
+
+p1 [label="Tester hypothèse causale" shape=box, style=filled, fillcolor=lightyellow]
+
+cm -> c 
+
+c [label="Manipuler facteurs" shape=box, style=filled, fillcolor=lightyellow]
+
+subgraph {rank=same ; me ; e }
+
+me -> e 
+
+e [label="Expérimenter c'est faire varier dans l'espoirt\n de voir apparaitre des variations" shape=box, style=filled, fillcolor=lightyellow]
+
+e -> v 
+v [label=Variables shape=box, style=filled, fillcolor=lightblue]
+
+v -> vi 
+v -> vd 
+v -> vp 
+
+vi [label="Indépendantes" shape=box, style=filled, fillcolor=lightblue]
+vd [label="Dépendantes"shape=box, style=filled, fillcolor=lightblue ]
+vp [label=Parasites shape=box, style=filled, fillcolor=lightblue]
+
+vi -> vid 
+
+vid [label="Manipulée intentionnellement par le chercheur" shape=box, style=filled, fillcolor=lightyellow]
+vd -> vdd 
+
+vdd [label="Variable dont on attend qu'elle vaire sous l'effet de la manipulation de la VI" shape=box, style=filled, fillcolor=lightyellow]
+vp -> vpd 
+
+vpd [label="Exogènes, exercent un effet indésiré sur la variable dépendante" shape=box, style=filled, fillcolor=lightyellow]
+
+me -> qi 
+
+qi [label=Qui shape=box, style=filled, fillcolor=lightyellow]
+
+qi -> ec 
+
+ec [label=Echantillonnage shape=box, style=filled, fillcolor=lightblue]
+
+
+ec -> a 
+
+a [label=Aléatoire shape=box, style=filled, fillcolor=lightyellow]
+
+a -> al 
+
+al [label="Garantie représentativité, tirage sort" shape=box, style=filled, fillcolor=lightyellow]
+
+ec -> occ 
+
+occ [label=Occasionnel shape=box, style=filled, fillcolor=lightblue]
+
+
+
+e -> va [style=invis]
+
+ subgraph {rank=same ; me ; va }
+
+
+va [label=Validité shape=box, style=filled, fillcolor=lightblue]
+
+va -> int 
+va -> ext 
+va -> eco 
+
+int [label=Interne shape=box, style=filled, fillcolor=lightyellow]
+ext [label=Externe shape=box, style=filled, fillcolor=lightyellow]
+eco [label=Ecologique shape=box, style=filled, fillcolor=lightyellow]
+
+int -> intd 
+
+intd [label="Lorsque seule les VI sont responsables des VD" shape=box, style=filled, fillcolor=lightyellow]
+
+ext -> extd 
+eco -> ecod 
+
+extd [label="Résultats représentatif de ceux que l'on obtiendrait sur tout sujet" shape=box, style=filled, fillcolor=lightyellow]
+
+ecod [label="Résults sont généralisables et prédictifs" shape=box, style=filled, fillcolor=lightyellow]
+
+pa [label="Plan action" shape=box, style=filled, fillcolor=lightblue]
+
+c -> pa 
+
+pa -> padd 
+
+padd [label="Ensemble des informations relatives à l'organisation d'une expérience" shape=box, style=filled, fillcolor=lightyellow]
+
+padd -> pac 
+
+pac [label=Classiques shape=box, style=filled, fillcolor=lightblue]
+
+padd -> paf 
+
+paf [label=Factoriels shape=box, style=filled, fillcolor=lightblue]
+
+pac -> pacd
+
+pacd [label="Manipulation une et une seule VI" shape=box, style=filled, fillcolor=lightyellow]
+
+pacd -> cod 
+cod [label=Codification shape=box, style=filled, fillcolor=lightblue]
+
+qr [label="Question recherche" shape=box, style=filled, fillcolor=lightyellow]
+
+qr -> ir -> ids 
+
+ir [label="Identification question recherche" shape=box, style=filled, fillcolor=lightblue]
+
+ids [label="Identifier ses déterminants" shape=box, style=filled, fillcolor=lightyellow]
+
+subgraph {rank=same ; ir ; ids }
+
+ir -> cp 
+ir -> pi 
+ir -> osy 
+
+osy [label="Observation systématisés" shape=box, style=filled, fillcolor=lightblue]
+
+cp [label="Constat profanes" shape=box, style=filled, fillcolor=lightblue]
+pi [label="Prise infos autres scientifiques" shape=box, style=filled, fillcolor=lightblue]
+
+qr -> hy 
+
+subgraph {rank=same ; qr ; hy }
+
+hy [label=Hypothèse shape=box, style=filled, fillcolor=lightblue]
+hy -> qr 
+
+hy -> opé 
+hy -> vér 
+hy -> vrai 
+hy -> cohé 
+hy -> pro 
+hy -> acc 
+
+opé [label=Opérationnalité shape=box, style=filled, fillcolor=lightyellow]
+vér [label=Vérifiabilité shape=box, style=filled, fillcolor=lightyellow]
+vrai [label=Vraisemblance shape=box, style=filled, fillcolor=lightyellow]
+cohé [label="Cohérence externe"shape=box, style=filled, fillcolor=lightyellow]
+pro [label="Productivité épistémique" shape=box, style=filled, fillcolor=lightyellow]
+acc [label=Acceptabilité shape=box, style=filled, fillcolor=lightyellow]
+
+e -> epo 
+
+epo [label="Expérimenter = provoquer + observer" shape=box, style=filled, fillcolor=lightblue]
+
+epo -> epod 
+
+epod [label="Idée de la manière dont fonctionne le réel -> mise à l'épreuve d'une idée par le contact aux faits \n -> observation des phénomènes en résultant-> décision quant à la valeur de l'idée suite au contact avec les faits" shape=box, style=filled, fillcolor=lightyellow]
+
+
+
+
+
     
     
     
