@@ -355,8 +355,155 @@ epod [label="Idée de la manière dont fonctionne le réel -> mise à l'épreuve
 
 
 
-    
-    
+a -> cf [style=invis]
+cf -> os [style=invis]
+os -> pi [style=invis]
+pi -> pq 
+a [label="Augmenter le savoir" shape=box, style=filled, fillcolor=cornflowerblue]
+
+cf [label="Constats fortuits" shape=box, style=filled, fillcolor=lightblue]
+
+os [label="Observation systématisée"  shape=box, style=filled, fillcolor=lightblue]
+
+pi [label="Prise infos auprès pairs"  shape=box, style=filled, fillcolor=lightblue]
+
+subgraph {rank=same ; a ; cr ; dcc }
+
+a -> cr -> dcc 
+
+dcc [label="Dresser les conlusions"  shape=box, style=filled, fillcolor=coral1]
+cr [label="Communiquer les résultats"  shape=box, style=filled, fillcolor=coral1]
+
+dcc -> pq 
+
+pq [label="Problèmes/Questions"  shape=box, style=filled, fillcolor=coral1]
+
+subgraph {rank=same ; pq ; os ; rad  }
+
+pq -> ri 
+
+ri [label="Rassembler des informations"  shape=box, style=filled, fillcolor=coral1]
+
+subgraph {rank=same ; ri ; chy ; xp }
+
+ri -> chy -> xp 
+
+chy [label="Construire une hypothèse"  shape=box, style=filled, fillcolor=coral1]
+xp [label=Expérimenter  shape=box, style=filled, fillcolor=coral1]
+
+rad [label="Rassemnler et analyser les données"  shape=box, style=filled, fillcolor=coral1]
+
+xp -> rad -> dcc 
+
+
+
+me [label="Méthode expérimentale"  shape=box, style=filled, fillcolor=lightgreen]
+
+dcc -> chy [label="Revenir sur hypothèse"]
+
+
+
+cf1 -> cf 
+
+subgraph {rank=same ; cf1 ; cf }
+
+cf1 [label="Observations issues du quotidien\n observation ordinaire"  shape=box, style=filled, fillcolor=lightyellow]
+
+os1 -> os 
+
+subgraph {rank=same ; os1 ; os }
+
+os1 [label="Caractère méthotique et répétée"  shape=box, style=filled, fillcolor=lightyellow]
+
+chy -> hy 
+
+hy [label=Hypothèse  shape=box, style=filled, fillcolor=lightblue]
+
+hy -> hy1 
+hy -> hy2 
+hy -> hy3 
+hy -> hy4 
+hy -> hy5
+hy -> hy6 
+
+hy1 [label="Opérationnalité : concrète et précise pour être tester par un tier"  shape=box, style=filled, fillcolor=lightyellow]
+hy2 [label="Vérificabilité : réellement testable"  shape=box, style=filled, fillcolor=lightyellow]
+hy3 [label="Vraisemblance, plausible"  shape=box, style=filled, fillcolor=lightyellow]
+hy4 [label="Cohérence externe : s'articule avec connaissances actuelles"  shape=box, style=filled, fillcolor=lightyellow]
+hy5 [label="Productivité épistémique, potentiel créatif"  shape=box, style=filled, fillcolor=lightyellow]
+hy6 [label="Accéptabilité"  shape=box, style=filled, fillcolor=lightyellow]
+
+
+
+
+me -> hyc 
+
+hyc [label="Hypothèse caudale"  shape=box, style=filled, fillcolor=lightyellow]
+
+hyc -> v 
+
+v [label=Variables  shape=box, style=filled, fillcolor=lightyellow]
+
+v -> vi 
+v -> vd 
+
+vi [label="Variable indépendante"  shape=box, style=filled, fillcolor=lightblue]
+vd [label="Variable dépendante"  shape=box, style=filled, fillcolor=lightblue]
+
+vi -> vid 
+vd -> vdd 
+
+vid [label="manipulée intentionnellement dans le but de provoquer des variations observales"  shape=box, style=filled, fillcolor=lightyellow]
+vdd [label="Dépendant de la variable indépendante, c'est ce que le chercehr attend de voir varier"  shape=box, style=filled, fillcolor=lightyellow]
+
+xp -> gp 
+
+gp [label=Echantillons  shape=box, style=filled, fillcolor=lightyellow]
+
+gp -> gp1 
+
+gp1 [label=Aléatoire  shape=box, style=filled, fillcolor=lightyellow]
+
+xp -> va  -> vad
+
+va [label=Validité  shape=box, style=filled, fillcolor=lightyellow]
+
+vad [label="Capable de tester ses propres hyptohèses"  shape=box, style=filled, fillcolor=lightyellow]
+
+vad -> vad1 
+vad -> vad2 
+vad -> vad3 
+
+vad1 [label="Interne : seul(es) la/les VI sont respinsables des VD"  shape=box, style=filled, fillcolor=lightblue]
+vad2 [label="Externe ; représentativité des résultats sur tous sujets soumis aux même influences des VI" shape=box, style=filled, fillcolor=lightblue]
+vad3 [label="Ecologique : Possibilité de généraliser les résultats et capacité prédictives" shape=box, style=filled, fillcolor=lightblue]
+
+et [label=Ethique  shape=box, style=filled, fillcolor=lightgreen]
+et -> etd 
+etd [label="Ensemble réflexions et principes qui guident choix morau en situations complexes"  shape=box, style=filled, fillcolor=lightyellow]
+
+etd -> ret 
+ret [label="Réflexion éthique"  shape=box, style=filled, fillcolor=lightyellow]
+
+etd -> etr 
+
+etr [label="Ethique de la recherche"  shape=box, style=filled, fillcolor=lightyellow]
+
+cf -> pq
+
+
+hyc -> hy 
+
+subgraph {rank=same ; me ;  hyc ; hy}
+
+pi -> ri 
+
+subgraph {rank=same ; ri ; pi }
+
+
+
+
+
     
     
     
