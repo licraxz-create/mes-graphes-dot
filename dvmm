@@ -773,6 +773,128 @@ pe [label="Prise exemple"  shape=box, style=filled, fillcolor=lightyellow]
 
 
 
+p [label=Personnalité shape=box, style=filled, fillcolor=coral]
+
+p -> f
+p -> e 
+
+f [label=Freud shape=box, style=filled, fillcolor=IndianRed1]
+e [label=Erikson shape=box, style=filled, fillcolor=lightblue]
+
+p -> s 
+
+s [label=Soi shape=box, style=filled, fillcolor=lightyellow]
+
+
+p -> is 
+
+is [label="Identité sexuée" shape=box, style=filled, fillcolor=lightyellow]
+
+s -> sd 
+
+sd [label="Composantes cognitive de la personnalité" shape=box, style=filled, fillcolor=lightyellow] 
+sd -> si 
+sd -> ss 
+si -> sm 
+si -> sp 
+
+si [label="Soi individualiste" shape=box, style=filled, fillcolor=lightpink]
+ss [label="Soi sociale" shape=box, style=filled, fillcolor=lightpink]
+sm [label="Soi matériel" shape=box, style=filled, fillcolor=lightpink]
+sp [label="Soi personnel" shape=box, style=filled, fillcolor=lightpink]
+
+s -> es 
+
+es [label="Estime de soi" shape=box, style=filled, fillcolor=orange]
+
+es -> esd 
+esd -> esdd 
+esdd [label="soi réel perçu \ soi idéal" shape=box, style=filled, fillcolor=lightblue]
+esd [label="Evaluative, valeur" shape=box, style=filled, fillcolor=lightyellow]
+
+f -> a -> ph -> pl -> g 
+
+a [label=Anal shape=box, style=filled, fillcolor=IndianRed1]
+ph [label=Phallique shape=box, style=filled, fillcolor=IndianRed1]
+pl [label="Période de latence" shape=box, style=filled, fillcolor=IndianRed1]
+g [label="Période géntial" shape=box, style=filled, fillcolor=IndianRed1]
+
+subgraph {rank=same ; a ; ad }
+subgraph {rank=same ; ph ; phd }
+subgraph {rank=same ; pl ; pld }
+subgraph {rank=same ; g ; gd }
+
+ad -> a 
+phd -> ph 
+pld -> pl 
+gd -> g 
+
+ad [label="Changement zone érogènes\n apprentissage propreté\n retenir, relâcher\n pouvoir de décider\n frustrations et conflits"shape=box, style=filled, fillcolor=lightyellow]
+phd [label="identité sexuelle\n relation triangulaire\n identitfication parent même sexe\n adoption comprtement lié sexe\n elaboration du surmoi\n refoulement pulsion sexuelle" shape=box, style=filled, fillcolor=lightyellow]
+pld [label="Déplacement des désirs\n dirigé parents -> ami\n connaissance, savori scolaires" shape=box, style=filled, fillcolor=lightyellow]
+gd [label=""shape=box, style=filled, fillcolor=lightyellow]
+
+
+
+e -> e1 
+
+e1 [label="Initiative Vs culpabilité" shape=box, style=filled, fillcolor=lightblue]
+
+subgraph {rank=same ; e1 ; e1d }
+
+e1 -> e1d 
+
+e1d [label="Autonomie, force adaptative\n capacité à se fixer des buts, curiosité et ambition" shape=box, style=filled, fillcolor=lightyellow]
+
+is -> ch9 -> ch9d 
+
+ ch9 [label="Chiland 1995" shape=box, style=filled, fillcolor=lightyellow]
+ 
+ ch9d [label="Connaissance de son appartenance, sentiments d'appartenance\n intégration construction identitaire" shape=box, style=filled, fillcolor=lightyellow]
+ 
+ is -> dev 
+ 
+ dev [label=Développement shape=box, style=filled, fillcolor=lightyellow]
+ 
+ p -> kh 
+ 
+ kh [label=Kohlberg shape=box, style=filled, fillcolor=cornflowerblue]
+ 
+ dev -> bio 
+ dev -> enf 
+ dev -> soc 
+ 
+ bio [label=Biologique shape=box, style=filled, fillcolor=lightgreen]
+ enf [label=Enfant shape=box, style=filled, fillcolor=lightyellow]
+ soc [label=Social shape=box, style=filled, fillcolor=orange]
+ 
+ bio -> biod 
+  biod [label="Anomalie hormonale\n troubles identité sexuée" shape=box, style=filled, fillcolor=lightyellow]
+ 
+kh -> devd
+
+devd [label="Développement basé processus cognitifs" shape=box, style=filled, fillcolor=lightyellow]
+
+
+
+devd -> ig2 -> sg2 -> cg2 
+
+ig2 [label="Identité de genre" shape=box, style=filled, fillcolor=lightgreen]
+sg2 [label="Stabilité de genre" shape=box, style=filled, fillcolor=yellow]
+cg2 [label="Constance de genre" shape=box, style=filled, fillcolor=coral1]
+
+soc -> soc1 
+soc -> soc2 
+
+soc1 [label=Renforcement shape=box, style=filled, fillcolor=lightyellow]
+soc2 [label="Prise d'exemple" shape=box, style=filled, fillcolor=lightyellow]
+
+
+
+
+
+
+
 
 
 
