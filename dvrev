@@ -97,7 +97,30 @@ rankdir=LR
  vp2 [label="Prononciation et fluidité correctes" shape=box, style=filled, fillcolor=lightyellow]
  vl2 [label="ACtivité compréhension" shape=box, style=filled, fillcolor=lightyellow]
  vd3 [label="Info/arguments" shape=box, style=filled, fillcolor=lightyellow]
+
+//%relationsociales
+ RS [label="Relations sociales" shape=box, style=filled, fillcolor=orange]
  
+ RS -> rep 
+ 
+ rep [label="Parents-enfats" shape=box, style=filled, fillcolor=lightyellow]
+ 
+ rep -> ip 
+ rep -> tha 
+ 
+ ip [label="Intérations précoces" shape=box, style=filled, fillcolor=lightyellow]
+ 
+ tha [label="Théorie de l'attachement" shape=box, style=filled, fillcolor=IndianRed1]
+ 
+ ip -> rbd 
+ 
+ rbd [label="Processus bidirectionnels" shape=box, style=filled, fillcolor=lightyellow]
+ 
+ rbd -> rbdd 
+ rbdd [label="Interaction corportementales : \n • corporelles \n • visuelles \n• vocales" shape=box, style=filled, fillcolor=lightyellow]
+ 
+ 
+  
  
   
   
