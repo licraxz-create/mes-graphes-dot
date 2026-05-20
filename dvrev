@@ -1,0 +1,105 @@
+digraph G {
+rankdir=LR 
+
+//%Languages
+  
+  l [label=Language shape=box, style=filled, fillcolor=lightblue]
+  l -> mc 
+  
+  mc [label="Modalité communicatives" shape=box, style=filled, fillcolor=lightyellow]
+  
+  
+  mc -> v 
+  mc -> nv 
+  
+  v [label=Verbal shape=box, style=filled, fillcolor=lightyellow]
+  nv [label="Non-verbal" shape=box, style=filled, fillcolor=lightyellow]
+  
+  mc -> cl 
+  cl [label="Composantes languagières" shape=box, style=filled, fillcolor=green]
+  
+  cl -> ph 
+  cl -> lx 
+  cl -> g 
+  
+  ph [label=Phonologie shape=box, style=filled, fillcolor=lightgreen]
+  lx [label=Lexique shape=box, style=filled, fillcolor=lightgreen]
+  g [label=Grammaire shape=box, style=filled, fillcolor=lightgreen]
+  
+  l -> a1 -> a1d 
+  
+  a1 [label="0-2ans" shape=box, style=filled, fillcolor=lightyellow]
+  a1d [label="Communication\n Primauté orale\n non verbale -> interprétation\n réception/production\n variabilité interindividuelles" shape=box, style=filled, fillcolor=lightyellow]
+  
+  mc -> com 
+  
+  com [label=Communication shape=box, style=filled, fillcolor=lightblue]
+  
+  com -> pr -> prd 
+  
+  
+  
+  pr [label=Précoces shape=box, style=filled, fillcolor=lightyellow]
+  
+  prd [label="Préfréece voix maternelles\n adaptation sons quotidiens\n reconnaissances" shape=box, style=filled, fillcolor=lightyellow]
+  
+  v -> b -> b1 -> b2
+  
+  b [label=Babillage shape=box, style=filled, fillcolor=lightyellow]
+  b1 [label="Canonique : 6-10mois, syllabe consonne voyelles" shape=box, style=filled, fillcolor=lightyellow]
+  b2 [label="Panaché : 10-12mois, suites polysyllabiques" shape=box, style=filled, fillcolor=lightyellow]
+  
+  lx -> lx1 
+  
+  lx1 [label="1ans : premiers mots (env.50mots)" shape=box, style=filled, fillcolor=lightyellow]
+  lx1 -> lx2 
+  
+  lx2 [label="2ans : développement répertoire\n dissociation voca passif/actif\n activité désignation et dénominations" shape=box, style=filled, fillcolor=lightyellow]
+  
+  ph -> pps 
+  
+  pps [label="Processus phonologiques simplificateurs" shape=box, style=filled, fillcolor=lightyellow]
+  
+  g -> g1 
+  
+  g1 [label="2-6ans : construction phrases (+) longues" shape=box, style=filled, fillcolor=lightyellow]
+  
+  l -> lo 
+  
+  lo [label="Langage orale" shape=box, style=filled, fillcolor=lightblue]
+  
+  lo -> vp -> vl -> vs -> vd 
+  
+  vp [label="Volet phonétique" shape=box, style=filled, fillcolor=lightblue]
+  vl [label="Volet lexicale" shape=box, style=filled, fillcolor=lightblue]
+  vs [label="Volet syntaxique" shape=box, style=filled, fillcolor=lightblue]
+  vd [label="Volet discursif" shape=box, style=filled, fillcolor=lightblue]
+  
+  subgraph {rank=same ; vp ; vp1 ; vp2}
+    subgraph {rank=same ; vl ; vl1 ; vl2 }
+      subgraph {rank=same ; vd ; vd1 ; vd2; vd3}
+  
+  
+ vp -> vp1 -> vp2 
+ vl -> vl1 -> vl2 
+ vd -> vd1 -> vd2 -> vd3
+ 
+ vp1 [label="Améliore articulation" shape=box, style=filled, fillcolor=lightyellow]
+ vl1 [label="Voca enrichi" shape=box, style=filled, fillcolor=lightyellow]
+ vs -> vs1 
+ 
+ subgraph {rank=same ; vs ; vs1 }
+ 
+ vs1 [label="Intégré structure canonique" shape=box, style=filled, fillcolor=lightyellow]
+ vd1 [label="Intégré stucture récit : peu marques intonations" shape=box, style=filled, fillcolor=lightyellow]
+ 
+ vd2 [label="Prise paroles complexes" shape=box, style=filled, fillcolor=lightyellow]
+ vp2 [label="Prononciation et fluidité correctes" shape=box, style=filled, fillcolor=lightyellow]
+ vl2 [label="ACtivité compréhension" shape=box, style=filled, fillcolor=lightyellow]
+ vd3 [label="Info/arguments" shape=box, style=filled, fillcolor=lightyellow]
+ 
+ 
+  
+  
+  
+}
