@@ -1,140 +1,193 @@
 digraph G {
-    rankdir=LR 
-    m [label=Mesure shape=box, style=filled, fillcolor=lightblue]
-    
-    m -> md 
-    
-    md [label="Associer un nombre à un objet" shape=box, style=filled, fillcolor=lightyellow]
+
+rankdir=LR 
   
-    md -> f 
-    md -> v 
-    
-    f [label=Fiabilité shape=box, style=filled, fillcolor=coral1]
-    v [label=Validité shape=box, style=filled, fillcolor=coral1]
-    
-    t -> v 
-    
-    t -> fi 
-    
-    t [label="Test psycho" shape=box, style=filled, fillcolor=lightblue]
-    fi [label=Fidélité shape=box, style=filled, fillcolor=coral1]
-    
-    
-    f -> f1 
-    
-    f1 [label="Qualité technique" shape=box, style=filled, fillcolor=lightyellow]
-    v -> vd 
-    
-    vd [label="Aptitude à mesurer l'objet" shape=box, style=filled, fillcolor=lightyellow]
-    
-   
-    vd -> v2 
-    vd -> v3 
-    v3 [label=Méthodes shape=box, style=filled, fillcolor=lightblue]
-  v2 [label="Types" shape=box, style=filled, fillcolor=lightyellow]
-  v2 -> vd2 
-  v2 -> vd3 
-  v2 -> vd4 
+as [label="Approche scientifique" shape=box style=filled, fillcolor=lightblue]
+
+as -> asd ->  me 
+me [label="Méthode expérimentale"  shape=box style=filled, fillcolor=lightyellow]
+
+
+me -> o
+rs -> e -> m 
+
+subgraph {rank=same ;rs ;  e ; m }
+
+
+o [label=Observation  shape=box style=filled, fillcolor=lightblue]
+e [label=Expérimentation  shape=box style=filled, fillcolor=Indianred1]
+m [label=Mesure  shape=box style=filled, fillcolor=lightyellow]
+
+
+asd [label="Rassembler des infors de façons\n systématique et observable"  shape=box style=filled, fillcolor=lightyellow]
+
+subgraph {rank=same ; asd ; d ; p ; ex ; v }
+
+asd -> d -> p -> ex -> v 
+
+d -> dd 
+p -> pd 
+ex -> exd 
+v -> vd 
+
+d [label=Description  shape=box style=filled, fillcolor=lightyellow]
+dd [label="Réalisation compte rendu caractéristiques"  shape=box style=filled, fillcolor=lightyellow]
+
+p [label=Prédire shape=box style=filled, fillcolor=lightyellow]
+pd [label="Capacoté de connaitre à l'avance comportements" shape=box style=filled, fillcolor=lightyellow]
+ex [label=Expliquer shape=box style=filled, fillcolor=lightyellow]
+exd [label="identifier cause adéquate"shape=box style=filled, fillcolor=lightyellow]
+v [label=Vérifier shape=box style=filled, fillcolor=lightyellow]
+vd [label="Application connaissances" shape=box style=filled, fillcolor=lightyellow]
+
+ms [label=Methodes shape=box style=filled, fillcolor=lightblue]
+
+ms -> mi 
+ms -> md 
+
+mi [label=Inductive shape=box style=filled, fillcolor=lightyellow]
+md [label=Déductive shape=box style=filled, fillcolor=lightyellow]
+
+mi -> mid 
+
+mid [label="Spécifique -> générale" shape=box style=filled, fillcolor=lightyellow]
+mdd [label="Générale -> spécifique" shape=box style=filled, fillcolor=lightyellow]
+
+md -> mdd 
+
+mdd -> o1 -> o 
+
+subgraph {rank=same  mdd ; o1 ; o ; od ; rs  }
+
+o1 [label="Confronter modèle théoriques\n à de nouvelles observations" shape=box style=filled, fillcolor=lightyellow]
+
+
+
+subgraph {rank=same ; me ; ms }
+subgraph {rank=same ; mi ; md }
+
+mi -> md [style=invis]
+
+o -> od 
+
+od [label="•Rapporter systématiquement évènements\n • compréhension fine comportement humain\n • validation théories et modèles\n • identifications schémas" shape=box style=filled, fillcolor=lightyellow]
+
+
+od -> rs 
+
+rs [label=Recherche shape=box style=filled, fillcolor=lightblue]
+
+rs -> rf 
+rs -> ra 
+
+rf [label=Fondamentale shape=box style=filled, fillcolor=lightyellow]
+ra [label=Appliquée shape=box style=filled, fillcolor=lightyellow]
+
+
+rf -> rd 
+rf -> re 
+rf -> rx 
+
+
+rd [label=Déscriptive shape=box style=filled, fillcolor=lightyellow]
+re [label=Explicative shape=box style=filled, fillcolor=lightyellow]
+rx [label=Exploratoire shape=box style=filled, fillcolor=lightyellow]
+
+
+ra -> rst 
+ra -> ro 
+
+rst [label=Stratégique shape=box style=filled, fillcolor=lightyellow]
+ro [label=Orientée shape=box style=filled, fillcolor=lightyellow]
+
+
+od -> q 
+od -> qi 
+od -> cm 
+
+q [label=Quoi shape=box style=filled, fillcolor=lightblue]
+qi [label=Qui shape=box style=filled, fillcolor=lightblue]
+cm [label="Comment" shape=box style=filled, fillcolor=lightblue]
+
+
+q -> qd 
+qi -> qid 
+cm -> cmd 
+
+qd [label="Objet observation • Accès données pertinentes\n • Considérer phénomènes non directement obsevables\n • indicateurs relatif variables,  disposé modèle analyse" shape=box style=filled, fillcolor=lightyellow]
+
+qid [label=Population shape=box style=filled, fillcolor=lightyellow]
+
+qid -> ec 
+
+ec [label=Echantillons shape=box style=filled, fillcolor=lightyellow] 
+
+ec -> ect 
+ec -> ecr
+ec -> ecnr 
+
+
+
+
+
+ect [label=Totalité shape=box style=filled, fillcolor=lightyellow]
+
+ecr [label=Représentatif shape=box style=filled, fillcolor=lightyellow]
+
+ecnr [label="Non-représentatif"shape=box style=filled, fillcolor=lightyellow]
+
+ecr -> ecr1 
+ecr -> ecr2 
+ecr -> ecr3 
+
+ecr1 [label="Aléatoire simple : sélection sans critères spécifiques" shape=box style=filled, fillcolor=lightyellow]
+ecr2 [label="Stratifié : classes déterminée" shape=box style=filled, fillcolor=lightyellow]
+ecr3 [label="Systématique : sélection au hasard puis systématique" shape=box style=filled, fillcolor=lightyellow]
+
+cmd [label=Directe shape=box style=filled, fillcolor=lightyellow]
+cm -> cmd1 
+cm -> cmd2 
+
+cmd1 [label=Indirecte shape=box style=filled, fillcolor=lightyellow]
+cmd2 [label="Auto-observation" shape=box style=filled, fillcolor=lightyellow]
+
+cmd1 -> cmd1d 
+cmd -> cmdd 
+cmd2 -> cmd2d 
+
+cmdd [label="Receuil d'info sans s'adresser directement aux sujets" shape=box style=filled, fillcolor=lightyellow]
+
+cmd1d [label="Données propre fonctionnement" shape=box style=filled, fillcolor=lightyellow]
+
+cmd2d [label="Outils ; questionnaires / médias" shape=box style=filled, fillcolor=lightyellow]
+
+e -> et 
+
+et [label=Ethique shape=box style=filled, fillcolor=lightyellow]
+
+et -> etd 
+
+etd [label="Recherche ne doit pas satisfaire curiosité futile\n • priment pas sur santé aprticipantes\n • chercheur=responsables\n • consentement éclairé" shape=box style=filled, fillcolor=lightyellow]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
-  vd2 [label=Internes shape=box, style=filled, fillcolor=lightyellow]
-  vd3 [label=Externe  shape=box, style=filled, fillcolor=lightyellow]
-  vd4 [label=Ecologique  shape=box, style=filled, fillcolor=lightyellow]
   
-  
-    t -> va 
-    
-    va [label=Variables shape=box, style=filled, fillcolor=lightyellow]
-    
-e1 -> e2 [label="Relation causale"]
-e2 -> m [label="Technique de mesure"]
-    subgraph {rank=same ; e1 ; e2 ; m }
-    
-    e1 [label="Traits esprit Hû"shape=box, style=filled, fillcolor=lightyellow]
-    e2 [label="Manifestation ext" shape=box, style=filled, fillcolor=lightyellow]
-    
-    e2 -> e2d -> f 
-    
-    e2d [label="Qualité métrologique :\n •précision \n •constance" shape=box, style=filled, fillcolor=lightyellow]
-    
-    
-    g1 -> e1 
-    g2 -> e2 
-    
-    g1 [label=Inobservable shape=box, style=filled, fillcolor=lightblue]
-    g2 [label=Observable shape=box, style=filled, fillcolor=lightblue]
-    
-    t -> se 
-    
-    t -> h 
-    
-    se [label=Sensibilité shape=box, style=filled, fillcolor=lightblue]
-    h [label=Homogénéité shape=box, style=filled, fillcolor=lightblue]
-    
-    
-    se -> sd 
-    
-    sd [label="Capacité du test à différencier différents profils" shape=box, style=filled, fillcolor=lightyellow]
-    
-    h -> hd 
-    
-    hd [label="cohérence entre les items" shape=box, style=filled, fillcolor=lightyellow]
-    
-    hd -> h1 
-    h1 -> h2 
-    h1 -> h3 
-    
-    h1 [label=Echelles shape=box, style=filled, fillcolor=lightyellow]
-    h2 [label=Ordinale shape=box, style=filled, fillcolor=lightyellow]
-    h3 [label=intervalle shape=box, style=filled, fillcolor=lightyellow]
-    
-    
-    subgraph {rank=same ; h ; se }
-    
-    se -> h [style=invis]
-    
-
-    
-    v3 -> m1 
-    v3 -> m2 
-    
-    v3 -> m3 
-    v3 -> m4 
-    v3 -> m5 
-    v3 -> m6 
-    
-    m1 [label="face validity" shape=box, style=filled, fillcolor=lightyellow]
-    m2 [label="reliée critère" shape=box, style=filled, fillcolor=lightyellow]
-    m3 [label="validité concomitante" shape=box, style=filled, fillcolor=lightyellow]
-    m4 [label="vailidité prédictive" shape=box, style=filled, fillcolor=lightyellow]
-    
-    m5 [label="validité contenu" shape=box, style=filled, fillcolor=lightyellow]
-    m6 [label="validité construit" shape=box, style=filled, fillcolor=lightyellow]
-    
-    
-fi -> fid 
-fid [label=Méthodes shape=box, style=filled, fillcolor=lightyellow]
-fid -> fid1 
- 
-fid1 [label="Test-retest" shape=box, style=filled, fillcolor=lightyellow]
-fid -> fid2 
-fid -> fid3 
-
-fid2 [label="Formes parallèles ou équivalentes" shape=box, style=filled, fillcolor=lightyellow]
-fid3 [label="consistance interne" shape=box, style=filled, fillcolor=lightyellow]
-
-va -> VD 
-va -> vi 
-
-VD [label="Dépendantes"shape=box, style=filled, fillcolor=coral1]
-vi [label=Indépendantes shape=box, style=filled, fillcolor=coral1]
-
-
-subgraph {rank=same ; VD ; vi }
-
-vi -> VD [label="Fait varier"]
-
-    
-    
-    
-    
 }
+
+
+
+
+
+
