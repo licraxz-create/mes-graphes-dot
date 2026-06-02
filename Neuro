@@ -1,4 +1,11 @@
-digraph G {
+
+
+
+   
+    
+    
+
+{
 
 rankdir = LR 
 sn [label=SN shape=box, style=filled, fillcolor=lightgreen]
@@ -28,15 +35,10 @@ sympa [label=Sympathique shape=box, style=filled fillcolor=plum1]
 sympa -> ortho 
 sympa -> para 
 
-ortho [label=Orthosympatique shape=box, style=filled fillcolor=coral1]
-para [label=Parasympathique shape=box, style=filled fillcolor=lightblue]
 
-ortho -> o 
-para -> p 
+ortho [label="Ergotrope, situation alerte"shape=box, style=filled fillcolor=coral1]
 
-o [label="Ergotrope, situation alerte"shape=box, style=filled fillcolor=coral1]
-
-p [label= "Tropotropes, réserve énergie" shape=box, style=filled fillcolor=lightblue]
+para [label= "Tropotropes, réserve énergie" shape=box, style=filled fillcolor=lightblue]
     
 c -> tc 
 
@@ -135,8 +137,8 @@ aud2 [label=Associative shape=box, style=filled fillcolor=lightyellow]
 cxd [label="couche neurones superficie" shape=box, style=filled fillcolor=lightyellow]
 
 
-o -> od 
-p -> pdd 
+od 
+ pdd 
 
 od [label="neurones préganglionnaire -> acht -> neurones postganglionnaire -> noradrénaline" shape=box, style=filled fillcolor=lightyellow]
 pdd [label="neurones préganglionnaire et postganglionnaire -> Acht" shape=box, style=filled fillcolor=lightyellow]
@@ -164,62 +166,6 @@ cpr -> no -> dsl
 no [label="Nerf optique" shape=box, style=filled fillcolor=lightblue]
 
 
-nf [label="Nerfs" shape=box, style=filled fillcolor=orange]
-
-nf -> snc
-snc -> nf 
-
-nf -> nc 
-
-nf -> ns 
-
-nc [label="12 paires nerfs craniaux" shape=box, style=filled fillcolor=lightyellow]
-ns [label="31 paires nerfs spinaux" shape=box, style=filled fillcolor=lightyellow]
-
-
-
-
-SN [shape=box, style=filled, fillcolor=lightgreen]
-
-
-SN -> SNC 
-SN -> SNP 
-
-SNC [shape=box, style=filled, fillcolor=lightblue]
-SNP [shape=box, style=filled, fillcolor=lightyellow]
-
-SNC -> i1 
-
-i1 [label="Infos visuelles et olfactives"shape=box, style=filled, fillcolor=lightyellow]
-
-i1 -> c 
-i1 -> me 
-
-c [label=Cerveau shape=box, style=filled, fillcolor=lightblue]
-me [label="Moëlle épinière" shape=box, style=filled, fillcolor=lightblue]
-
-SNP -> s1 
-SNP -> s2 
-SNP -> s3 
-
-s1 [label="Somatique" shape=box, style=filled, fillcolor=plum1]
-s2 [label="Sympatique" shape=box, style=filled, fillcolor=plum1]
-s3 [label="Entérique" shape=box, style=filled, fillcolor=orange]
-
-
-s2 -> s1d 
-
-s1d [label="Infos organes internes" shape=box, style=filled, fillcolor=lightyellow]
-
-s3 -> s3d 
-
-s3d [label="Infos tube digestif" shape=box, style=filled, fillcolor=lightyellow]
-
-
-
-s1 -> s2d 
-
-s2d [label=Volontaire shape=box, style=filled, fillcolor=lightyellow]
 
 
 
@@ -241,17 +187,7 @@ n [label=Neurones shape=box, style=filled, fillcolor=lightgreen]
 
 SN -> cs -> n 
 
-s1d -> p 
-s1d -> o 
 
-p [label=Para shape=box, style=filled, fillcolor=coral1]
-o [label=Ortho shape=box, style=filled, fillcolor=lightblue]
-
-p -> pd 
-o -> od 
-
-pd [label=Réserves shape=box, style=filled, fillcolor=lightyellow]
-od [label=Alerte shape=box, style=filled, fillcolor=lightyellow]
 
 s2d -> nf 
 
