@@ -179,6 +179,173 @@ ns [label="31 paires nerfs spinaux" shape=box, style=filled fillcolor=lightyello
 
 
 
+SN [shape=box, style=filled, fillcolor=lightgreen]
+
+
+SN -> SNC 
+SN -> SNP 
+
+SNC [shape=box, style=filled, fillcolor=lightblue]
+SNP [shape=box, style=filled, fillcolor=lightyellow]
+
+SNC -> i1 
+
+i1 [label="Infos visuelles et olfactives"shape=box, style=filled, fillcolor=lightyellow]
+
+i1 -> c 
+i1 -> me 
+
+c [label=Cerveau shape=box, style=filled, fillcolor=lightblue]
+me [label="Moëlle épinière" shape=box, style=filled, fillcolor=lightblue]
+
+SNP -> s1 
+SNP -> s2 
+SNP -> s3 
+
+s1 [label="Somatique" shape=box, style=filled, fillcolor=plum1]
+s2 [label="Sympatique" shape=box, style=filled, fillcolor=plum1]
+s3 [label="Entérique" shape=box, style=filled, fillcolor=orange]
+
+
+s2 -> s1d 
+
+s1d [label="Infos organes internes" shape=box, style=filled, fillcolor=lightyellow]
+
+s3 -> s3d 
+
+s3d [label="Infos tube digestif" shape=box, style=filled, fillcolor=lightyellow]
+
+
+
+s1 -> s2d 
+
+s2d [label=Volontaire shape=box, style=filled, fillcolor=lightyellow]
+
+
+
+a [label="Commande générale\n collect infos" shape=box, style=filled, fillcolor=lightyellow]
+
+subgraph {rank=same ; a ; a1 ; a2 }
+
+a1 [label="Analyse" shape=box, style=filled, fillcolor=lightyellow]
+
+a2 [label="Réaction" shape=box, style=filled, fillcolor=lightyellow]
+
+a -> a1 -> a2 
+
+subgraph {rank=same ; SN ; cs ; n }
+
+cs [label=Cellules shape=box, style=filled, fillcolor=lightyellow]
+
+n [label=Neurones shape=box, style=filled, fillcolor=lightgreen]
+
+SN -> cs -> n 
+
+s1d -> p 
+s1d -> o 
+
+p [label=Para shape=box, style=filled, fillcolor=coral1]
+o [label=Ortho shape=box, style=filled, fillcolor=lightblue]
+
+p -> pd 
+o -> od 
+
+pd [label=Réserves shape=box, style=filled, fillcolor=lightyellow]
+od [label=Alerte shape=box, style=filled, fillcolor=lightyellow]
+
+s2d -> nf 
+
+nf [label=Nerfs shape=box, style=filled, fillcolor=lightyellow]
+
+nf -> nfa 
+nf -> nfe 
+
+nfa [label=Afférent shape=box, style=filled, fillcolor=lightblue]
+nfe [label=Efférent shape=box, style=filled, fillcolor=coral1]
+
+c -> mn 
+
+mn [label=Méninges shape=box, style=filled, fillcolor=lightyellow]
+
+mn -> mnd 
+mnd [label="Dure-mère > arachnoïdes > pie-mère" shape=box, style=filled, fillcolor=lightyellow]
+
+mn -> lcr 
+
+lcr [label=LCR shape=box, style=filled, fillcolor=lightblue]
+
+lcr -> lcrd 
+
+lcrd [label="Se forme > sang \n remplit ventricules, arachnoïdes\n protège" shape=box, style=filled, fillcolor=lightyellow]
+
+me -> sb -> sbd 
+me -> sg -> sgd 
+
+sb [label="Substance blanche" shape=box, style=filled, fillcolor=lightyellow]
+sg [label="Substance grise" shape=box, style=filled, fillcolor=lightyellow]
+
+
+sbd [label="Riches en fibre myélinisés" shape=box, style=filled, fillcolor=lightyellow]
+
+sgd [label="Riches en corps cellulaires"shape=box, style=filled, fillcolor=lightyellow]
+
+n -> d 
+n -> sm 
+n -> ax 
+
+d [label=Dendrites shape=box, style=filled, fillcolor=lightyellow]
+sm [label=Soma shape=box, style=filled, fillcolor=lightyellow]
+
+ax [label=Axone shape=box, style=filled, fillcolor=lightyellow]
+
+
+
+a2 -> mt 
+a2 -> mod 
+
+mod -> mod1 
+
+mt [label=Motricité shape=box, style=filled, fillcolor=lightyellow]
+
+mod [label=Modulation shape=box, style=filled, fillcolor=lightyellow]
+
+mod1 [label="Fonction cardiaque \n rythme respiratoire \n fonction végétatives" shape=box, style=filled, fillcolor=lightyellow]
+
+
+as [label=Astrocytes shape=box, style=filled, fillcolor=lightpink]
+as -> asd 
+
+asd [label="Très ramifié, formation synapse\n soutien myélinisation, modulation communication" shape=box, style=filled, fillcolor=lightyellow]
+
+og -> ogd 
+
+og [label=Oligodendrocytes shape=box, style=filled, fillcolor=yellow]
+ogd [label="Forment gaine de myélines" shape=box, style=filled, fillcolor=lightyellow]
+
+mi [label=Microglies shape=box, style=filled, fillcolor=lightgreen]
+
+mi -> mid 
+
+mid [label="Cellules immunitaires" shape=box, style=filled, fillcolor=lightyellow]
+
+
+subgraph{rank=same ; n ; mi ; og ; as }
+
+n -> as -> og -> mi 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
