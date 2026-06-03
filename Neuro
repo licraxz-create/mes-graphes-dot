@@ -19,12 +19,13 @@ digraph G {
   sympa [label=Sympatique shape=box, style=filled, fillcolor=plum2]
   sne [label=SNE shape=box, style=filled, fillcolor=orange]
   cev [label=Cerveau shape=box, style=filled, fillcolor=lightblue]
+  enc [label=Encéphale shape=box, style=filled, fillcolor=lightblue]
   moe [label="Moëlle épinière" shape=box, style=filled, fillcolor=lightblue]
   ortho [label=Ortho shape=box, style=filled, fillcolor=coral1]
   para [label=Para shape=box, style=filled, fillcolor=lightblue]
   snc -> cev
   snc -> moe 
-  
+  cev -> enc 
   sn -> snc 
   sn -> snp 
   snp -> soma 
@@ -336,6 +337,8 @@ subgraph {rank=same ; hyp ; pr }
   pa -> sy 
   syc -> ppr 
   
+  enc -> bhe 
 
 }
+
     
