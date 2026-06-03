@@ -1,5 +1,5 @@
 digraph G {
-  rankdir=LR
+rankdir=LR 
 
   sn [label=SN shape=box, style=filled, fillcolor=green]
   c  [label=Cellules shape=box, style=filled, fillcolor=lightgreen]
@@ -33,8 +33,20 @@ digraph G {
   sympa -> para 
   
   snp -> sne 
+  cev -> tc 
+  
+  tc [label="Tronc cérébrale"shape=box, style=filled, fillcolor=lightblue]
+  tc -> br 
+  tc -> pont 
+  tc -> mes 
+  
+  br [label="Buble rachidien" shape=box, style=filled, fillcolor=lightyellow]
+  pont [label=Pont shape=box, style=filled, fillcolor=lightyellow]
+  mes [label=Mésencéphale shape=box, style=filled, fillcolor=lightyellow]
   
       
+      
+
   }
 
   // ── CLUSTER 1 : Neurones ──────────────────────────────────────
@@ -261,29 +273,6 @@ nr [label="Noeud de Ranvier" shape=box, style=filled, fillcolor=lightyellow]
   }
 
   // ── CLUSTER 5 : Schéma intégratif ────────────────────────────
-  subgraph cluster_schema {
-    label="Schéma intégratif"
-    style=filled
-    fillcolor="#e3f2fd"
-    color="#1565c0"
-
-    n1  [label="Neurone" shape=box, style=filled, fillcolor=lightgreen]
-    n2  [label="Neurone" shape=box, style=filled, fillcolor=lightgreen]
-    cg1 [label="Cellule gliale" shape=box, style=filled, fillcolor=lightyellow]
-    cg2 [label="Cellule gliale" shape=box, style=filled, fillcolor=lightyellow]
-    cg3 [label="Cellule gliale" shape=box, style=filled, fillcolor=lightyellow]
-    ce1 [label="Cellule endothéliale" shape=box, style=filled, fillcolor=lightyellow]
-
-    subgraph { rank=same; n1; cg2; ce1 }
-
-    n1 -> n2 [label="Réseau de neurones"]
-    n2 -> cg1
-    cg2 -> cg3 [label=Communication]
-    cg3 -> cg1
-    ce1 -> cg1 [label="Pas de BHE → organe circum."]
-    n1 -> cg2 [label="UNV et BHE"]
-    cg2 -> ce1 [label="UNV et BHE"]
-  }
 
 
   //-Potentiel d'action 
@@ -340,5 +329,3 @@ subgraph {rank=same ; hyp ; pr }
   enc -> bhe 
 
 }
-
-    
