@@ -1,297 +1,341 @@
+digraph G {
+  rankdir=LR
 
+  sn [label=SN shape=box, style=filled, fillcolor=green]
+  c  [label=Cellules shape=box, style=filled, fillcolor=lightgreen]
 
+  
+  //Cluster 2 : principal 
+  
+  subgraph cluster_principal
+  { style=filled 
+  fillcolor=white
+  
+  sn 
+  snc [label=SNC shape=box, style=filled, fillcolor=lightblue]
+  snp [label=SNP shape=box, style=filled, fillcolor=lightyellow]
+  
+  soma [label=Somatique shape=box, style=filled, fillcolor=plum1]
+  sympa [label=Sympatique shape=box, style=filled, fillcolor=plum2]
+  sne [label=SNE shape=box, style=filled, fillcolor=orange]
+  cev [label=Cerveau shape=box, style=filled, fillcolor=lightblue]
+  moe [label="Moëlle épinière" shape=box, style=filled, fillcolor=lightblue]
+  ortho [label=Ortho shape=box, style=filled, fillcolor=coral1]
+  para [label=Para shape=box, style=filled, fillcolor=lightblue]
+  snc -> cev
+  snc -> moe 
+  
+  sn -> snc 
+  sn -> snp 
+  snp -> soma 
+  snp -> sympa -> ortho 
+  sympa -> para 
+  
+  snp -> sne 
+  
+      
+  }
 
-   
+  // ── CLUSTER 1 : Neurones ──────────────────────────────────────
+  subgraph cluster_neurones {
+    label="Neurones"
+    style=filled
+    fillcolor="#e8f5e9"
+    color="#388e3c"
+
+    n   [label=Neurones shape=box, style=filled, fillcolor=lightgreen]
+    nd  [label="Cellule excitable\n(PA)" shape=box, style=filled, fillcolor=lightyellow]
+    d   [label=Dendrites shape=box, style=filled, fillcolor=lightgreen]
+    s   [label=Soma shape=box, style=filled, fillcolor=lightgreen]
+    ax  [label=Axone shape=box, style=filled, fillcolor=lightgreen]
+    dd  [label="Reçoivent infos" shape=box, style=filled, fillcolor=lightyellow]
+    axd [label="Envoie infos" shape=box, style=filled, fillcolor=lightyellow]
+    div [label=Diversité shape=box, style=filled, fillcolor=lightyellow]
+    mo  [label=Morphologie shape=box, style=filled, fillcolor=lightyellow]
+    mlt [label=Multipolaire shape=box, style=filled, fillcolor=lightyellow]
+    u   [label=Unipolaire shape=box, style=filled, fillcolor=lightyellow]
+    b   [label=Bipolaire shape=box, style=filled, fillcolor=lightyellow]
+    loc [label=Localisation shape=box, style=filled, fillcolor=lightyellow]
+    loct[label="Déterminé par\nlocalisation corps cell." shape=box, style=filled, fillcolor=lightyellow]
+    ntr [label=Neurotransmetteurs shape=box, style=filled, fillcolor=lightgreen]
+    rx  [label=Réseaux shape=box, style=filled, fillcolor=lightyellow]
+    rxd [label="Fonction spécifique SN" shape=box, style=filled, fillcolor=lightyellow]
+    pntr [label=Précurseus shape=box, style=filled, fillcolor=lightyellow]
+    entr [label="Enzyme de synthèses" shape=box, style=filled, fillcolor=lightyellow]
+    pntr -> entr -> ntr 
+    n -> nd -> d
+ nd -> s
+   nd -> ax
+    d -> dd
+    ax -> axd
+    n -> div -> mo -> mlt
+    mo -> u
+    mo -> b
+    div -> loc -> loct
+    div -> ntr
+    n -> rx -> rxd
     
+    nd -> mp 
     
-
-{
-
-rankdir = LR 
-sn [label=SN shape=box, style=filled, fillcolor=lightgreen]
-
-snc [label=SNC shape=box, style=filled fillcolor=lightblue]
+    mp [label="Membrane plasmique" shape=box, style=filled, fillcolor=lightyellow]
     
-snp [label=SNP shape=box, style=filled fillcolor=lightyellow]
-
-sn -> snc 
-sn -> snp 
-
-snc -> c 
-snc -> me 
-
-c [label=Cerveau shape=box, style=filled fillcolor=lightblue]
-me [label="Moëlle épinière" shape=box, style=filled fillcolor=lightblue]
-
-
-snp -> soma 
-snp -> sympa 
-snp -> sne 
-
-sne [label=SNE shape=box, style=filled fillcolor=orange]
-soma [label=Somatique shape=box, style=filled fillcolor=lightblue]
-sympa [label=Sympathique shape=box, style=filled fillcolor=plum1]
-
-sympa -> ortho 
-sympa -> para 
-
-
-ortho [label="Ergotrope, situation alerte"shape=box, style=filled fillcolor=coral1]
-
-para [label= "Tropotropes, réserve énergie" shape=box, style=filled fillcolor=lightblue]
+    mp -> mic 
+    mp -> mec 
     
-c -> tc 
-
-tc [label="Tronc cérébrale" shape=box, style=filled fillcolor=lightyellow]
-
-tc -> b 
-tc -> po
-
-b [label="Buble rachidien" shape=box, style=filled fillcolor=lightgreen]
-
-b -> bd 
-
-bd [label="Relais influx sensitif"shape=box, style=filled fillcolor=lightyellow]
-
-po [label=Pont shape=box, style=filled fillcolor=lightgreen]
-
-po -> pd 
-
-pd [label="Relais,respiration" shape=box, style=filled fillcolor=lightyellow]
-
-tc -> mc 
-
-mc [label=Mésencéphale shape=box, style=filled fillcolor=lightgreen]
-
-mc -> mcd 
-
-mcd [label="Coordination mouvement occulaire, motricité" shape=box, style=filled fillcolor=lightyellow]
-
-c -> ct 
-
-ct [label=Cervelet shape=box, style=filled fillcolor=orange]
-
-ct -> ctd 
-
-ctd [label="Traite info cortex moteur, équilibre posture" shape=box, style=filled fillcolor=lightyellow]
-
-c -> dsl 
-
-dsl [label="Dicéphale et système limbique" shape=box, style=filled fillcolor=lightyellow]
-
-dsl -> th 
-dsl -> hyp 
-dsl -> epi 
-dsl -> sl 
-
-th [label=Thalamus shape=box, style=filled fillcolor=lightpink]
-hyp [label=Hypothalamus shape=box, style=filled fillcolor=lightpink]
-epi [label=Epiphyse shape=box, style=filled fillcolor=lightpink]
-sl [label="Système lymbique" shape=box, style=filled fillcolor=lightpink]
-
-c -> cx 
-
-cx [label=Cortex shape=box, style=filled fillcolor=lightblue]
-
-th -> thd 
-thd [label="Relais infos sensorielles" shape=box, style=filled fillcolor=lightyellow]
-thd -> rc 
-rc [label="Régions corticales" shape=box, style=filled fillcolor=lightpink]
-
-hyp -> hypd 
-
-hypd [label="Contrôle fonctions végétatives" shape=box, style=filled fillcolor=lightyellow]
-epi -> epd 
-
-epd [label="Mélatonine" shape=box, style=filled fillcolor=lightyellow]
-
-sl -> sld 
-
-sld [label="Structures centrale autour thalamus, comportement émotionnel et mémoire" shape=box, style=filled fillcolor=lightyellow]
-
-cx -> cxd 
-cxd -> ai 
-
-ai [label=Aires shape=box, style=filled fillcolor=lightyellow]
-ai -> vs -> vs1 
-vs -> vs2 
-ai -> aud -> aud1 
-aud -> aud2 
-ai -> w 
-ai -> sp 
-ai -> B 
-ai -> P 
-ai -> mot
-
-vs [label=Visuelles shape=box, style=filled fillcolor=lightyellow]
-vs1 [label=Primaire shape=box, style=filled fillcolor=lightyellow]
-vs2 [label=Associative shape=box, style=filled fillcolor=lightyellow]
-aud [label=Auditive shape=box, style=filled fillcolor=lightyellow]
-aud1 [label=Primaire shape=box, style=filled fillcolor=lightyellow]
-w [label=Wernicke shape=box, style=filled fillcolor=lightyellow]
-sp [label="Somesthésique primaire" shape=box, style=filled fillcolor=lightyellow]
-B [label=Broca shape=box, style=filled fillcolor=lightyellow]
-P [label=Motrice shape=box, style=filled fillcolor=lightyellow]
-mot [label=Prémotrice shape=box, style=filled fillcolor=lightyellow]
-aud2 [label=Associative shape=box, style=filled fillcolor=lightyellow] 
-cxd [label="couche neurones superficie" shape=box, style=filled fillcolor=lightyellow]
-
-
-od 
- pdd 
-
-od [label="neurones préganglionnaire -> acht -> neurones postganglionnaire -> noradrénaline" shape=box, style=filled fillcolor=lightyellow]
-pdd [label="neurones préganglionnaire et postganglionnaire -> Acht" shape=box, style=filled fillcolor=lightyellow]
-
-sne -> sned 
-sned [label="M.longitudinale -> PM -> m. circulaire -> PS -> m. muqueuse -> m. intestinale" shape=box, style=filled fillcolor=orange]
-
-sned -> snedd 
-snedd [label="distorsion musculaire et muqueuse\n nature chimique composé" shape=box, style=filled fillcolor=lightyellow]
-
-
-re [label=Retine shape=box, style=filled fillcolor=lightgreen]
-
-
-
-re -> red 
-
-red [label="Succession cellules réceptrices et nerveuse" shape=box, style=filled fillcolor=lightyellow]
-
-red -> cpr 
-
-cpr [label="Cellules photoreceptrice,Cellules bipolaires\n , Cellules ganglionnaire, se rejoignent au point aveugle"shape=box, style=filled fillcolor=lightyellow]
-
-cpr -> no -> dsl 
-no [label="Nerf optique" shape=box, style=filled fillcolor=lightblue]
-
-
-
-
-
-a [label="Commande générale\n collect infos" shape=box, style=filled, fillcolor=lightyellow]
-
-subgraph {rank=same ; a ; a1 ; a2 }
-
-a1 [label="Analyse" shape=box, style=filled, fillcolor=lightyellow]
-
-a2 [label="Réaction" shape=box, style=filled, fillcolor=lightyellow]
-
-a -> a1 -> a2 
-
-subgraph {rank=same ; SN ; cs ; n }
-
-cs [label=Cellules shape=box, style=filled, fillcolor=lightyellow]
-
-n [label=Neurones shape=box, style=filled, fillcolor=lightgreen]
-
-SN -> cs -> n 
-
-
-
-s2d -> nf 
-
-nf [label=Nerfs shape=box, style=filled, fillcolor=lightyellow]
-
-nf -> nfa 
-nf -> nfe 
-
-nfa [label=Afférent shape=box, style=filled, fillcolor=lightblue]
-nfe [label=Efférent shape=box, style=filled, fillcolor=coral1]
-
-c -> mn 
-
-mn [label=Méninges shape=box, style=filled, fillcolor=lightyellow]
-
-mn -> mnd 
-mnd [label="Dure-mère > arachnoïdes > pie-mère" shape=box, style=filled, fillcolor=lightyellow]
-
-mn -> lcr 
-
-lcr [label=LCR shape=box, style=filled, fillcolor=lightblue]
-
-lcr -> lcrd 
-
-lcrd [label="Se forme > sang \n remplit ventricules, arachnoïdes\n protège" shape=box, style=filled, fillcolor=lightyellow]
-
-me -> sb -> sbd 
-me -> sg -> sgd 
-
-sb [label="Substance blanche" shape=box, style=filled, fillcolor=lightyellow]
-sg [label="Substance grise" shape=box, style=filled, fillcolor=lightyellow]
-
-
-sbd [label="Riches en fibre myélinisés" shape=box, style=filled, fillcolor=lightyellow]
-
-sgd [label="Riches en corps cellulaires"shape=box, style=filled, fillcolor=lightyellow]
-
-n -> d 
-n -> sm 
-n -> ax 
-
-d [label=Dendrites shape=box, style=filled, fillcolor=lightyellow]
-sm [label=Soma shape=box, style=filled, fillcolor=lightyellow]
-
-ax [label=Axone shape=box, style=filled, fillcolor=lightyellow]
-
-
-
-a2 -> mt 
-a2 -> mod 
-
-mod -> mod1 
-
-mt [label=Motricité shape=box, style=filled, fillcolor=lightyellow]
-
-mod [label=Modulation shape=box, style=filled, fillcolor=lightyellow]
-
-mod1 [label="Fonction cardiaque \n rythme respiratoire \n fonction végétatives" shape=box, style=filled, fillcolor=lightyellow]
-
-
-as [label=Astrocytes shape=box, style=filled, fillcolor=lightpink]
-as -> asd 
-
-asd [label="Très ramifié, formation synapse\n soutien myélinisation, modulation communication" shape=box, style=filled, fillcolor=lightyellow]
-
-og -> ogd 
-
-og [label=Oligodendrocytes shape=box, style=filled, fillcolor=yellow]
-ogd [label="Forment gaine de myélines" shape=box, style=filled, fillcolor=lightyellow]
-
-mi [label=Microglies shape=box, style=filled, fillcolor=lightgreen]
-
-mi -> mid 
-
-mid [label="Cellules immunitaires" shape=box, style=filled, fillcolor=lightyellow]
-
-
-subgraph{rank=same ; n ; mi ; og ; as }
-
-n -> as -> og -> mi 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
+    subgraph {rank=same ; mic ; mec }
+    
+    mic -> mec [label="Vm"]
+    
+    mic [label="MIC" shape=box, style=filled, fillcolor=lightyellow]
+    mec [label="MEC" shape=box, style=filled, fillcolor=lightyellow]
     
     
     
+  }
+
+  // ── CLUSTER 2 : Synapses ──────────────────────────────────────
+  subgraph cluster_synapses {
+    label="Synapses"
+    style=filled
+    fillcolor="#ede7f6"
+    color="#6a1b9a"
+sy -> typ 
+typ[label=Type shape=box, style=filled, fillcolor=lightyellow]
+typ -> syc 
+typ -> sye 
+
+syc [label=Chimiques shape=box, style=filled, fillcolor=lightblue]
+sye [label=Electriques shape=box, style=filled, fillcolor=coral1]
+    sy   [label=Synapses shape=box, style=filled, fillcolor=plum1]
+    syd  [label="Transmission\nentre neurones" shape=box, style=filled, fillcolor=lightyellow]
+    nps  [label="Neurone présynaptique" shape=box, style=filled, fillcolor=lightblue]
+    npos [label="Neurone postsynaptique" shape=box, style=filled, fillcolor=coral1]
+   lsy [label=Localisation shape=box, style=filled, fillcolor=lightyellow]
+  lsyd [label="Axo dendritiques ; axo-axonale,\n  en passant ; axo-soma" shape=box, style=filled, fillcolor=lightyellow]
+   typ -> lsy 
+    sy -> syd -> nps
+    nps -> npos [label="Fente synaptiques"]
+    
+    lsy -> lsyd 
+      
+      nps -> e1 -> e2 -> e3 
+      subgraph {rank=same ; e1 ; e2 ; e3 ; nps}
+      subgraph {rank=same ; npos ; e5 ; e6 ; e7 }
+      
+
+
+
+      e1 [label="Entrée Ca2+" shape=box, style=filled, fillcolor=lightblue]
+      e2 [label="Fusion vésiculaes avec MP" shape=box, style=filled, fillcolor=lightblue]
+      e3 [label="Exocytose" shape=box, style=filled, fillcolor=lightblue]
+      e4 [label="Diffusion fente" shape=box, style=filled, fillcolor=lightyellow]
+      e5 [label="Liaison récepteurs post" shape=box, style=filled, fillcolor=lightyellow]
+      e6 [label="Activation récepteurs" shape=box, style=filled, fillcolor=lightyellow]
+      e7 [label="Réponse cellulaires" shape=box, style=filled, fillcolor=coral1]
+      
+    e3 -> e4 
+    e4 -> e5 -> e6 -> e7 
+e7 -> npos  
+    
+    e2 -> e6 [style=invis]
+    e1 -> e7 [style=invis]
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+  }
+    
+    subgraph cluster_jnm {
+        label="Jonction neuro-musuclaire"
+        style=filled 
+        fillcolor="#e3f2fd"
+        
+        ppr [label="terminaison axonale motoneurone" shape=box, style=filled, fillcolor=lightblue]
+        pps [label="fibre musculaire" shape=box, style=filled, fillcolor=coral1]
+       vacht [label="Vésicules Acht" shape=box, style=filled, fillcolor=lightyellow]
+       racth [label="Récepteurs Acht" shape=box, style=filled, fillcolor=lightyellow]
+        ppr -> vacht 
+        vacht -> racth [label=Fente]
+        racth -> pps 
+        
+  
+  
+  
+  
+    }
+
+  // ── CLUSTER 3 : Cellules gliales ─────────────────────────────
+  subgraph cluster_gliales {
+    label="Cellules gliales"
+    style=filled
+    fillcolor="#fff8e1"
+    color="#f57f17"
+
+    cg  [label="Cellules gliales" shape=box, style=filled, fillcolor=lightyellow]
+    a   [label=Astrocytes shape=box, style=filled, fillcolor=lightpink]
+    ad  [label="Contact neurones,\nendothéliales, capillaires" shape=box, style=filled, fillcolor=lightyellow]
+    a2  [label="Modulation, myélinisation,\ntransport, immunité" shape=box, style=filled, fillcolor=lightyellow]
+    e   [label=Ependymocytes shape=box, style=filled, fillcolor=yellow]
+    ed  [label="Cellules ciliées,\nbordure ventricules" shape=box, style=filled, fillcolor=lightyellow]
+    lcr [label=LCR shape=box, style=filled, fillcolor=orange]
+    o   [label=Oligodendrocytes shape=box, style=filled, fillcolor=orange]
+    od  [label="Conduction rapide,\nstructure, nutriments" shape=box, style=filled, fillcolor=lightyellow]
+    my  [label=Myélinisation shape=box, style=filled, fillcolor=orange]
+    cs  [label="Cellule de Schwann" shape=box, style=filled, fillcolor=orange]
+    csd [label="Cellule gliale du SNP" shape=box, style=filled, fillcolor=lightyellow]
+    mi  [label=Microglies shape=box, style=filled, fillcolor=plum1]
+    mid [label="Surveillance, plasticité,\nimmunité, réparation" shape=box, style=filled, fillcolor=lightyellow]
+    t   [label=Tanycytes shape=box, style=filled, fillcolor=lightpink]
+    td  [label="Détection nutriments,\nhormones, modulation" shape=box, style=filled, fillcolor=lightyellow]
+    p   [label=Pituicytes shape=box, style=filled, fillcolor=lightyellow]
+    pd  [label="Régulent libération\nneurone hypophysaire" shape=box, style=filled, fillcolor=lightyellow]
+myd [label="Formation gaine de myéline" shape=box, style=filled, fillcolor=lightyellow]
+nr [label="Noeud de Ranvier" shape=box, style=filled, fillcolor=lightyellow]
+
+
+
+
+    cg -> a -> ad
+    a -> a2
+    cg -> e -> ed
+    ed -> lcr [label=Sécrètent]
+    cg -> o -> od -> my
+    cg -> cs -> csd -> my
+    cg -> mi -> mid
+    cg -> t -> td
+    cg -> p -> pd
+    my -> myd 
+    
+    myd -> nr [label="Ions du PA passer dans MP"]
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  }
+
+  // ── CLUSTER 4 : BHE & unité neuro-vasculaire ─────────────────
+  subgraph cluster_vasculaire {
+    label="BHE & Unité neuro-vasculaire"
+    style=filled
+    fillcolor="#fce4ec"
+    color="#c62828"
+
+    ce   [label="Cellules endothéliales" shape=box, style=filled, fillcolor=lightyellow]
+    pe   [label=Pericytes shape=box, style=filled, fillcolor=lightyellow]
+    bhe  [label=BHE shape=box, style=filled, fillcolor=coral1]
+    bhed [label="Régulation entrée\nmolécules dans SNC" shape=box, style=filled, fillcolor=lightyellow]
+    cv   [label="Cellules vasculaires" shape=box, style=filled, fillcolor=lightyellow]
+    unv  [label="Unité neuro-vasculaire" shape=box, style=filled, fillcolor=lightgreen]
+    unvd [label="Couplage neuronal,\nnutriments, O2" shape=box, style=filled, fillcolor=lightyellow]
+    ocri [label="Organe circumventriculaire" shape=box, style=filled, fillcolor=lightyellow]
+
+    ce -> pe -> bhe
+    bhe -> bhed
+    bhe -> ocri [label="Si absente"]
+    pe -> cv -> unv -> unvd
+  }
+
+  // ── CLUSTER 5 : Schéma intégratif ────────────────────────────
+  subgraph cluster_schema {
+    label="Schéma intégratif"
+    style=filled
+    fillcolor="#e3f2fd"
+    color="#1565c0"
+
+    n1  [label="Neurone" shape=box, style=filled, fillcolor=lightgreen]
+    n2  [label="Neurone" shape=box, style=filled, fillcolor=lightgreen]
+    cg1 [label="Cellule gliale" shape=box, style=filled, fillcolor=lightyellow]
+    cg2 [label="Cellule gliale" shape=box, style=filled, fillcolor=lightyellow]
+    cg3 [label="Cellule gliale" shape=box, style=filled, fillcolor=lightyellow]
+    ce1 [label="Cellule endothéliale" shape=box, style=filled, fillcolor=lightyellow]
+
+    subgraph { rank=same; n1; cg2; ce1 }
+
+    n1 -> n2 [label="Réseau de neurones"]
+    n2 -> cg1
+    cg2 -> cg3 [label=Communication]
+    cg3 -> cg1
+    ce1 -> cg1 [label="Pas de BHE → organe circum."]
+    n1 -> cg2 [label="UNV et BHE"]
+    cg2 -> ce1 [label="UNV et BHE"]
+  }
+
+
+  //-Potentiel d'action 
+ subgraph cluster_pa {
+     label="Potentiel d'action"
+     style=filled
+     fillcolor=thistle
+
+pr [label="Potentiel repos"  shape=box, style=filled, fillcolor=lightyellow]
+hyp [label=Hyperpolarisation shape=box, style=filled, fillcolor=lightblue]
+dep [label=Depolarisation shape=box, style=filled, fillcolor=coral1]
+rep [label=Repolarisation shape=box, style=filled, fillcolor=lightyellow]
+pa [label="Potentiel d'action" shape=box, style=filled, fillcolor=plum1]
+pf [label="Période réfractaire"shape=box, style=filled, fillcolor=lightyellow ]
+pfa [label="Absolue" shape=box, style=filled, fillcolor=lightyellow]
+pfr [label="Relative" shape=box, style=filled, fillcolor=lightyellow]
+pfad [label="Canaux Na+ inactivés"shape=box, style=filled, fillcolor=lightyellow]
+pfrd [label="Nécessité de plus grande dépolarisation pour PA" shape=box, style=filled, fillcolor=lightyellow]
+pfad -> pfa 
+pfrd -> pfr
+
+
+pf -> pfa 
+
+
+pfa -> pfr 
+pr -> dep 
+dep ->pa [label="Entrée Na+/Rétro(+)"]
+pa -> rep
+rep -> hyp  [label="Sortie K+"]
+hyp -> pr 
+pfr -> rep [style=invis]
+pfa -> pr [style=invis]
+
+
+subgraph {rank=same ; pr ; dep } 
+subgraph {rank=same ; pfr ; pfa ; pf }
+subgraph {rank=same ; pa ; rep}
+subgraph {rank=same ; hyp ; pr }
+
+
+
+
+ }
+
+   // ── Connexions inter-clusters ─────────────────────────────────
+  c -> n
+  c -> cg
+  c -> ce
+  a2 -> sy [label="Communication neuronales"]
+  pa -> sy 
+  syc -> ppr 
+  
+
 }
+    
