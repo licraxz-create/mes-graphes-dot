@@ -1,0 +1,392 @@
+digraph G {
+    
+    nodesep = 0.3; // Valeur par défaut : 0.25 (réduire pour rapprocher)
+    ranksep = 0.1; // Espacement vertical (réduire pour rapprocher)
+    
+
+    rankdir=LR;
+    node [shape=box ; style=filled];
+
+    ps [label="Psychologie sociale", style=filled, fillcolor=IndianRed1];
+
+    ps -> xp;
+    xp [label="Expériences", style=filled, fillcolor=lightyellow];
+
+    xp -> mil;
+    mil [label="Milgram", style=filled, fillcolor=lightblue];
+
+  
+    ps -> d [label="Définition"];
+    
+    xp -> ash 
+    xp -> shr 
+    
+    ash [label=Ash  fillcolor=lightblue]
+    shr [label=Shérrif  fillcolor=lightblue]
+
+    d [label="Discipline qui vise à expliquer comment les sentiments et les comportements des individus sont influencés par les autres",
+       style=filled, fillcolor=lightyellow];
+
+    subgraph cluster_concepts {
+
+        label="Concepts de soi, identité, groupe";
+        style=filled;
+        fillcolor=azure;
+
+        c [label="Concepts", style=filled, fillcolor=cornflowerblue];
+
+        c -> s;
+        s [label="Soi", style=filled, fillcolor=lightblue];
+
+        s -> cs [label="Cognitif"];
+        s -> es [label="Affectif"];
+        s -> pts [label="Conatif"];
+
+        cs [label="Concept de soi", style=filled, fillcolor=lightblue];
+        es [label="Estime de soi", style=filled, fillcolor=lightblue];
+        pts [label="Présentation de soi", style=filled, fillcolor=lightblue];
+
+        c -> is;
+        is [label="Identité sociale", style=filled, fillcolor=lightblue];
+
+        c -> gp;
+        gp [label="Groupe", style=filled, fillcolor=lightblue];
+
+        cs -> csd -> cst;
+
+        csd [label="Observation répétée\nComparaison sociale",
+             style=filled, fillcolor=lightyellow];
+
+        cst [label="Activation ponctuelle selon la situation",
+             style=filled, fillcolor=lightyellow];
+
+        es -> est;
+
+        est [label="Autoévaluation",
+             style=filled, fillcolor=lightyellow];
+
+        est -> mdp [label="Positif"];
+        est -> fdr [label="Négatif"];
+
+        mdp [label="Mécanismes de protection",
+             style=filled, fillcolor=lightblue];
+
+        fdr [label="Facteur de risque",
+             style=filled, fillcolor=lightblue];
+
+        fdr -> st;
+
+        st [label="Stéréotypes",
+            style=filled, fillcolor=lightblue];
+
+        mdp -> mdpd;
+
+        mdpd [label="Biais égocentrique ; exagération\nBiais du faux consensus ; penser que les autres sont comme nous\nEffet projecteur ; surestimation\nBiais d'unicité des attributs",
+              style=filled, fillcolor=lightyellow];
+
+        pts -> sa;
+        sa -> si;
+        sa -> so;
+
+        si -> sra [style=invis];
+        so -> sra [style=invis];
+
+        sa [label="Soi authentique",
+            style=filled, fillcolor=lightblue];
+
+        si [label="Soi idéal",
+            style=filled, fillcolor=lightgreen];
+
+        so [label="Soi obligé",
+            style=filled, fillcolor=lightgreen];
+
+        sra [label="Soi stratégique",
+             style=filled, fillcolor=lightblue];
+   
+   pi -> is 
+   pip -> ip 
+   
+   pi [label="Pôle intergroupe"style=filled]
+   pip [label="Pôle interpersonnel"style=filled]
+   
+   ip [label="Identité personnelle"style=filled, fillcolor=lightblue]
+   
+   is -> os 
+   ip -> os 
+   
+   os [label="Oscillation identité en fonction\n proximité du pôles" style=filled fillcolor=lightyellow]
+   os -> va 
+   
+   va [label=Valorisation fillcolor=IndianRed1]
+   
+   va -> sva 
+   
+   sva [label="Stratégie valorisation" fillcolor=Indianred1]
+   
+   sva -> ms 
+   
+   sva -> chs 
+   
+   ms [label="Moibilité sociale = action individuelle" fillcolor=lightgreen]
+   
+   chs [label="Changemnt sociale= action collective" fillcolor=lightgreen]
+   
+   is -> tag 
+   
+   tag [label="Théorie auto-catégorisation" fillcolor=lightblue]
+   
+   tag -> percp 
+   tag -> cpt 
+   tag -> mg 
+
+
+gp -> mg 
+
+percp [label="Catégorie déterminé sur base hiérarchie" fillcolor=lightyellow]
+cpt [label="Accessibilité ou aquéquation : \n disponibilité cognitive, méta-contraste, correspondance" fillcolor=lightyellow]
+
+mg [label="Dépersonnalisation ; passage de identité personelle à sociale" fillcolor=lightyellow]
+
+gp -> apg 
+
+apg [label=Approches fillcolor=lightblue]
+
+apg -> apgd 
+
+apgd [label="Individualiste (invidu)\n dynamique = composantes\n cognitive = dynamique + individualiste\n sociométrique = sociogramme" fillcolor=lightyellow]
+
+   }
+
+    
+subgraph cluster_att {
+    
+    label=Attitudes 
+    style=filled 
+    fillcolor=azure1
+
+    att [label=Attitude fillcolor=lightblue]
+    
+    atd -> att 
+    
+    atd [label="Evaluation objet"]
+    
+    att -> iatt[label=Intensité] 
+    att -> vatt[label=Valence]
+    
+    iatt [label="Puissance émotionnelle"]
+    vatt [label=Direction ]
+    
+    subgraph {rank=same ; att ; att1 }
+    
+    att -> att1 
+    
+    att1 [label="Force = stabilité / persistance" fillcolor=IndianRed1]
+    
+    oatt [label=Objet ]
+    
+    oatt -> m1 
+    oatt -> m2 
+    oatt -> m3 
+    
+    m1 [label="Modèle unidimensionnlle" fillcolor=lightblue]
+    
+    m2 [label="Modèle tri classique" fillcolor=lightblue]
+    m3 [label="Modèle tri revisité" fillcolor=lightblue]
+    
+    m2 -> m21 
+    m1 -> m2A 
+    m2A [label="Evaluation +-" ]
+    m2 -> m22 
+    m2 -> m23 
+    m3 -> m2E 
+    
+    m2E [label="Conciliation 2 modèles"]
+    
+    m21 [label=Conitif ]
+    m22 [label=Conatif ]
+    m23 [label=Affectif]
+    
+    subgraph {rank=same ; m21 ; m22 ; m23 }
+    
+att -> int 
+
+int [label=Intention  fillcolor=lightblue]
+
+int -> cpts
+
+cpts [label=Comportement  fillcolor=lightblue]
+
+cp -> int 
+
+subgraph {rank=same ; cp ; int }
+
+cp [label="Contrôle perçu (comportement planifié)"  fillcolor=orange]
+
+
+    
+    cpts -> mod 
+    
+    mod [label="Modifier comportement"  fillcolor=lightyellow]
+    
+    mod -> p 
+    mod -> e 
+    mod -> disc 
+    
+    p [label=Persuasion  fillcolor=IndianRed1]
+    e [label=Engagement  fillcolor=lightblue]
+    disc [label="Dissonnance cognitive"  fillcolor=lightblue]
+    
+    p -> p1 
+    p -> p2 
+    p1 -> p3 
+    p1 -> p4 
+    p4 -> p5 
+    p4 -> p6 
+    
+    p1 [label="Approche cognitive"  fillcolor=lightblue]
+    p2 [label="Modèles apprentissage et com"  fillcolor=lightblue]
+    p3 [label="Modèl stochastique"  fillcolor=lightblue]
+    p4 [label="Duaux de persuasion"  fillcolor=lightblue]
+    p5 [label=Probabilité  fillcolor=lightblue]
+    p6 [label="Heuristique vs sémantique"  fillcolor=lightblue]
+    
+    
+    e -> e1 
+    e -> e2 
+    
+    e1 -> e3 
+    e1 -> e4 
+    
+    e2 -> e5 
+    e2 -> e6 
+    
+    e1 [label="Escalade engagement"  fillcolor=lightblue]
+    e2 [label="Soumission librement consentie"  fillcolor=lightblue]
+    
+    e3 [label="Dépense gâchée"  fillcolor=lightblue]
+    e4 [label="Piège abscons"  fillcolor=lightblue]
+    
+    e5 [label="PDLP"  fillcolor=lightblue]
+    e6 [label=Amorçage  fillcolor=lightblue]
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
+    
+    
+    
+    
+    
+    subgraph cluster_is {
+        label="Influence sociale"
+        style=filled 
+        fillcolor=azure
+        
+        
+    n [label=Normalisation  fillcolor=cornflowerblue]
+    cof [label=Conformisme fillcolor=cornflowerblue]
+    ob [label=Obéissance fillcolor=cornflowerblue]
+    
+ shr -> n 
+ ash -> cof 
+ mil -> ob 
+        
+        
+   n -> pcn 
+   
+   pcn [label="Processus communication" fillcolor=lightblue]
+   
+   pcn -> evc 
+   
+   evc [label="Evitement conflit" fillcolor=lightblue]
+   
+   n -> nd 
+   
+   nd [label="Mécanisme de négociation" fillcolor=IndianRed1]
+   
+   cof -> ima 
+   cof -> imi 
+   
+   ima [label="Influence majoritaire" fillcolor=lightblue]
+   imi [label="Influence minoritaire" fillcolor=lightblue]
+   
+   ima -> infl 
+   
+   infl [label=Influence]
+   
+   infl -> infn 
+   
+   infl -> info 
+   
+   infn [label=Normative]
+   
+
+info [label=Informationnlle]
+
+ob -> ea 
+ea [label="Etat autonome vs Agentique" fillcolor=lightblue]
+imi -> pbv 
+
+pbv [label="Paradigme bleu-vert" fillcolor=lightblue]
+
+
+}
+
+subgraph cluster_cs {
+style=filled 
+fillcolor=azure
+persp [label="Perception sociale" fillcolor=lightblue]
+
+tip [label="Théories implicites personnalité" fillcolor=lightblue]
+
+tip -> persp
+
+theoeq [label="théorie de l'équilibre"fillcolor=lightblue]
+
+theoeq -> attc
+
+attc [label="Attribution causale"fillcolor=lightblue]
+
+attc -> hatt 
+
+hatt [label="Hétéro-attribution" fillcolor=lightblue]
+
+attc -> auatt 
+
+auatt [label="auto-attribution" fillcolor=orange]
+
+hatt -> mifc 
+
+hatt -> mcov 
+
+mifc [label="modèle inférences correspondantes" fillcolor=lightblue]
+
+auatt -> mcov 
+
+mcov [label="Modèle covariation"fillcolor=orange]
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
