@@ -1,0 +1,224 @@
+digraph G {
+
+rankdir=LR 
+nodesep = 0.45; // Valeur par défaut : 0.25 (réduire pour rapprocher)
+    ranksep = 0.5; // Espacement vertical (réduire pour rapprocher)
+    
+cf [label="Constats fortuits" style=filled shape=box]
+os [label="Observation systématisée" style=filled shape=box]
+pi [label="Prise infos pairs" style=filled shape=box]
+
+cf -> eh 
+os -> eh 
+pi -> eh 
+subgraph {rank=same ; os ; eh ; es ; pa ;ar ; dc }
+eh [label="Enonciation d'une hypothèse" style=filled shape=box style=filled, fillcolor=indianred1]
+eh -> es 
+
+es [label="Elaboration d'un schéma -\n dessein expérimentale" style=filled shape=box style=filled, fillcolor=indianred1]
+
+es -> pa 
+
+pa [label="Passage à l'acte" style=filled shape=box style=filled, fillcolor=indianred1]
+
+pa -> ar 
+
+ar [label="Analyse des résultas" style=filled shape=box style=filled, fillcolor=indianred1]
+
+ar -> dc 
+
+dc [label="Discussion-conclusion"style=filled shape=box style=filled, fillcolor=indianred1]
+
+
+pe [label="Prologements expérimentauex" style=filled shape=box style=filled]
+as [label="Acroissement du savoir" style=filled shape=box style=filled]
+
+dc -> as 
+pe -> dc [style=invis]
+
+pe -> nh 
+
+nh [label="Nouvelles hypothèses" style=filled shape=box style=filled, fillcolor=indianred1]
+
+rh -> pe 
+rh -> eh  
+
+rh [label="Retour sur les hypothèses" style=filled shape=box style=filled]
+
+
+
+eh -> h 
+
+
+
+h [label=Hypothèse style=filled shape=box style=filled, fillcolor=lightskyblue1]
+
+h -> def -> dd 
+
+def [label=Définitions style=filled shape=box style=filled]
+
+dd [label="Relation entre deux faits\n Méthode expérimentale : causes -  conséquences" style=filled shape=box style=filled, fillcolor=lightskyblue1]
+
+dd -> dhd 
+
+dhd [label="Démarche hypothético-déductive" style=filled shape=box style=filled, fillcolor=indianred1]
+
+
+
+dhd -> dcsm 
+
+dcsm [label="Démarche classique de la sciences modernes" style=filled shape=box style=filled, fillcolor=lightskyblue1]
+
+dhd -> me 
+
+me [label="Méthode expérimentale" style=filled shape=box style=filled, fillcolor=indianred1]
+
+h -> c 
+
+
+
+c [label="Critères" style=filled shape=box style=filled]
+
+c -> o 
+c -> v 
+c -> v2 
+c -> ce 
+c -> poe
+c -> a 
+
+subgraph {rank=same ; pe ; nh }
+
+
+cf -> os [style=invis]
+os -> pi [style=invis]
+
+
+o [label="Opérationnalité" style=filled shape=box style=filled, fillcolor=lightskyblue1]
+v [label=Vérifiabilité style=filled shape=box style=filled, fillcolor=lightskyblue1]
+v2 [label=Vraisemblance style=filled shape=box style=filled, fillcolor=lightskyblue1]
+ce [label="Cohérence externe" style=filled shape=box style=filled, fillcolor=lightskyblue1]
+poe [label="Productivité épistémique" style=filled shape=box style=filled, fillcolor=lightskyblue1]
+a [label=Admissibilité style=filled shape=box style=filled, fillcolor=lightskyblue1]
+
+o -> o1 
+
+o1 [label="Enoncée de maière suffisament claire\n hypothèse claire et accessible" style=filled shape=box style=filled, fillcolor=lightskyblue1]
+v -> v1 
+v1 [label="Confronté les faits, testable" style=filled shape=box style=filled, fillcolor=lightskyblue1]
+
+v2 -> v21 
+
+v21 [label="Procéder à mise à l'épreuve que la mesure porte à considérer que c'est vrai" style=filled shape=box style=filled, fillcolor=lightskyblue1]
+
+ce -> ced 
+
+ced [label="Liaison avec ensemble connaissances\n s'articulent avec les recherches connues" style=filled shape=box style=filled, fillcolor=lightskyblue1]
+
+poe -> poed 
+
+poed [label="Vérification de l'hypothèse permet accroissement connaissances" style=filled shape=box style=filled, fillcolor=lightskyblue1]
+
+a -> ad 
+
+ad [label="Légale : loi prohibe action\n Déontologie : norme déonton \n Morale : valeurs morales personnelles \n Ethique : confrontation comité éthique " style=filled shape=box style=filled, fillcolor=lightskyblue1]
+
+es -> dv 
+es -> ss 
+es -> cg 
+
+dv [label="Définir les variables" style=filled shape=box style=filled, fillcolor=lightskyblue1]
+ss [label="Sélectionner sujets" style=filled shape=box style=filled, fillcolor=lightskyblue1]
+cg [label="Constituer des groupes" style=filled shape=box style=filled, fillcolor=lightskyblue1]
+
+dv -> va 
+
+va [label=Variables style=filled shape=box style=filled]
+
+va -> vad 
+va -> vi -> vip 
+vi -> vii 
+
+va -> vp 
+
+vad [label="Variable dépendante" style=filled shape=box style=filled, fillcolor=indianred1]
+vi [label="Variable indépendante" style=filled shape=box style=filled, fillcolor=indianred1]
+vp [label="Variable parasite" style=filled shape=box style=filled]
+
+
+vip [label=Provoquée style=filled shape=box style=filled]
+vii [label=Invoquée style=filled shape=box style=filled]
+
+
+
+vii -> viid 
+viid [label="Caractéristiques non manipulable" style=filled shape=box style=filled]
+vip -> vipd 
+vipd [label="Caractéristiques manipulable"style=filled shape=box style=filled]
+
+ss -> ech 
+
+ech [label=Echantillons style=filled shape=box style=filled, fillcolor=lightskyblue1]
+
+ech -> e1 
+ech -> e2 
+
+e1 [label="Aléatoire simple"style=filled shape=box style=filled, fillcolor=lightskyblue1]
+
+e1 -> e1d 
+
+e1d [label="Garantie représentativité\n Sélection sujet absence critères\n difficile mettre en place" style=filled shape=box style=filled]
+e2 [label="Occasionnel" style=filled shape=box style=filled, fillcolor=lightskyblue1]
+e2 -> e2d 
+
+e2d [label="Disponibilité sujet" style=filled shape=box style=filled]
+
+ech -> e3 -> e3d 
+
+e3 [label=Empirique style=filled shape=box style=filled, fillcolor=lightskyblue1]
+e3d [label="Représentativité population (écoles/électios)"style=filled shape=box style=filled]
+ech -> e4 -> e4d 
+
+e4 [label="Stratifité" style=filled shape=box style=filled, fillcolor=lightskyblue1]
+e4d [label="Répartition sujets dans classes critère déterminé" style=filled shape=box style=filled]
+
+cg -> ge 
+
+ge [label="Groupes équivalents" style=filled shape=box style=filled, fillcolor=lightskyblue1]
+
+ge -> e1 
+ge -> ga 
+
+ga [label="Groupes appariés" style=filled shape=box style=filled, fillcolor=lightskyblue1]
+
+ga -> gad 
+
+gad [label="Identifité un VP mesuré la VP \n et associer sujet en fonctions VP (appariement niv.fatigue)" style=filled shape=box style=filled]
+
+ge -> gp 
+
+gp [label="Groupes parallèles" style=filled shape=box style=filled, fillcolor=lightskyblue1]
+
+gp -> gpd 
+
+gpd [label="Figer la VP" style=filled shape=box style=filled]
+
+cg -> gc 
+
+gc [label="Groupes contrastés" style=filled shape=box style=filled, fillcolor=lightskyblue1]
+
+gc -> gcd 
+
+gcd [label="identifier factreurs qui explique différences"style=filled shape=box style=filled]
+
+
+
+
+
+
+
+
+
+
+
+
+}
