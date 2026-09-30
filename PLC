@@ -58,11 +58,44 @@ mvtd [label="Utilisation app. amplificateurs, filtrants\n otpimisée malgrée la
 LS  -> lsp 
 lsp [label="Caractère conventionnel du signe\n multicomposite ; phonologie paramètre de formation du signe" shape=box, style=filled]
 
+lsd -> ws 
 
-    
-    
-    
-    
+ws [label="William Stokoe" shape=box, style=filled, fillcolor=lightgreen ]
+
+ws -> wsd 
+
+wsd [label="Double articulations\n Unités lexicales organisées entre elles selon des règles\n Unités sous-lexicales"shape=box, style=filled]
+
+wsd -> w1 
+
+w1 [label="Identification de paramètres\n formation des signes\n configuration main, emplacement, orientation, mvt" shape=box, style=filled, fillcolor=lightgreen]
+
+lsp -> pfs 
+
+pfs [label="Formation des signes" shape=box, style=filled, fillcolor=lightgreen]
+
+pfs -> pfs1 
+
+pfs1 [label="Phonologie" shape=box, style=filled, fillcolor=lightgreen]
+
+w1 -> pfs1
+
+subgraph {rank=same ; w1 ; pfs1 }
+
+pfs -> pfs2 
+
+pfs2 [label="Morhologie et syntaxe" shape=box, style=filled, fillcolor=lightgreen]
+
+pfs2 -> pfs2d 
+
+pfs2d [label="Relation entre éléments lexicaux actualisés par mvt" shape=box, style=filled]
+   
+
+pfs -> pfs3 
+
+pfs3 [label="Prosodie émotionnelle et linguistique" shape=box, style=filled, fillcolor=lightgreen]
+
+
     
     
     
