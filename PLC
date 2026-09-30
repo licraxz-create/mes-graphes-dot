@@ -1,0 +1,81 @@
+digraph G {
+
+  rankdir=LR 
+  
+  
+l [label=Langue shape=box, style=filled, fillcolor=cornflowerblue]
+
+l -> ling 
+
+ling [label=Linguistique shape=box, style=filled]
+
+ling -> lingd 
+
+lingd [label="•Moyen de communication \n • Registre de langue\n • système de signes et de règles" shape=box, style=filled]
+
+p [label=Parole shape=box, style=filled, fillcolor=cornflowerblue]
+
+p -> pd 
+
+pd [label="Résultat de l'action de parler\n S'oppose à notion de langue\n Résulte d'un acte physiologique volontaire"shape=box, style=filled]
+
+lg -> p 
+lg -> l 
+
+fs -> lg 
+
+fs [label="Ferdinand de Saussure" shape=box, style=filled]
+
+lg [label=Langage shape=box, style=filled, fillcolor=cornflowerblue]
+
+l -> ps 
+p -> pi 
+
+ps [label="Phénomène social"shape=box, style=filled, fillcolor=cornflowerblue]
+pi [label="Phénomène individuel" shape=box, style=filled, fillcolor=cornflowerblue]
+
+subgraph {rank=same ; l ; p }
+
+l -> p [label=Interdépendance]
+p -> l 
+    
+    
+LS [label="Langue des signes"shape=box, style=filled, fillcolor=lightgreen]
+
+LS -> lsd 
+
+lsd [label="XVe siècle : Dactylologie \n XVIIe siècle : première reconnaissance LS Charles Michel Abbée Epée\n XIXe siècle : avènement éducation oraliste" shape=box, style=filled]
+    
+LS -> mvt 
+
+mvt [label="Méthode verbo-tonale" shape=box, style=filled, fillcolor=lightgreen]
+
+mvt -> mvtd 
+
+mvtd [label="Utilisation app. amplificateurs, filtrants\n otpimisée malgrée la perte auditive" shape=box, style=filled]
+
+
+LS  -> lsp 
+lsp [label="Caractère conventionnel du signe\n multicomposite ; phonologie paramètre de formation du signe" shape=box, style=filled]
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
