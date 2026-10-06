@@ -95,20 +95,178 @@ pfs -> pfs3
 
 pfs3 [label="Prosodie émotionnelle et linguistique" shape=box, style=filled, fillcolor=lightgreen]
 
+lg -> app 
 
+subgraph {rank=same ; app ; lg }
+
+app [label=Approches shape=box, style=filled, fillcolor=lightyellow]
+
+app -> ant 
+
+ant [label=Antiquité shape=box, style=filled, fillcolor=lightyellow]
+
+ant -> annt 
+annt [label="Pensée prèce langage" shape=box, style=filled, fillcolor=lightyellow]
+
+app -> gt 
+
+gt [label="Grammaire traditionnelle" shape=box, style=filled, fillcolor=lightyellow]
+    
+gt -> gtd 
+
+gtd [label="Fodement grammaire moderne\n voloté descriptio des principes" shape=box, style=filled, fillcolor=lightyellow]
+
+fs -> ling [label="Rapport signifiat \signifié"]
+
+ling -> hsw 
+
+hsw [label="Hypothèse Sapir Whorf" shape=box, style=filled, fillcolor=lightblue]
+
+hsw -> hswd 
+
+hswd [label="Relativisem linguistique\n utilisation de la langue = interprétation du monde" shape=box, style=filled, fillcolor=lightyellow]
+
+
+ling -> ch 
+
+ch [label="Charle Hokcett" shape=box, style=filled, fillcolor=lightyellow]
+
+ch -> chd 
+
+chd [label="Dualité, productivité, arbitrité, interchangeabilité,..." shape=box, style=filled, fillcolor=lightyellow]
+
+ling -> jla 
+
+jla [label=Langshaw shape=box, style=filled, fillcolor=lightyellow]
+jla -> jld 
+
+jld [label="Acte illo/perlo/locutoire" shape=box, style=filled, fillcolor=lightyellow]
+
+
+Ling [label=Linguistique shape=box, style=filled, fillcolor=lightblue]
+
+Ling -> o1 
+
+o1 [label="Organes phonatoire" shape=box, style=filled, fillcolor=lightyellow]
+o1 -> o2 
+
+o2 [label=Larynx shape=box, style=filled, fillcolor=lightyellow]
+
+o1 -> o3 
+
+o3 [label="Pharyx, bouche, cavité nasale" shape=box, style=filled, fillcolor=lightyellow]
+
+Ling -> sdp 
+
+sdp [label="Son de parole" shape=box, style=filled, fillcolor=lightyellow]
+
+sdp -> voc 
+sdp -> cont 
+
+voc [label="Vocoïdes" shape=box, style=filled, fillcolor=lightblue]
+cont [label="Contoïdes" shape=box, style=filled, fillcolor=lightblue]
+
+voc -> vocd 
+
+vocd [label="Source vocale, son produit sans fermeture canal" shape=box, style=filled, fillcolor=lightblue]
+    
+    cont -> cond 
+    
+    cond [label="Son provenant fermeture" shape=box, style=filled, fillcolor=lightblue]
+    cond -> mod
+    
+    mod [label="Mode" shape=box, style=filled, fillcolor=lightyellow]
+    
+    mod -> m1 
+    mod -> m2 
+    mod -> m3 
+    
+    m1 [label="Occlusives" shape=box, style=filled]
+    m2 [label="Fricatives" shape=box, style=filled]
+    m3 [label="Latérale/Semi-consonnes"shape=box, style=filled]
     
     
     
+    cond -> vois 
     
+    vois [label="Voisement = vibration des cordes voc" shape=box, style=filled, fillcolor=lightblue]
+    cond -> nas 
     
+    nas [label=Nasalité shape=box, style=filled, fillcolor=lightblue]
     
+    vocd -> v1 
+    vocd -> v2 
+    vocd -> v3 
+    vocd -> v4 
     
+    v1 [label=Aperture shape=box, style=filled, fillcolor=lightblue]
+    v2 [label=Lieu shape=box, style=filled, fillcolor=lightblue]
+    v3 [label=Arrondissement shape=box, style=filled, fillcolor=lightblue]
+    v4 [label=Nasalité shape=box, style=filled, fillcolor=lightblue]
     
+    Ling -> pho 
     
+    pho [label=Phonème shape=box, style=filled, fillcolor=lightblue]
     
+    pho -> phod 
     
+    phod [label="Associer son langue à unité" shape=box, style=filled]
     
+    Ling -> syll 
     
+    syll [label=Syllabe shape=box, style=filled, fillcolor=lightblue]
     
+    syll -> s1 
+    syll -> s2 
+    
+    s2 -> s3 
+    s2 -> s4 
+    
+    s1 [label=Attaque shape=box, style=filled]
+    s2 [label=Rime shape=box, style=filled]
+    s3 [label=Noyau shape=box, style=filled]
+    s4 [label=Coda shape=box, style=filled]
+    
+    phod -> morp 
+    
+    morp [label=Morphème shape=box, style=filled, fillcolor=lightblue]
+    
+    morp -> morpd 
+    
+    morpd [label="Création unités de sens" shape=box, style=filled, fillcolor=lightblue]
+    morp -> syntgam 
+    
+    syntgam [label="Association de morphème = syntagme" shape=box, style=filled, fillcolor=lightblue]
+    
+    morpd -> mo1 
+    morpd -> mo2 
+    
+    mo1 [label=Lexicaux shape=box, style=filled, fillcolor=lightblue]
+    mo2 [label=Grammaticaux shape=box, style=filled, fillcolor=lightblue]
+ 
+ syntgam -> sy1 
+ syntgam -> sy2 
+ 
+ sy1 [label="Nomiale" shape=box, style=filled, fillcolor=lightblue]
+ sy2 [label="Verbal" shape=box, style=filled, fillcolor=lightblue]
+ 
+ 
+ lg -> pros 
+ pros [label="Prosodie" shape=box, style=filled, fillcolor=cornflowerblue]
+ 
+ pros -> pr1 
+ pros -> pr2 
+ pros -> pr3 
+ 
+ pr1 [label=Démarcatives shape=box, style=filled, fillcolor=lightyellow]
+ pr2 [label=Syntaxique shape=box, style=filled, fillcolor=lightyellow]
+ 
+ pr3 [label=Pragmatique shape=box, style=filled, fillcolor=lightyellow] 
+ 
+ 
+ 
+ 
+ 
+ 
     
 }
