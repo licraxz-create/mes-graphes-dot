@@ -1,0 +1,106 @@
+digraph G {
+
+rankdir=LR 
+
+
+oc [label="Orthopédagogie clin." shape=box, style=filled, fillcolor=aquamarine1]
+
+oc -> mc -> mcd 
+oc -> sh 
+
+oc -> vo
+
+mc [label="Métier de contexte" shape=box, style=filled]
+mcd [label="Personne évolue de faço dyn." shape=box, style=filled]
+
+sh [label="Situation de handicap" shape=box, style=filled]
+
+vo [label=Valeurs shape=box, style=filled]
+
+vo -> acp 
+vo -> rdf 
+vo -> i 
+vo -> qdv 
+
+acp [label="Approche centrée sur la persone" shape=box, style=filled, fillcolor=aquamarine1]
+rdf [label="Respect droit fondametaux" shape=box, style=filled]
+i [label=Inclusion shape=box, style=filled, fillcolor=aquamarine1]
+qdv [label="Qualité de vie" shape=box, style=filled, fillcolor=aquamarine1]
+
+h [label=Handicap shape=box, style=filled, fillcolor=lightblue]
+
+h -> m 
+
+m [label=Modèles shape=box, style=filled]
+m -> m1 
+m1 -> vb 
+m1 -> vf 
+
+m1 [label="Modèles individuels" shape=box, style=filled, fillcolor=lightblue ]
+
+vb [label="Variante biomédicale"shape=box, style=filled,]
+
+vf [label="Variante fonctionnelle" shape=box, style=filled, ]
+
+m -> m2 
+
+m2 -> ve 
+m2 -> vcdc 
+
+m2[label="Modèles sociaux" shape=box, style=filled, fillcolor=lightblue]
+
+ve [label="Variante environementale" shape=box, style=filled]
+vcdc [label="Variante centrée sur les droits civiques" shape=box, style=filled]
+
+m -> m3 
+
+m3 [label="Modèles socioécologique/systèmique"shape=box, style=filled, fillcolor=lightblue]
+
+m -> m4 
+m4 [label="Modèles universalistes" shape=box, style=filled, fillcolor=lightblue]
+
+m3 -> pph 
+
+pph [label=PPH shape=box, style=filled, fillcolor=lightblue]
+
+pph -> p1 
+pph -> p2 
+pph -> p3 
+
+p1 [label="Facteurs personnels" shape=box, style=filled]
+p2 [label="Facteurs environnementaux" shape=box, style=filled]
+p3 [label=HDV shape=box, style=filled, fillcolor=lightgreen]
+
+m4 -> cif 
+
+cif [label=CIF shape=box, style=filled, fillcolor=lightblue]
+cif -> aifh 
+
+aifh [label="Approche intégrative fonctionnement humain" shape=box, style=filled]
+
+cif -> cid
+
+cid [label=Dimension shape=box, style=filled]
+
+cid -> c1 
+cid -> c2 
+cid -> c3 
+cid -> c4
+
+c1 [label="Fonction organiques, physio" shape=box, style=filled]
+
+c2 [label=Activités shape=box, style=filled]
+c3 [label=Participation shape=box, style=filled]
+c4 [label="Facteurs environnementaux" shape=box, style=filled]
+
+
+
+
+
+
+
+
+
+
+
+}
