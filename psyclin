@@ -1,0 +1,129 @@
+digraph G {
+rankdir=LR 
+
+pc [label="Psy clinique" shape=box, style=filled, fillcolor=cornflowerblue]
+
+pc -> tp 
+
+tp [label="Troubles" shape=box, style=filled, fillcolor=lightblue]
+
+tp -> t1 
+tp -> t2 
+tp -> t3 
+
+t1 [label="Détresse perso. / souffrance" shape=box, style=filled]
+
+t1 -> t1d 
+
+t1d [label="Souffrance => diagnostic" shape=box, style=filled]
+
+t2 -> t2d 
+
+t2 [label=Dysfonctionnement shape=box, style=filled]
+
+t21 [label="Cognitif : pensées suicidaire" shape=box, style=filled]
+t23 [label="Emotionnel" shape=box, style=filled]
+t2d[label=Comportemental shape=box, style=filled]
+
+t2 -> t21 
+t2 -> t23 
+
+t3 [label="Caractère atypique d'un point de vue culturel" shape=box, style=filled]
+
+pc -> pt 
+
+pt [label=Psychothérapie shape=box, style=filled, fillcolor=lightblue]
+
+pt -> p1 -> p2 -> P3 -> P4 
+
+p1 [label="Prise de RDV / plan thérapeutique" shape=box, style=filled]
+
+p2 [label="Evaluation\n construire alliance thérapeutique" shape=box, style=filled]
+
+P3 [label="travail thérapeutique" shape=box, style=filled]
+
+P4 [label=Désengagement shape=box, style=filled]
+
+pc -> c 
+
+c [label=Courants shape=box, style=filled, fillcolor=cornflowerblue]
+
+subgraph {rank=same ; pc ; c}
+
+
+c -> ay 
+
+ay [label=Psychanalyse  shape=box, style=filled, fillcolor=IndianRed1]
+
+ay -> ap 
+
+ap [label="Appareil psychique"  shape=box, style=filled]
+
+ap -> to1 
+ap -> to2 
+
+to1 [label="Topique 1"  shape=box, style=filled]
+to2 [label="Topique 2" shape=box, style=filled]
+
+
+to1 -> i 
+to1 -> pr 
+to1 -> co
+
+i [label=Inconscient shape=box, style=filled]
+pr [label=Préconscient shape=box, style=filled]
+co [label=Conscient shape=box, style=filled]
+
+i -> pr [label=Censure]
+subgraph {rank=same ; i ; pr}
+
+i -> idp 
+
+idp [label="Principe de plaisir" shape=box, style=filled]
+
+co -> cond 
+
+cond [label="Principe de réalité" shape=box, style=filled]
+
+
+
+to2 -> ca 
+to2 -> mo 
+to2 -> su 
+
+ca [label=ça shape=box, style=filled]
+mo [label=Moi shape=box, style=filled]
+su [label=Surmoi shape=box, style=filled]
+
+ap -> pay 
+
+pay [label=Personnalité shape=box, style=filled]
+
+pay -> pay1 
+pay -> pay2 
+pay -> pay3 
+
+pay1 [label=Psychotique shape=box, style=filled]
+pay2 [label="Etat-limite" shape=box, style=filled]
+pay3 [label=Nevrotique shape=box, style=filled]
+
+pay3 -> mdd 
+
+mdd [label="Mécanismes de défenses" shape=box, style=filled]
+
+mdd -> mpd 
+mdd -> msd 
+
+mpd [label=Primaire shape=box, style=filled]
+msd [label=Secondaire shape=box, style=filled]
+
+
+
+
+
+
+
+
+
+ 
+}
