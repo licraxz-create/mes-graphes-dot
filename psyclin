@@ -1,4 +1,10 @@
-digraph G {
+
+
+
+
+
+
+ digraph G {
 rankdir=LR 
 
 pc [label="Psy clinique" shape=box, style=filled, fillcolor=cornflowerblue]
@@ -119,11 +125,49 @@ msd [label=Secondaire shape=box, style=filled]
 
 
 
+c -> tcc 
+
+tcc [label=TCC shape=box, style=filled, fillcolor=lightgreen ]
 
 
+mpd -> d1 
+mpd -> d2 
+mpd -> d3 
+mpd -> d4 
+mpd -> d5 
 
-
+d1 [label="Projection" shape=box, style=filled]
+d2 [label=Déni shape=box, style=filled]
+d3 [label=Repli shape=box, style=filled]
+d4 [label=Identification shape=box, style=filled]
+d5 [label=Annulation shape=box, style=filled]
 
 
  
+msd -> d6 
+msd -> d7 
+msd -> d8 
+msd -> d9 
+
+d6 [label="rationnalisation" shape=box, style=filled]
+d7 [label="Formation réactionnelle" shape=box, style=filled]
+d8 [label=Refoulement shape=box, style=filled]
+d9 [label=Sublimation shape=box, style=filled]
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
