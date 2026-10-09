@@ -1,0 +1,282 @@
+digraph G {
+
+  rankdir=LR
+  
+  
+  p [label=Psychiatrie shape=box, style=filled, fillcolor=lightblue]
+  
+ p -> e 
+ 
+ e [label=Examen shape=box, style=filled]
+ 
+ e -> en 
+ 
+ en [label=Neutral shape=box, style=filled]
+ 
+ en -> n1 
+ en -> n2 
+ en -> n3 
+ en -> n4 
+ en -> n5 
+ en -> n6 
+ en -> n7 
+ en -> n8 
+ 
+ n1 [label="Présentation et contact" shape=box, style=filled]
+ n2 [label="Langage et pensée" shape=box, style=filled]
+n3 [label=Perception shape=box, style=filled]
+n4 [label="Attention et mémoire" shape=box, style=filled]
+n5 [label="Affectivité" shape=box, style=filled]
+n6 [label="Fonctions physio" shape=box, style=filled]
+n7 [label=Comportement shape=box, style=filled]
+n8 [label="Jugement et conscience du trouble" shape=box, style=filled]
+ 
+ 
+ subgraph {rank=same ; p ; e ; sy ; en  }
+ 
+sy -> p
+
+sy [label=Syndrome shape=box, style=filled, fillcolor=lightblue]
+
+sy -> sy1 
+sy -> sy2 
+sy -> sy3 
+sy -> sy4 
+sy -> sy5 
+sy -> sy6 
+sy -> sy7 
+sy -> sy8 
+
+sy1 [label="Positif" shape=box, style=filled]
+sy2 [label=Négatif shape=box, style=filled]
+sy3 [label=Désorganisation shape=box, style=filled]
+sy4 [label=Thymique shape=box, style=filled]
+
+sy4 -> tdh 
+
+tdh [label="Trouble de l'humeur" shape=box, style=filled, fillcolor=lightblue]
+
+subgraph cluster_tdh {
+    label=TDH
+  ;
+        style = filled;
+        color = lightblue;
+        node [shape=box, style=filled, fillcolor=lightyellow];
+
+tdh -> tdhd 
+
+
+tdhd [label="Ensemble pathologies\n anomalies de la thymie"]
+
+tdhd -> td
+tdhd -> tb 
+
+td [label=Dépressifs]
+tb [label="Bipolaires et apparentés"]
+    
+td -> tdm 
+
+tdm [label="Induit par substance ou médicament"]
+    
+tb -> ty1 -> em 
+tb -> ty2 -> ehm 
+tb -> tdm 
+
+ty1 [label="Type 1"]
+ty2 [label="Type 2"]
+    
+    tdhd -> bi 
+    
+    bi [label="Bilan/Prise en charge"]
+    
+    subgraph {rank=same ; tdhd ; bi }
+    
+
+    em [label="Episode maniaque"]
+    ehm [label="Episode hypomaniaque"]
+    
+    bi -> obj 
+    
+    obj [label="Rémission / Amélioration / prévention"]
+    
+    bi -> pec 
+    
+    pec [label="Prise en charge"]
+    
+    pec -> app 
+    
+    app [label=Approches]
+    
+    app -> a1 
+    app -> a2 
+    
+    a1 [label=Pyschopharma]
+    a2 [label=Psychothérapeutique]
+    
+    
+pec -> h 
+
+h [label=Hospitalisation ]
+    
+a1 -> isrs 
+
+isrs [label=ISRS]
+a1 -> ECT 
+
+em -> h 
+    
+}
+sy5 [label=Anxieux shape=box, style=filled]
+
+sy5 -> ta 
+
+ta [label="Troubles anixuex" shape=box, style=filled, fillcolor=IndianRed1]
+
+sy6 [label=Dépendance shape=box, style=filled]
+
+sy6 -> add 
+
+add [label=Addictologie shape=box, style=filled, fillcolor=mediumorchid]
+
+sy7 [label=Suicidaire shape=box, style=filled]
+
+sy7 -> s
+
+subgraph cluster_sui {
+    label=Suicidologie 
+    
+        style = filled;
+        fillcolor=lightgreen
+        node [shape=box, style=filled, fillcolor=lightyellow];
+
+    s -> sd 
+    
+    sd [label="Acte intentionnel de mettre fin à ses jours"]
+    
+   sd -> ts -> ps 
+   
+   ts [label=Tentative]
+   ps [label=Suicidante]
+   
+   ps -> IDS 
+   
+   IDS -> ia 
+   IDS -> ip 
+   
+   ia [label=Actives]
+   ip [label=Passives]
+   
+   s -> cs 
+   
+   cs [label="Crise suicidaire"]
+   
+   
+   cs -> eids 
+   
+   eids [label="Expression IDS"]
+   
+   cs -> mcs 
+   
+   mcs [label="Manifestation situation de crise"]
+   
+   cs -> cvf 
+   
+   cvf [label="Contextes et facteurs"]
+   
+cs -> eva 
+
+eva [label=Evaluation]
+eva -> csr 
+eva -> csu 
+eva -> csd 
+
+   csr [label=Risque]
+   csu [label=Urgence]
+   csd [label=Dangerosité]
+    
+    csr -> fp 
+    
+    fp [label="Facteur de protection"]
+    
+    fp -> fp1 
+    fp -> fp2 
+    fp -> fp3 
+    
+    fp1 [label=Résilience]
+    fp2 [label=Famille]
+    fp3 [label=Croyances]
+    
+    csu -> ue 
+    
+    ue [label="Faible / moyenne / élevée"]
+
+eids -> uids 
+
+uids [label="Urgence psychiatrique"]
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
+
+s [label=Suicidologie shape=box, style=filled, fillcolor=lightgreen]
+
+sy8 [label=Catatonique shape=box, style=filled]
+
+sy -> sy9 
+
+sy9 [label=Agitation shape=box, style=filled]
+
+sy9 -> er 
+
+er [label=Urgences shape=box, style=filled,fillcolor=orange]
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+}
