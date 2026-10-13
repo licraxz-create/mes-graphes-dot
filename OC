@@ -93,6 +93,33 @@ c2 [label=Activités shape=box, style=filled]
 c3 [label=Participation shape=box, style=filled]
 c4 [label="Facteurs environnementaux" shape=box, style=filled]
 
+p3 -> p31 
+p3 -> p32 
+
+p31 [label="Renforcement capacités ou compensation incapacités" style=filled, shape=box]
+
+p32 [label="Réduction obstacles dans environnement" style=filled, shape=box]
+
+p1 -> p11 
+
+p11 [label="Identitaires ; caractéristiques proprés individu" style=filled, shape=box]
+
+p1 -> p12 
+
+p12 [label="Organiques : intrégrité, déficience"style=filled, shape=box]
+
+p1 -> p13 
+
+p13 [label="Aptitudes ; comportement adaptatif, capacité, incapacité" style=filled, shape=box]
+
+p2 -> p21 
+
+p21 [label=Facilitateurs style=filled, shape=box]
+p2 -> p22 
+
+p22 [label=Obstacle style=filled, shape=box]
+
+
 
 
 
