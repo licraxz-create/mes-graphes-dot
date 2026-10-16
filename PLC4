@@ -1,0 +1,174 @@
+digraph G {
+rankdir=LR 
+node [shape=box, style=filled, fillcolor=lightyellow]
+
+l [label="Linguistique" fillcolor=lightblue]
+l -> sdp 
+
+sdp [label="Son de parole" fillcolor=lightblue]
+
+sdp -> op 
+
+op [label="Organe phonatoire"]
+
+op -> rs 
+op -> sv
+op -> ss 
+
+rs [label="Résonateurs supraglottiques"]
+sv [label="Source vocale"]
+ss [label="Souffleire subglottique"]
+
+
+sdp -> cs 
+
+cs [label=Classes]
+
+cs -> v 
+cs -> c 
+
+v [label=Vocoïdes fillcolor=lightblue]
+c [label=Contoïdes fillcolor=lightblue]
+
+v -> vd 
+
+vd [label="Pas de fermeture / source vocales"]
+c -> cd 
+
+cd [label="Fermeture complète canal"]
+
+cd -> c1 
+
+c1 [label="Lieu d'articulation"]
+cd -> c2 
+
+c2 [label="Mode"]
+
+cd -> c3 
+cd -> c4 
+
+c3 [label=Voisement]
+c4 [label="Nasalité"]
+
+vd -> v1 
+vd -> v2 
+vd -> v3 
+vd -> v4 
+
+
+
+
+
+l -> p 
+
+p [label=Phonème fillcolor=lightblue]
+
+p -> pp 
+pp [label="Représentation perceptive, abstrait"]
+
+l -> s 
+p -> s [label=Regroupement]
+subgraph {rank=same ; s ; p }
+s [label=Syllabe fillcolor=lightblue]
+
+s -> s1 
+s -> s2 -> s3 
+s2 -> s4 
+
+s1 [label=Attaque]
+s2 [label=Rime]
+s3 [label=Noyau]
+s4 [label=Coda]
+
+l -> m 
+
+m [label=Morhpème fillcolor=lightblue]
+
+m -> m1 
+m -> m2 
+m1 [label=Lexicaux]
+m2 [label=Grammaticaux]
+
+m2 -> m3 
+m2 -> m4 
+
+m3 [label="Liés"]
+m4 [label=Libre]
+
+m3 -> m31 
+m3 -> m32 
+
+m31 [label=Flexionnels]
+m32 [label=Dérivationnels]
+
+l -> sy 
+m -> sy [label=Association ]
+subgraph {rank=same ; m ; sy }
+
+sy [label=Syntagme fillcolor=lightblue]
+
+
+sy -> y1 
+sy -> y2 
+
+y1 [label=Nominal]
+y2 [label=Verbal]
+
+
+
+n [fillcolor=lightblue label="Neuropsycholinguistique"]
+
+n -> mod 
+
+mod [label=Modèles]
+
+mod -> o1 [label="En module"]
+
+
+o1 [label="Caramazza et Hillis"]
+
+
+mod -> o2 [label="Réseaux"]
+
+o2 [label="Casacade de Dell"]
+
+mod -> o3 
+
+o3 [label="Sériel"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
