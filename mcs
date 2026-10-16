@@ -1,0 +1,281 @@
+digraph G {
+
+rankdir=LR 
+
+node [style=filled, shape=box, fillcolor=lightyellow]
+
+r [label=Rédaction fillcolor=lightgreen]
+
+r -> rd 
+
+rd [label="Réflexion, rigueur, plan"]
+
+rd -> r1 
+
+r1 [label=Précision]
+
+rd -> r2 
+
+r2 [label=Clarté]
+
+
+rd -> r3 
+
+r3 [label=Concision]
+
+es 
+
+es [label="Ecrit scientifique" fillcolor=lightgreen]
+
+es -> r 
+es -> s 
+
+s [label=Structure fillcolor=lightgreen]
+
+s -> i 
+s -> m 
+s -> rs 
+s -> d 
+
+i [label=Introduction]
+m [label=Méthode]
+rs [label=Résultats]
+d [label="(et) Discuission"]
+
+i -> ib 
+
+ib [label="But / annoncer la problématique"]
+
+ib -> i1 
+ib -> i2 
+ib -> i3 
+ib -> i4 
+
+i1 [label="Introductio générale"]
+i2 [label="Révue litt."]
+i3 [label=Problématique]
+i4 [label="Hypothèse de recherche"]
+
+m -> md 
+
+md [label="Partie centrale"]
+md -> m1 
+md -> m2 
+md -> m3 
+md -> m4 
+
+m1 [label=Participants]
+m2 [label=Mesures]
+m3 [label=Procédures]
+m4 [label=Matériel]
+
+rs -> rsd 
+
+rsd [label="partie dynamique"]
+
+d -> dd
+
+dd [label="Partie majeure"]
+
+dd -> cl 
+
+cl [label="Comparaison littérature"]
+
+dd -> ccl 
+
+ccl [label=Conclions]
+
+dd -> lep 
+
+lep [label="Limites et persepctives"]
+
+es -> sy 
+
+sy [label="Style scientifique" fillcolor=lightgreen]
+
+sy -> moi 
+
+moi [label="Manière objective et impersonnelle"]
+
+sy -> conj 
+
+conj [label="Présent, sources cités"]
+
+sy -> ql 
+
+ql [label=Qualité] 
+
+ql -> qfq 
+
+qfq [label="Qui / fait / quoi"]
+
+ql -> col 
+
+col [label="Connecteurs logiques"]
+
+sy -> ras 
+
+ras [label=Règles]
+
+
+ras -> s1 -> s2 
+ras -> s3 
+ras -> s4 
+ras -> s5 
+ras -> s6  -> s7  -> s8 
+ras -> s9
+
+
+s1 [label="Citez sources"]
+s2 [label="Fin du texte / dans le texte"]
+s3 [label="Pas de prénom"]
+
+s4 [label="Chiffres > 9 en chiffres"]
+
+s5 [label="Chiffres pas début"]
+s6 [label="Forme impersonnelle"]
+s7 [label="Indicatif présent"]
+s8 [label="Phrases courtes "]
+s9 [label="Pas de com. perso"]
+
+
+mcs [label="Méthodologie de la communication scientifique" fillcolor=lightgreen]
+
+mcs -> pt2 -> es 
+mcs -> pt3 
+pt2 [label="Chapitre 2"]
+pt3 [label="Chapitre 3"]
+
+
+pt3 -> cso 
+
+cso [label="Communiquer objectifs" fillcolor=lightgreen]
+
+cso -> tdd 
+
+tdd [label="Texte à dominante"]
+tdd -> tdd1 
+tdd1 [label=Descriptive]
+
+tdd1 -> idc 
+idc [label="Introduction / développement / conclusion"]
+
+idc -> saa  -> spp -> sdv 
+saa [label="Sujet amené"]
+spp [label="Sujet posé"]
+sdv [label="Sujet divisé"]
+
+saa -> saad 
+spp -> sppd 
+sdv -> sdvd 
+
+subgraph {rank=same ; saa ; saad }
+subgraph {rank=same ; spp ; sppd ; tp ; tpd }
+subgraph {rank=same ; sdvd ; sdv}
+
+saad [label="Amener le sujet\n sans le spécifier"]
+sppd -> tp -> tpd 
+
+
+sppd [label="Présenter sujet"]
+sdvd [label="Enoncer les éléments qui seront abordés"]
+
+
+sdvd -> dev 
+
+dev [label="Développement"]
+
+dev -> dv1 
+dev -> dv2 
+
+dv1 [label="Aspects"]
+dv2 [label="Sous-aspects"]
+
+dev -> conclu 
+
+subgraph {rank=same ; dev ; conclu}
+
+conclu [label=Conclusion]
+
+conclu -> ccl1 
+conclu -> ccl2 
+
+ccl1 [label="Rappel aspects"]
+ccl2 [label="Ouverture/réflexion"]
+
+
+tdd -> tdd2 
+
+tdd2 [label=Argumentative fillcolor=lightgreen]
+tdd2 -> idc
+
+tp [label="Thème posé"fillcolor=lightgreen ]
+tpd [label="Predre position" fillcolor=lightgreen]
+
+tpd -> arg -> conclu
+
+arg [label="Arguments"]
+
+arg -> fait 
+
+fait [label="Fait"]
+arg -> a2 
+arg -> a3 
+arg -> a4 
+
+a2 [label=Valeur]
+a3 [label=Référence]
+a4 [label="Principe logique"]
+tdd -> t3 
+
+t3 [label=Explicative]
+
+t3 -> idc 
+
+t3 -> t3d 
+
+t3d [label="Développement explicative"]
+
+subgraph {rank=same ; t3 ; t3d}
+
+t3d -> t3d1 
+
+t3d1 [label="Comparaison \n Illustration\n Définition \n Reformulation \n exemple"]
+
+mcs -> pt4 -> rfr 
+
+pt4 [label="Chapitre 4 "]
+rfr [label="Référencer"fillcolor=lightgreen]
+
+rfr -> apa 
+
+apa [label=APA fillcolor=lightblue]
+
+apa -> rfr1 
+apa -> rfr2 
+
+rfr1 [label=Narrative]
+rfr2 [label="()"]
+apa -> f3 
+
+f3 [label="Citations dans le texte"]
+f4 [label="Indirecte"]
+
+apa -> f4 
+
+apa -> rfb 
+
+rfb [label="Bibliographie"]
+
+
+
+
+
+
+
+
+
+
+
+
+}
