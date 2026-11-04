@@ -1,0 +1,168 @@
+digraph G {
+rankdir=LR 
+node [shape=box, style=filled, fillcolor=lightyellow]
+subgraph {rank=same ; l ; sdp }
+l [label=Linguistique fillcolor=lightblue]
+
+l -> sdp 
+
+sdp [label="Son de parole"]
+
+
+sdp -> op 
+
+op [label="Organe phonatoire" fillcolor=lightblue]
+
+op -> rs 
+op -> sv 
+op -> ss 
+
+rs [label="Résonateurs supraglottiques"]
+sv [label="Source vocales"]
+ss [label="Soufflerie subglottique"]
+
+
+sv -> lcv 
+
+lcv [label="Larynx et cordes vocales"]
+
+rs -> r1 
+rs -> r2 
+rs -> r3 
+
+r1 [label=Pharynx]
+r2 [label=Bouche]
+r3 [label="Cavité nasale"]
+
+subgraph {rank=same ; op ; sdp2}
+
+op -> sdp2 [style=invis]
+
+sdp2 [label="Classes de sons"]
+
+sdp2 -> v 
+sdp2 -> co 
+
+v [label=Voyelles fillcolor=lightblue]
+co [label=Consonnes fillcolor=lightblue]
+
+v -> v1 
+
+v1 [label="Source vocale"]
+co -> c2 
+
+c2 [label="Fermeture complète canal ou rétrecissement"]
+
+c2 -> c3 
+
+c3 [label="Lieu d'articulation / point occlusion"]
+
+
+c2 -> c4 
+
+c4 [label="Mode / façon de produire son "]
+
+c2 -> c5 
+
+c5 [label="Voisement / vibration CV"]
+
+c2 -> c6 
+
+c6 [label="Nasalité"]
+
+v1 -> v2 
+v1 -> v3 
+v1 -> v4 
+v1 -> v5 
+
+v2 [label="Aperture"]
+v3 [label="Lieu = position langue"]
+v4 [label="Arrondissement lèvres"]
+v5 [label="Nasalité"]
+
+sdp -> p 
+
+subgraph {rank=same ; p ; sdp ; st ; sy ; m }
+
+p [label=Phonème fillcolor=lightblue]
+
+p -> p1 
+
+p1 [label="Traits distinctifs / unités distinctives de sens"]
+
+p -> sy [label="Regroupement"]
+
+sy [label=Syllabe]
+
+sy -> y1 
+sy -> y2 
+y2 -> y3 
+y2 -> y4 
+
+y1 [label=Attaque]
+y2 [label=Rime]
+y3 [label=Noyau]
+y4 [label=Coda]
+
+sy  -> m [label="Association phonème"]
+
+m [label=Morphème fillcolor=lightblue]
+
+m -> m1 
+m -> m2 
+
+m1 [label="Lexicaux"]
+m2 [label=Grammaticaux]
+
+m3 [label=Liés]
+m1 -> m2 
+m4 [label=Libres]
+
+m2 -> m3 
+m2 -> m4
+
+m -> st [label="Association"]
+
+st [label=Syntagme fillcolor=lightblue]
+
+st -> st1 
+st -> st2 
+
+st1 [label=Nominal]
+st2 [label=Verbal]
+
+
+L -> M 
+
+L [label=Langage fillcolor=lightblue]
+M [label=Modèles fillcolor=lightblue]
+
+M -> ch 
+
+ch [label="Caramazza et Hillis" fillcolor=orange]
+
+M -> d1 
+
+d1 [label="Cascade de Dell"]
+M -> sdl 
+
+sdl [label="Série de Levelt"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
