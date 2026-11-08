@@ -2,13 +2,159 @@ digraph G {
 rankdir=LR 
 node [shape=box, style=filled, fillcolor=lightyellow]
 
-l [label=Langue fillcolor=lightblue]
 
-l -> ld 
+l -> c 
 
-ld [label="Moyen de communication"]
+c [label=Compétences]
 
-ld -> i 
+c -> c1 
+
+c1 [label="Phonétique=articuler son de parole"]
+c2[label="Phonologique = assembler sons de parole"]
+
+c -> c2 
+
+c -> c3 
+
+c3 [label="Lexicale=employer lexique"]
+
+c -> c4 
+
+c4 [label="Syntaxique = assembler mots en phrases"]
+
+c -> c5 
+
+c5 [label="Morphologique = fléchir morphèmes en fonctions règles"]
+
+c -> c6 
+
+c6 [label="Pragmatique = interpréter / produire message en fonction contexte"]
+
+
+
+
+
+l -> o 
+
+o [label=Propriétés]
+
+o -> us 
+
+us [label="Utilisation signes linguistiques"]
+
+us -> sl 
+
+sl [label="Signe Linguistique"]
+
+subgraph {rank=same ; us ; sl }
+
+
+sl -> sld 
+
+sld [label="Entités comprenant"]
+
+sld -> sf 
+sld -> sg 
+
+sf [label=Signifiant fillcolor=cornflowerblue]
+
+sg [label=Signifié fillcolor=cornflowerblue]
+
+sf -> m 
+sg -> m 
+
+m [label=Morphèmes fillcolor=cornflowerblue]
+
+sf -> P 
+
+P [label=Phonèmes fillcolor=cornflowerblue]
+
+l -> multi 
+
+multi [label="Intégration différentes composantes\n règles de fonctionnement et spécificités\n iteraction mais autonome"]
+ 
+
+L [label=Langue fillcolor=cornflowerblue]
+pa [label=Parole fillcolor=cornflowerblue]
+
+L -> rdl 
+
+rdl [label="Registre de langue"]
+
+L -> ld 
+
+ld [label="Système de signes et de règles"]
+
+
+pa -> pda 
+
+pda [label="Résultat action parler"]
+
+f -> L 
+f -> pa 
+
+f [label="De Saussure" fillcolor=lightgreen]
+
+L -> pso
+pa -> pi
+
+pi [label="Phénomène individuel" fillcolor=lightgreen]
+pso [label="Phénomène social" fillcolor=lightgreen]
+
+
+pa -> L 
+L -> pa 
+
+subgraph {rank=same ; L ; pa }
+
+ls [label="Langues des signes" fillcolor=cornflowerblue]
+
+ls -> lsd 
+
+lsd [label="Mode de communication naturel\n et aisé en cas de surdité"]
+
+lsd -> s1 
+
+s1 [label="16es : Ponce, interface communication "]
+
+s1 -> s2 
+
+s2 [label="18e : école gestuelle\n développement oralisme"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 i [label=Linguistique fillcolor=lightblue]
 
