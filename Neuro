@@ -1,201 +1,149 @@
+
 digraph G {
 
-rankdir=LR 
-sn [label=SN shape=box, style=filled, fillcolor=lightgreen]
+  rankdir=LR 
+  node [shape=box, style=filled, fillcolor=lightyellow]
+  SN [fillcolor=green]
+  
 
-sn -> snp 
-sn -> snc 
+SN -> snc 
 
-snp [label=SNP shape=box, style=filled, fillcolor=lightyellow]
-snc [label=SNC shape=box, style=filled, fillcolor=cornflowerblue]
+snc [label=SNC fillcolor=lightblue]
 
-  snp -> soma 
-  
-  soma [label=Somatique shape=box, style=filled, fillcolor=yellow]
-  
-  soma -> soma1 
-  
-  soma1 [label="Mouvemet volontaire et transmissions infos.senso" shape=box, style=filled, fillcolor=lightyellow]
-  
-  snp -> auto
-  
-  auto [label=Autonome shape=box, style=filled, fillcolor=darkorchid]
-  
-  auto -> para 
-  auto -> ortho 
-  
-  para [label="Parasympthique" shape=box, style=filled, fillcolor=lightblue]
-  ortho [label=Orthosympathique shape=box, style=filled, fillcolor=IndianRed1]
-  
- para -> ac 
- 
- ac [label=Acétylcholine shape=box, style=filled, fillcolor=lightyellow]
- ortho -> nora 
- 
- nora [label=Noradrenaline shape=box, style=filled, fillcolor=lightyellow]
- 
- snp -> sne 
- 
- sne [label=SNE shape=box, style=filled, fillcolor=orange]
+SN -> snp 
 
+snp [label=SNP]
 
 snc -> me 
 
-me [label=ME shape=box, style=filled, fillcolor=cornflowerblue]
+me [label="Moelle épinière" fillcolor=lightblue]
 
 snc -> ce 
 
-ce [label=Cerveau shape=box, style=filled, fillcolor=cornflowerblue]
+ce [label=Cerveau fillcolor=lightblue ]
+    
+snp -> vs[label="Voie sensorielle"]
+snp -> vm [label="Voie motrice"]
+
+vs [label="SN somatique (volontaire)" fillcolor=lightblue]
+
+vm [label="SN autonome (involontaire)" fillcolor=indianred]
+
+
+vs -> va 
+
+va [label="Voie afférente" fillcolor=lightblue]
+
+vs -> ve 
+
+ve [label="Voie efférente" fillcolor=indianred]
+
+vm -> sno 
+vm -> sna
+vm -> sne 
+
+sno [label="SN (ortho)sympathique" fillcolor=lightblue]
+sna [label="SN parasympthique" fillcolor=indianred]
+
+sne [label=SNE fillcolor=orange]
+
+n [label=Neurone fillcolor=aquamarine]
+
+sno -> nora 
+
+nora [label="Neurones postganglionnaire Noradrénaline "]
+sna -> ach 
+
+ach [label="Nuerone postganglionnaire ACh "]
+
+n -> m 
+n -> l 
+n -> ne
+
+m [label="Morphologie"]
+m -> uni -> ud 
+
+ud [label="Invertébrés"]
+m -> puni -> pud 
+pud [label="Neurones sensoriels dans SNP (Hû)"]
+m -> bi -> pud 
+m -> mulit -> mud 
+
+mud [label="Dominant vertébrés"]
+uni [label=Unipolaire]
+puni [label="Pseudo-unipolaire"]
+bi [label="Bipolaire"]
+mulit [label="Multipolaire"]
+l [label="Localisation"]
+ne [label="Neurotransmetteur"]
+
+
+n -> ae -> pa 
+
+pa [label="Génération PA"]
+
+ae [label="Activité électrique" fillcolor=yellow]
+
+
+pa -> sy 
+
+sy [label=Synapses]
+
+sy -> syd 
+
+syd [label="Site de transmission info (chim/elec)"]
+    
+ae -> mc 
+
+mc [label="Métabolisme énergétique cérébral" fillcolor=aquamarine]
+
+
+mc -> mcd 
+
+mcd [label="Réactions chim. = production / utilisation ATP cerveau"]
 
 ce -> sb 
 ce -> sg 
 
-sb [label="Substance blanche" shape=box, style=filled, fillcolor=lightyellow]
-sg [label="Substance grise" shape=box, style=filled]
+sg [label="Substance grise" fillcolor=lightgrey]
+sb [label="Substance blanche"]
 
-sb -> sbd 
 
-sbd [label="Fibres (axones)" shape=box, style=filled, fillcolor=lightyellow]
-sg -> sgd 
-sgd [label="Cortex et noyaux" shape=box, style=filled]
 
-sgd -> tc 
 
-tc [label="Tronc cérébrale" shape=box, style=filled, fillcolor=lightblue]
 
-tc -> m 
-tc -> p 
-tc -> b 
 
-m [label=Mésencéphale shape=box, style=filled, fillcolor=lightyellow]
-p [label=Pont shape=box, style=filled, fillcolor=IndianRed1]
-b [label=Bulbe shape=box, style=filled, fillcolor=lightblue]
-b -> bd 
 
-bd [label="Rythme cardiaque, déglutition,\n vomissement, toux, pa" shape=box, style=filled, fillcolor=lightyellow]
-p -> pd 
-
-pd [label="Sommeil" shape=box, style=filled, fillcolor=IndianRed1]
     
-m -> md 
-
-md [label="Structure coordination mvt\n occulaire, tête-tron, motricité" shape=box, style=filled, fillcolor=lightyellow]
-
-
-sgd -> cvt 
-
-cvt [label=Cervelet shape=box, style=filled]
-
-cvt -> cvtd
-
-cvtd [label="Ajustement mvt" shape=box, style=filled]
-
-sgd -> d
-
-d [label=Diencéphale shape=box, style=filled, fillcolor=aquamarine1]
-
-d -> th -> thd 
-d -> hy -> hd 
-d -> ep -> epd
-
-th [label=Thalamus shape=box, style=filled, fillcolor=aquamarine1]
-thd [label="Principal relais sensoriel" shape=box, style=filled, fillcolor=lightyellow]
-hy [label=Hypothalamus shape=box, style=filled, fillcolor=aquamarine1]
-
-hd[label="Régulateur homéostasique" shape=box, style=filled, fillcolor=lightyellow]
-
-ep [label=Epithalamus shape=box, style=filled, fillcolor=aquamarine1]
-
-epd [label="Modulation sommeil, douleur, émotions" shape=box, style=filled, fillcolor=lightyellow]
-
-sgd -> sl 
-
-sl [label="Système limbique" shape=box, style=filled, fillcolor=mediumorchid1]
-
-sl -> cc 
-sl -> csc 
-
-cc [label="Gyrus cingulaire" shape=box, style=filled, fillcolor=lightyellow]
-csc [label="Buble olfactif, amygdale, hippocampe" shape=box, style=filled, fillcolor=lightyellow]
-
-sgd -> cx 
-
-subgraph {rank=same ; cx ; sgd }
-
-cx [label="Cortex" shape=box, style=filled, fillcolor=cornflowerblue]
-
-
-cx -> histo 
-
-histo [label=Histologique shape=box, style=filled, fillcolor=lightyellow]
-
-histo -> allo
-histo -> iso 
-
-allo -> paleo 
-allo -> meso 
-allo -> archi 
-
-allo [label=Allocortex shape=box, style=filled, fillcolor=lightyellow]
-paleo [label=Paleocortex shape=box, style=filled, fillcolor=lightyellow]
-meso [label=Mesocortex shape=box, style=filled, fillcolor=lightyellow]
-iso [label=Isocortex shape=box, style=filled, fillcolor=lightyellow]
-archi [label=Archéocortex shape=box, style=filled, fillcolor=lightyellow]
-sbd -> fib 
-
-fib [label=Fibres shape=box, style=filled, fillcolor=lightyellow]
-
-fib -> f1 
-fib -> f2 
-fib -> f3 
-
-f1 [label="Associatives intrahémisphérique" shape=box, style=filled, fillcolor=lightyellow]
-f2 [label="Commissurales : interhémisphérique"shape=box, style=filled, fillcolor=lightyellow]
-f3 [label="Projectif : vers les structures ext. au cortex" shape=box, style=filled, fillcolor=lightyellow]
-
-f1 -> f1d 
-
-f1d [label="F.occiptofrontal inf\n F. unsciné\n F. longitudianel inf/sup\n F.arqué" shape=box, style=filled, fillcolor=lightyellow]
-f2 -> f2d 
-
-f2d [label="Corps calleux \n Commissure blanche ant/post \n Commissure hippo\n Commisure habulaire" shape=box, style=filled, fillcolor=lightyellow]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
     
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+   
+
