@@ -110,11 +110,165 @@ sb [label="Substance blanche"]
 
 
 
+ce -> c
+
+
+
+c [label=Cortex fillcolor=lightgrey]
+
+
+
+ce -> tc 
+
+tc [label="Tronc cérébrale"  fillcolor=lightblue]
+
+
+tc -> tcd 
+
+tcd [label="Zone de passage entre encéphale et moëlle épinière"]
+
+tcd -> tc1 
+tcd -> tc2 
+tcd -> tc3 
+
+tc1 [label="Mésencéphale"]
+tc2 [label=Pont fillcolor=indianred]
+tc3 [label="Bulbe rachidien" fillcolor=lightblue]
+
+
+
+tc1 -> tc1d 
+
+tc1d [label="Structure coordinations mouvements occulaires, tête-tronc, motricité"]
+
+tc2 -> tc2d 
+
+tc2d [label="Sommeil"]
+
+tc3 -> tc3d 
+
+tc3d [label="Rythme cardiaque, déglutition, toux, Pa"]
+
+tc1d -> csu 
+tc1d -> ci 
+
+csu [label="Colliculi sup : vers stim. visuels"]
+ci [label="Colliculi inf : vers stim. auditifs"]
+
+
+tc -> nmd 
+
+nmd [label="Neuromodulateurs"]
+
+nmd -> nm
+nm [label="Cholinergic"]
+
+nm -> nm1 
+
+nm1 [label="Vigilance, attention, apprentissage, mémoire"]
+
+nmd -> nm2 -> nm3 
+
+nm2 [label="Sérotoninergique"  fillcolor=lightgreen]
+
+nm3 [label="Humeur, anxiété, sommeil, appétit, douleur, cognition"  fillcolor=lightgreen]
+
+nmd -> nm4 -> nm5 
+
+nm4 [label=Noradrenergique  fillcolor=cornflowerblue]
+
+nm5 [label="Eveil, vigilance, attention, réponses"  fillcolor=cornflowerblue]
+
+nmd -> nm6 -> nm7 
+
+nm6 [label="Dopa"  fillcolor=indianred1]
+nm7 [label="Contrôle moteur, motivation, apprentissage"  fillcolor=indianred1]
+
+ce -> cv 
+cv [label=Cervelet] 
+
+cv -> cvd 
+
+cvd [label="Contrôle, coordination, ajustement mvt"]
+
+c -> di 
+tc -> di 
+
+di [label=Diencéphale  fillcolor=lightblue]
+
+di -> did 
+
+did [label="Centre intégration, contrôle physio"]
+
+did -> th 
+did -> hth 
+did -> eth 
+
+th [label=Thalamus]
+hth [label=Hypothalamus]
+eth [label=Epithalamus]
+
+th -> thd 
+
+thd [label="Principal relais sensoriel"]
+hth -> hthd 
+
+hthd [label="Régulateur homéostasique"]
+
+eth -> ethd 
+
+ethd [label="Modulation douleur, émotion, régulation"]
+
+di -> gdb 
+
+gdb [label="Ganglions de base" fillcolor=lightblue]
+
+gdb -> str 
+
+str [label=Striatum]
+
+str -> ncau
+
+ncau [label="Noyau caudé"]
+
+str -> put
+
+put [label=Putamen]
+
+str -> nacc
+
+nacc [label="Noyau accumbens"]
+
+gdb -> nst 
+
+nst [label="Noyau sous-thalamique"]
+
+gdb -> gp 
+
+gp [label="Globus palladius"]
+gdb -> snoir
+
+snoir [label="Substance noire"]
 
 
 
 
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     
     
@@ -122,28 +276,4 @@ sb [label="Substance blanche"]
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-   
 
