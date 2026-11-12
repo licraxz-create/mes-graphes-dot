@@ -1,238 +1,146 @@
+
 digraph G {
 rankdir=LR 
 node [shape=box, style=filled, fillcolor=lightyellow]
 
+l [label=Linguistique fillcolor=lightblue]
+l -> sdp 
 
-l -> c 
+sdp [label="Sons de parole" fillcolor=lightgray]
 
-c [label=Compétences]
+sdp -> v 
+sdp -> c 
 
-c -> c1 
-
-c1 [label="Phonétique=articuler son de parole"]
-c2[label="Phonologique = assembler sons de parole"]
-
-c -> c2 
-
-c -> c3 
-
-c3 [label="Lexicale=employer lexique"]
-
-c -> c4 
-
-c4 [label="Syntaxique = assembler mots en phrases"]
-
-c -> c5 
-
-c5 [label="Morphologique = fléchir morphèmes en fonctions règles"]
-
-c -> c6 
-
-c6 [label="Pragmatique = interpréter / produire message en fonction contexte"]
-
-
-
-
-
-l -> o 
-
-o [label=Propriétés]
-
-o -> us 
-
-us [label="Utilisation signes linguistiques"]
-
-us -> sl 
-
-sl [label="Signe Linguistique"]
-
-subgraph {rank=same ; us ; sl }
-
-
-sl -> sld 
-
-sld [label="Entités comprenant"]
-
-sld -> sf 
-sld -> sg 
-
-sf [label=Signifiant fillcolor=cornflowerblue]
-
-sg [label=Signifié fillcolor=cornflowerblue]
-
-sf -> m 
-sg -> m 
-
-m [label=Morphèmes fillcolor=cornflowerblue]
-
-sf -> P 
-
-P [label=Phonèmes fillcolor=cornflowerblue]
-
-l -> multi 
-
-multi [label="Intégration différentes composantes\n règles de fonctionnement et spécificités\n iteraction mais autonome"]
- 
-
-L [label=Langue fillcolor=cornflowerblue]
-pa [label=Parole fillcolor=cornflowerblue]
-
-L -> rdl 
-
-rdl [label="Registre de langue"]
-
-L -> ld 
-
-ld [label="Système de signes et de règles"]
-
-
-pa -> pda 
-
-pda [label="Résultat action parler"]
-
-f -> L 
-f -> pa 
-
-f [label="De Saussure" fillcolor=lightgreen]
-
-L -> pso
-pa -> pi
-
-pi [label="Phénomène individuel" fillcolor=lightgreen]
-pso [label="Phénomène social" fillcolor=lightgreen]
-
-
-pa -> L 
-L -> pa 
-
-subgraph {rank=same ; L ; pa }
-
-ls [label="Langues des signes" fillcolor=cornflowerblue]
-
-ls -> lsd 
-
-lsd [label="Mode de communication naturel\n et aisé en cas de surdité"]
-
-lsd -> s1 
-
-s1 [label="16es : Ponce, interface communication "]
-
-s1 -> s2 
-
-s2 [label="18e : école gestuelle\n développement oralisme"]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-i [label=Linguistique fillcolor=lightblue]
-
-ld -> rdl 
-i -> ldd 
-
-rdl [label="Registre de langue"]
-
-ldd [label="Système de signes et de règles\n individus même communauté"]
-
-subgraph {rank=same ; ld ; rdl }
-
-
-p [label=Parole fillcolor=lightblue]
-
-p -> pd 
-
-pd [label="Résultat action parler"]
-
-p -> l [label="S'oppose"]
-
-subgraph {rank=same ; p ; l }
-
- 
-fds [label="De Saussure"]
-
-fds -> L 
-
-L [label=Langage fillcolor=lightblue]
-
-L -> l 
-L -> p 
-
-pd -> pf 
-
-pf [label="Phénomène individuel"]
-
-ldd -> ps 
-
-ps [label="Phénomène social"]
-
-i -> sdp 
-
-sdp [label="Son de parole" fillcolor=lightblue]
-
-sdp -> op 
-
-op [label="Organe phonatoires" ]
-
-subgraph {rank=same ; i ; sdp }
-
-
-sdp -> cds 
-
-cds [label="Classe de sons"]
-
-cds -> c 
-
+v [label=Voyelles]
 c [label=Consonnes]
 
-cds -> v 
 
-v [label=Voyelles ]
+v -> sv 
+
+sv [label="Source vocale, toujours voisés"]
+
+c -> cv
+
+cv [label="Son provenant fermeture du canal"]
+
+cv -> la 
+
+la [label="Lieu articulation"]
+
+la -> lad 
+
+lad [label="Bilabiale : /p/, /b/, /m/ \n Labio-dentale : /f/, /v/ \n Alvéolaire : /t/ /d/ /n/ /s/ /z/ /l/ \n Post-alvéolaire \n Vélaire : /k/ /g/ \n Uvulaire"]
+
+cv -> mc 
+
+mc [label="Mode = façon de produire le son"]
+
+mc -> mcd 
+
+mcd [label="Occlusive : fermeture plus relâchement\n Fricatives : bruit de friction"]
+
+cv -> voi 
+
+voi [label="Voisement : vibration des cordes vocales"]
+
+cv -> na 
+
+na [label="Nasalité "]
+
+sv -> ap 
+sv -> li 
+sv -> ar 
+sv -> nav
+
+ap [label="Aperture"]
+li [label="Lieu / position de la langue"]
+ar [label="Arrondissement = lèvres"]
+nav [label="Nasalité"]
+
+sdp -> ph 
+
+subgraph {rank=same ; sdp ;  ph }
+
+ph [label="Phonème" fillcolor=lightgrey]
+
+ph -> phd 
+
+phd [label="Associes sons de la langues à unités distinctives"]
+
+phd -> phd1 
+
+phd1 [label="Traits distinctifs de la langue\n constitue unités distinctives de sens\n plus petites unités capable de changer le sens"]
+
+ph -> sy [label=Regroupement]
+
+subgraph {rank=same ; ph ; sy }
+
+sy [label=Syllabe fillcolor=lightgrey]
+
+sy -> sy2 
+
+sy2 [label="Structure"]
+
+sy2 -> sy3 
+sy2 -> sy4 
+sy4 -> sy5
+sy4 -> sy6 
 
 
+sy5 [label="Noyau : Fr tjs voyelle"]
+sy3 [label="Attaque : peut être abstente"]
+
+sy4 [label=Rime]
+
+sy6 [label="Coda : peut être absente, une ou pls consonnes"]
+
+sy -> mph 
+
+mph [label=Morphèmes fillcolor=lightgray]
+subgraph {rank=same ; sy ; mph ; syn }
+
+mph -> m1 
+mph -> m2 
+
+m1 [label=Lexicaux]
+m2 [label=Grammaticaux]
 
 
+m1 -> m1d 
 
+m1d [label="Signifé concret ou abstrait\n substantifs, verbes infinitif\n radixaux verbe"]
 
+m2 -> m2d 
 
+m2d [label="Marques grammaticales, inventaires fermé et limité"]
+m2d -> m3 
+m2d -> m4 
 
+m3 [label="Liés : flexionnels ou dérivationnels"]
 
+m4 [label="Libres = mots de fonctions (conjonctions, prépositions)"]
 
+mph -> lx 
 
+lx [label=Lexique fillcolor=lightgrey]
 
+lx -> lxd 
 
+lxd [label="Ensemble unités de sens (langue, personnes) "]
 
+mph -> syn 
 
+syn [label=Syntagme fillcolor=lightgrey]
+
+syn -> synd 
+
+synd [label="Associations de morphèmes formant une unité au sein de la phrase"]
+
+synd -> nd1 
+synd -> nd2 
+
+nd1 [label="Nominal : nom/pronoms associé aux déterminants et compléments du nom"]
+nd2 [label="Verbal : verbe associé aux compléments"]
 
 
 
