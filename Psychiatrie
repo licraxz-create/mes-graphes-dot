@@ -1,0 +1,129 @@
+digraph G {
+
+rankdir=LR 
+
+node [shape=box, style=filled, fillcolor=lightyellow]
+
+
+
+subgraph cluster_sex {
+    label="Sémiologie psychiatrique, anamnèse et examen mentale"
+    style=filled 
+    fillcolor=lightblue
+      as [label="Analyse séméiologique"]
+    e [label="Examen clinique / psychiatrique"]
+    
+    
+    e -> as 
+    
+    em [label="Examen mentale"]
+    
+    em -> e1 -> e11
+    em -> e2 -> e12 
+    em -> e3 -> e13 
+    em -> e4 -> e14 
+    em -> e5 -> e15 
+    em -> e6 -> e16 
+    
+    em -> e7 -> e17 
+    em -> e8 
+    
+    
+    e1 [label="Présentation et contact"]
+    
+
+    e11 [label="Apparence, hygiène, mimiques, activité psychomotrice"]
+    
+    
+    
+    e2 [label="Langage et pensée"]
+    
+    e12 [label="Dynamique pensée / langage \n forme langage, contenu discours"]
+
+e3 [label=Perception]
+e13 [label="Hallucination, illusions\n déréalisation, dépersonnalisation"]
+
+e4 [label="Attention et mémoire"]
+e14 [label="Attention, mémoire épisodique, MDT"]
+e5 [label=Affectivité]
+e15 [label="Emotions, humeur"]
+e6 [label="Fonctions physiologiques"]
+e16 [label="Sommeil, attention\n sexualité, neurovégétatif"]
+e7 [label=Comportement]
+e17 [label="Evitement, compulsion, comportements"]
+e8 [label="Jugement et conscience du trouble"]
+
+}
+
+
+subgraph cluster_uer {
+    label="Urgences ER"
+    style=filled
+    fillcolor=orange
+    
+ast [label="Anamnèse standardisée"]
+    ec [label="Examen clinique"]
+    ecc [label="Examen complémentaire"]
+    
+    sé -> ast 
+    sé -> ec 
+    sé -> ecc 
+    
+    sé [label=Sémiologie]
+    
+    syer [label=Syndromes]
+    
+    syer -> eta 
+    eta [label="Etat agitation"]
+    
+    syer -> sda 
+    
+    sda [label="Syndrome délirant aigue"]
+    
+    syer -> smq 
+    
+    smq [label="Syndrome maniaque"]
+    
+    sda -> pea 
+    
+    pea [label="Prise en charge"]
+    
+    
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+}
