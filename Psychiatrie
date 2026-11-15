@@ -81,18 +81,70 @@ ast [label="Anamnèse standardisée"]
     sda [label="Syndrome délirant aigue"]
     
     syer -> smq 
+    eta -> peas
+    sda -> peas 
+    
+    peas [label="Prise en charge"]
     
     smq [label="Syndrome maniaque"]
     
-    sda -> pea 
+    sda  
     
     pea [label="Prise en charge"]
     
+    syer -> sui 
+    
+    sui [label="Crise suicidaire"]
     
     
+    pea -> caj 
+    pea -> cap 
+    pea -> cpa 
+    
+    caj [label="Chez adulte jeune"]
+    cap [label="Chez adultes avec antécédents psychiatriques"]
+    cpa [label="Chez personne âgée"]
+
+smq -> peas
+
+peas -> tp 
+
+tp [label="Traitements psychopharmalogiques"]
+peas -> tnp 
+
+tnp [label="Traitements non psychorpharmalgoqiues"]
+
+
+
+
     
 }
 
+subgraph cluster_suicidologie {
+    label=Suicidologie
+style=filled
+fillcolor=lightgreen
+
+asui [label="Acte suicidaire"]
+asui -> a1 
+asui -> a2 
+asui -> a3 
+
+a1 [label="Expression IDS"]
+a2 [label="Manifestations situations crise"]
+a3 [label="Contexte vulnérabilité et facteurs de risques suicidaire"]
+
+csui [label="Crise suicidaire"]
+csui -> c1 
+csui -> c2 
+csui -> c3 
+
+c1 [label=Risque]
+c2 [label=Urgence]
+c3 [label=Dangerosité]
+
+
+}
 
 
 
