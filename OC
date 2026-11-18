@@ -1,123 +1,291 @@
 digraph G {
-
 rankdir=LR 
+node [shape=box, style=filled]
 
 
-oc [label="Orthopédagogie clin." shape=box, style=filled, fillcolor=aquamarine1]
+oc [label="Orthopédagogie clinique" fillcolor=aquamarine1]
 
-oc -> mc -> mcd 
-oc -> sh 
+oc -> d 
 
-oc -> vo
+d [label=Définition]
 
-mc [label="Métier de contexte" shape=box, style=filled]
-mcd [label="Personne évolue de faço dyn." shape=box, style=filled]
+d -> mdc 
 
-sh [label="Situation de handicap" shape=box, style=filled]
+mdc [label="Métier de contexte" fillcolor=lightyellow]
+sdh [label="Situation de handicap" fillcolor=lightyellow]
+d -> sdh 
 
-vo [label=Valeurs shape=box, style=filled]
+d -> vdp 
 
-vo -> acp 
-vo -> rdf 
-vo -> i 
-vo -> qdv 
+vdp [label="Valeurs" fillcolor=lightyellow]
 
-acp [label="Approche centrée sur la persone" shape=box, style=filled, fillcolor=aquamarine1]
-rdf [label="Respect droit fondametaux" shape=box, style=filled]
-i [label=Inclusion shape=box, style=filled, fillcolor=aquamarine1]
-qdv [label="Qualité de vie" shape=box, style=filled, fillcolor=aquamarine1]
+h [label=Historique]
 
-h [label=Handicap shape=box, style=filled, fillcolor=lightblue]
+h -> r -> p -> i 
 
-h -> m 
+r [label=Rejet fillcolor=lightblue]
+p [label=Protection fillcolor=lightblue]
+i [label=Inclusion fillcolor=lightblue]
 
-m [label=Modèles shape=box, style=filled]
-m -> m1 
-m1 -> vb 
-m1 -> vf 
+r -> a 
 
-m1 [label="Modèles individuels" shape=box, style=filled, fillcolor=lightblue ]
+subgraph {rank=same ; r ; a ; a1}
 
-vb [label="Variante biomédicale"shape=box, style=filled,]
+a [label="Antiquité : confusion handicap\n perte fonction\n pas d'utilité sociale " fillcolor=lightyellow]
 
-vf [label="Variante fonctionnelle" shape=box, style=filled, ]
+a -> a1 
 
-m -> m2 
+a1 [label="Aucune distincton DI et malade mentale"fillcolor=lightyellow]
 
-m2 -> ve 
-m2 -> vcdc 
+a1 -> a2 
 
-m2[label="Modèles sociaux" shape=box, style=filled, fillcolor=lightblue]
+a2 [label="Thèse de la dégénérescece + traitement idée purificaton" fillcolor=lightyellow]
 
-ve [label="Variante environementale" shape=box, style=filled]
-vcdc [label="Variante centrée sur les droits civiques" shape=box, style=filled]
+a2 -> a3 
+a3 [label="Différence entre DI et maladie mentale" fillcolor=lightyellow]
 
-m -> m3 
+p -> a4 
 
-m3 [label="Modèles socioécologique/systèmique"shape=box, style=filled, fillcolor=lightblue]
+subgraph {rank=same ; p ; a4}
 
-m -> m4 
-m4 [label="Modèles universalistes" shape=box, style=filled, fillcolor=lightblue]
+a4 [label="Précurseurs :  \n Pinel \n Séguin \n Binet"fillcolor=lightyellow]
 
-m3 -> pph 
+i -> a5 
 
-pph [label=PPH shape=box, style=filled, fillcolor=lightblue]
+subgraph {rank=same ; i ; a5}
 
-pph -> p1 
-pph -> p2 
-pph -> p3 
+a5 [label="Classer pour réinsérer \n Morbidité et chroncité" fillcolor=lightyellow]
 
-p1 [label="Facteurs personnels" shape=box, style=filled]
-p2 [label="Facteurs environnementaux" shape=box, style=filled]
-p3 [label=HDV shape=box, style=filled, fillcolor=lightgreen]
+a5 -> em 
 
-m4 -> cif 
+em [label="Emergence CIDIH" fillcolor=lightblue]
+em -> e1 
+em -> e2 
+em -> e3 
 
-cif [label=CIF shape=box, style=filled, fillcolor=lightblue]
-cif -> aifh 
+e1 [label="Déficiences"]
+e2 [label=Incapactés]
+e3 [label="Désavantage social ou handicap"]
 
-aifh [label="Approche intégrative fonctionnement humain" shape=box, style=filled]
+m [label=Modèle fillcolor=lightblue]
 
-cif -> cid
+m -> mi 
+mi [label="Modèles individuels\n causes liés caractéristiques\n personnelles" fillcolor=lightblue]
 
-cid [label=Dimension shape=box, style=filled]
+mi -> vb 
+mi -> vf 
 
-cid -> c1 
-cid -> c2 
-cid -> c3 
-cid -> c4
+vb [label="variante biomédicale\n diagnostis visée curatives"]
+vf [label="variante fonctionnelle\n limitations d'activités\n modèles de services et de compensation"]
 
-c1 [label="Fonction organiques, physio" shape=box, style=filled]
+m -> ms 
 
-c2 [label=Activités shape=box, style=filled]
-c3 [label=Participation shape=box, style=filled]
-c4 [label="Facteurs environnementaux" shape=box, style=filled]
+ms [label="Modèle sociaux\n causes liès barrières\n physique ou socioculturelle"fillcolor=lightblue]
 
-p3 -> p31 
-p3 -> p32 
+ms -> ve 
+ms -> vcd 
 
-p31 [label="Renforcement capacités ou compensation incapacités" style=filled, shape=box]
+ve [label="Variante environnementale\n aménagements nécessaires"]
 
-p32 [label="Réduction obstacles dans environnement" style=filled, shape=box]
+vcd [label="Variante centrée sur\n les droits civiques\n discrimination"]
 
-p1 -> p11 
+m -> mss 
 
-p11 [label="Identitaires ; caractéristiques proprés individu" style=filled, shape=box]
+mss [label="Modèles socioécologiques/systémiques" fillcolor=lightblue]
+m -> mu 
 
-p1 -> p12 
+mu [label="Modèles universalistes" fillcolor=lightblue]
 
-p12 [label="Organiques : intrégrité, déficience"style=filled, shape=box]
+mss -> pp
 
-p1 -> p13 
+pp [label=PPH fillcolor=cornflowerblue]
 
-p13 [label="Aptitudes ; comportement adaptatif, capacité, incapacité" style=filled, shape=box]
+pp -> mpp 
 
-p2 -> p21 
+mpp [label="Vulnérabilités bio et psycho\n interagissent tant avec les facteurs de risque\n que de protection"]
 
-p21 [label=Facilitateurs style=filled, shape=box]
-p2 -> p22 
+mpp -> hdv 
 
-p22 [label=Obstacle style=filled, shape=box]
+hdv [label="Habitudes de vie" fillcolor=lightblue]
+
+hdv -> h1
+
+h1 [label="Indicateur qualité participation sociale" fillcolor=lightyellow]
+hdv -> h2 
+
+h2 [label="Participation sociale optimale à situation de handicap"fillcolor=lightyellow]
+
+hdv -> h3 
+
+h3 [label="Renforcement capacités ou compensation des incapacités \n réduction des obstacles dans l'environnement" fillcolor=lightyellow]
+
+mpp -> fp 
+
+fp [label="Facteurs personnels"]
+mpp -> fe 
+
+fe [label="Facteurs environnementaux"]
+
+fp -> fi 
+
+fi [label="Facteurs identitaires"]
+
+fp -> fo 
+fo [label="Facteurs organiques"]
+
+fo -> it 
+fo -> df 
+
+it [label=Intégrité]
+df [label=Défience]
+
+fp -> ap 
+
+ap [label=Aptitudes]
+
+ap -> c
+ap -> ic 
+
+c [label=Capacité]
+ic [label=Incapacité]
+
+fe -> fac 
+fe -> ob 
+
+fac [label="Facilitateur"]
+ob [label=Obstacles]
+
+oc -> prs
+
+prs [label=Persepctive]
+
+prs -> cif 
+
+cif [label=CIF fillcolor=lightblue]
+
+cif -> necp
+
+necp [label="Ecart entre capacité et performance"]
+
+necp -> ca
+necp -> pef
+
+ca [label="Capacité" fillcolor=lightyellow]
+pef [label="Performance" fillcolor=lightyellow]
+
+ca -> cad 
+
+cad [label="Personne fait dans son environnement standard" fillcolor=lightyellow]
+pef -> pefd 
+
+pefd [label="Personne fait dans environnement réel" fillcolor=lightyellow]
+
+ast 
+
+ast [label="Approche socioécologique TND" fillcolor=lightblue] 
+
+ast -> di 
+ast -> tsa 
+ast -> tda 
+
+di [label="Défience intellectuelle" fillcolor=lightyellow]
+tsa [label="TSA" fillcolor=lightyellow]
+tda [label="Troubles spécifiques apprentissage" fillcolor=lightyellow]
+
+oc -> um 
+
+um [label="Utilisation modèles sociaux/socioécologique"] 
+
+um -> ast 
+
+di -> pv 
+
+pv [label="Public privilégié / cas conceptuel"]
+
+pv -> aaidd 
+
+aaidd [label=AAIDD fillcolor=lightblue]
+
+
+aaidd -> ai -> bds 
+
+ai [label="Evolution terminologiue\n Introduction comportement adaptatif\n abandon d° sévérité"fillcolor=lightyellow]
+
+cap -> fu 
+cpa -> fu 
+se -> fu 
+pir -> fu 
+
+ct -> fu 
+
+subgraph {rank=same ; cap ; cpa ; se ; pir ; ct ; bds  }
+
+cap [label="Capacité intellectuelle" fillcolor=lightyellow]
+cpa [label="Comportement adaptatif" fillcolor=lightblue]
+se [label="Santé, étiologie" fillcolor=lightyellow]
+pir [label="Participation, interaction, rôle sociaux" fillcolor=lightyellow]
+ct [label=Contexte fillcolor=lightyellow]
+
+bds [label="Besoins de soutien"fillcolor=lightblue]
+
+fu [label="Fonctionnement\n Humain"]
+
+ai -> cpta 
+
+subgraph {rank=same ; ai ; cpta ; cptad}
+
+cpta [label="Comportement adaptatif" fillcolor=lightblue]
+
+cpta -> cptad 
+
+cptad [label="Reflet du développement cognitif\n sociale et moteur\n autonomie % environnement" fillcolor=lightyellow]
+
+cptad -> cpc 
+cptad -> cps 
+cptad -> cpp 
+
+cpc [label="Compétence conceptuelle" fillcolor=lightyellow]
+cps [label="Compétence sociale" fillcolor=lightyellow]
+cpp [label="Compétence pratique" fillcolor=lightyellow]
+
+bds -> b1
+
+b1 [label="Vision complémentaire accompagnement"]
+
+b1 -> b2 
+b1 -> b3 
+b2 [label="Cotation doit refléter soutien pour réussir activités"]
+b3 [label="Assumer que la personne pourrait participer pleinement activité"]
+
+aaidd -> cpos
+
+subgraph {rank=same ; aaidd ; cpos}
+
+cpos [label="Postulats" fillcolor=lightyellow]
+
+cpos -> o1 
+cpos -> o2 
+cpos -> o3 
+cpos -> o4 
+cpos -> o5 
+
+o1 [label="Environnement typiques" fillcolor=lightyellow]
+
+o2 [label="Diversité culturelle et linguistique" fillcolor=lightyellow]
+o3 [label="Limitatons coexistent avec les forces" fillcolor=lightyellow]
+o4 [label="Profil besoins de soutines" fillcolor=lightyellow]
+
+o5 [label="Fonctionnement devrai s'améliorer si soutien personnalisé et approprié"fillcolor=lightyellow]
+
+tsa -> dy 
+
+dy [label="Dyade autistique"] 
+
+dy -> pcse 
+dy -> crr 
+
+pcse [label="Perturbation\n communication sociale\n émotionnelle"]
+crr [label="Comportements \n restreints et répétitifs" ]
 
 
 
@@ -130,4 +298,14 @@ p22 [label=Obstacle style=filled, shape=box]
 
 
 
+
+
+
+
+
+
+
+
+    
+    
 }
